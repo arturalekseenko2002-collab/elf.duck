@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import menuIcon from "../assets/menuIcon.png";
 import logo from "../assets/logo.png"; 
-// import bonus from "../assets/bonus.png";
+import coinIcon from "../assets/coinIcon.png";
 
 
 const MainPage = () => {
@@ -26,10 +26,14 @@ const MainPage = () => {
             <img className="logo" src={logo} />
           </div>
 
-          {/* <div className="headerRight">
-            <img className="bonus" src={bonus} />
-            <img className="avatar" src={avatar} />
-          </div> */}
+          <div className="headerRight">
+              <div className="bonusBlock">
+                <img src={coinIcon} className="bonusIconLeft" />
+                <span className="bonusText">x4</span>
+                <img src={plusIcon} className="bonusIconRight" />
+              </div>
+            {/* <img className="avatar" src={avatar} /> */}
+          </div>
         </div>
 
         </div> 

@@ -139,11 +139,49 @@ body {
 }
 
 .logo {
-  height: 56px;
+  height: 58px;
   width: clamp(90px, 30vw, 100px);
   object-fit: contain;
   flex-shrink: 0;
   align-self: flex-end;
+}
+
+.bonusBlock {
+  height: 35px;
+  min-width: 90px;
+  max-width: 140px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  background: rgba(225, 140, 84, 0.9);
+  border-radius: 18px;
+
+  box-shadow:
+    inset 0 20px 5px rgba(0, 0, 0, 0.25);
+
+  box-sizing: border-box;
+  flex-shrink: 0; /* 🔒 КРИТИЧНО */
+}
+
+.bonusText {
+  font-family: Unbouunded-Regular;
+  font-size: 14px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 1);
+  white-space: nowrap;
+}
+
+.bonusIconLeft,
+.bonusIconRight {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 
@@ -274,8 +312,8 @@ body {
 }
 
 @font-face {
-  font-family: "Inter_18pt-Regular";
-  src: url("/public/fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-family: "Unbouunded-Regular";
+  src: url("/public/fonts/Unbouunded-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
