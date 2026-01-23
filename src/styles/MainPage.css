@@ -201,9 +201,9 @@ body {
   align-items: center;
   justify-content: center;
 
-  /* background: rgba(255, 255, 255, 0.08); */
+  background: transparent;
 
-  flex-shrink: 0; /* 🔒 критично для headerRight */
+  flex-shrink: 0; 
 }
 
 .userAvatar {
