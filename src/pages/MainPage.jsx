@@ -23,57 +23,63 @@ const MainPage = () => {
 
         <div className="mainHomePageContainer">
 
-        <div className="headerContainer">
-          <div className="headerLeft">
-            <img className="menuIcon" src={menuIcon} />
-            <img className="logo" src={logo} />
-          </div>
+          <div className="headerContainer">
+            <div className="headerLeft">
+              <img className="menuIcon" src={menuIcon} />
+              <img className="logo" src={logo} />
+            </div>
 
-          <div className="headerRight">
-              <div className="bonusBlock">
-                <img src={coinIcon} className="bonusIconLeft" />
-                <span className="bonusText">x4</span>
-                <img src={swapIcon} className="bonusIconRight" />
-              </div>
-            <div className="avatarHeaderContainer">
-              {user?.photoUrl && (
-                <div
-                  className={`avatarHeaderContainer ${
-                    avatarLoaded ? "visible" : "hidden"
-                  }`}
-                >
-                  <img
-                    src={user.photoUrl}
-                    className="userAvatar"
-                    onLoad={() => setAvatarLoaded(true)}
-                  />
+            <div className="headerRight">
+                <div className="bonusBlock">
+                  <img src={coinIcon} className="bonusIconLeft" />
+                  <span className="bonusText">x4</span>
+                  <img src={swapIcon} className="bonusIconRight" />
                 </div>
-              )}
+              <div className="avatarHeaderContainer">
+                {user?.photoUrl && (
+                  <div
+                    className={`avatarHeaderContainer ${
+                      avatarLoaded ? "visible" : "hidden"
+                    }`}
+                  >
+                    <img
+                      src={user.photoUrl}
+                      className="userAvatar"
+                      onLoad={() => setAvatarLoaded(true)}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="sectionTitle">
-          <span className="sectionLine" />
-          <span className="sectionText">Полезная информация</span>
-          <span className="sectionLine" />
-        </div>
-
-        <div className="bannerSection">
-          <div className="bannerWrapper">
-            <img
-              src={banerIMG}
-              alt="Banner"
-              className="bannerImage"
-            />
+          <div className="sectionTitle">
+            <span className="sectionLine" />
+            <span className="sectionText">Полезная информация</span>
+            <span className="sectionLine" />
           </div>
 
-          <div className="bannerPagination">
-            <span className="dot active" />
-            <span className="dot" />
-            <span className="dot" />
+          <div className="bannerSection">
+            <div className="bannerWrapper">
+              <img
+                src={banerIMG}
+                alt="Banner"
+                className="bannerImage"
+              />
+            </div>
+
+            <div className="bannerPagination">
+              <span className="dot active" />
+              <span className="dot" />
+              <span className="dot" />
+            </div>
           </div>
-        </div>
+
+          <div className="sectionTitle">
+            <span className="sectionLine" />
+            <span className="sectionText">Наш каталог</span>
+            <span className="sectionLine" />
+          </div>
 
         </div> 
  
