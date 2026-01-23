@@ -586,6 +586,15 @@ body {
   .catalogButtons {
     width: 90%;
   }
+
+  .newDropBadge {
+    font-size: 9px;
+  }
+
+  .cardTitle2 {
+    transform: translate(-50%, -300%);
+  }
+  
 }
 
 @media (max-width: 480px) {
