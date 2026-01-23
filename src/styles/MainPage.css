@@ -233,6 +233,7 @@ body {
 
   gap: 12px; /* отступ между текстом и линиями */
   margin: 20px 0;
+  align-self: center;
 }
 
 .sectionLine {
