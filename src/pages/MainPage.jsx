@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import menuIcon from "../assets/menuIcon.png";
 import logo from "../assets/logo.png"; 
-import bonus from "../assets/bonus.png";
+// import bonus from "../assets/bonus.png";
 
 
 const MainPage = () => {
