@@ -11,6 +11,7 @@ import banerIMG from "../assets/banerIMG.png";
 import categoriesIcon from "../assets/categoriesIcon.png";
 import allItemsIcon from "../assets/allItemsIcon.png";    
 import duckIMG from "../assets/duck.png";
+import categoryBG from "../assets/category-bg.png";
 
 const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
@@ -101,7 +102,7 @@ const MainPage = () => {
 
             {/* 2 слой — фон-картинка */}
             <img
-              src="/images/category-bg.png"
+              src={categoryBG}
               className="cardImageFull"
               alt=""
             />
