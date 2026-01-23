@@ -357,12 +357,14 @@ body {
   position: relative;
 
   width: 100%;
-  aspect-ratio: 165 / 150;
+  aspect-ratio: 200 / 150;
   border-radius: 20px;
 
   overflow: hidden;
 
   border: solid 1px #CECECE;
+
+  margin-top: 24px;
 }
 
 .cardBg {
