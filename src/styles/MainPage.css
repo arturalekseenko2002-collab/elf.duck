@@ -353,18 +353,27 @@ body {
 
 /* ================= CATEGORIES GRID ================= */
 
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 90%;
+  margin: 0 auto;
+
+  margin-top: 24px;
+}
+
 .categoryCard {
   position: relative;
 
   width: 100%;
-  aspect-ratio: 200 / 150;
+  aspect-ratio: 220 / 200;
   border-radius: 20px;
 
   overflow: hidden;
 
   border: solid 1px #CECECE;
 
-  margin-top: 24px;
 }
 
 .cardBg {
@@ -453,14 +462,6 @@ body {
   color: #fff;
 
   text-transform: uppercase;
-}
-
-.categoriesGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  width: 90%;
-  margin: 0 auto;
 }
 
 /* ================= FOOTER (адаптивный) ================= */
