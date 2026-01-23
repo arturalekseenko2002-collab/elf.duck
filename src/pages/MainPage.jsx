@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
-import { TitleAnimation } from "../components/TitleAnimation";
 import { useNavigate } from "react-router-dom";
 
 import deposit from "../assets/deposit.png";
