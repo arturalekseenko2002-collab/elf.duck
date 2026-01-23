@@ -95,32 +95,33 @@ const MainPage = () => {
               <span>Все товары</span>
             </button>
           </div>
+          <div className="categoriesGrid">
+            <div className="categoryCard">
+              {/* 1 слой — фон */}
+              <div className="cardBg" />
 
-          <div className="categoryCard">
-            {/* 1 слой — фон */}
-            <div className="cardBg" />
+              {/* 2 слой — фон-картинка */}
+              <img
+                src={categoryBG}
+                className="cardImageFull"
+                alt=""
+              />
 
-            {/* 2 слой — фон-картинка */}
-            <img
-              src={categoryBG}
-              className="cardImageFull"
-              alt=""
-            />
+              {/* 3 слой — персонаж */}
+              <img
+                src={duckIMG}
+                className="cardImageLeft"
+                alt=""
+              />
 
-            {/* 3 слой — персонаж */}
-            <img
-              src={duckIMG}
-              className="cardImageLeft"
-              alt=""
-            />
+              {/* 4 слой — затемнение */}
+              <div className="cardOverlay" />
 
-            {/* 4 слой — затемнение */}
-            <div className="cardOverlay" />
-
-            {/* 5 слой — контент */}
-            <div className="cardContent">
-              <div className="newDropBadge">NEW DROP</div>
-              <div className="cardTitle">ЖИДКОСТИ</div>
+              {/* 5 слой — контент */}
+              <div className="cardContent">
+                <div className="newDropBadge">NEW DROP</div>
+                <div className="cardTitle">ЖИДКОСТИ</div>
+              </div>
             </div>
           </div>
 

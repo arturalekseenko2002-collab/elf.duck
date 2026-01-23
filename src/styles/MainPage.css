@@ -361,6 +361,8 @@ body {
   border-radius: 20px;
 
   overflow: hidden;
+
+  border: solid 1px #CECECE;
 }
 
 .cardBg {
@@ -368,7 +370,6 @@ body {
   inset: 0;
 
   background: rgba(217, 217, 217, 0.2);
-  border: 1px solid #CECECE;
   border-radius: 20px;
 
   z-index: 1;
