@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import menuIcon from "../assets/menuIcon.png";
 import logo from "../assets/logo.png"; 
 import coinIcon from "../assets/coinIcon.png";
+import swapIcon from "../assets/swapIcon.png";
 
 
 const MainPage = () => {
@@ -30,7 +31,7 @@ const MainPage = () => {
               <div className="bonusBlock">
                 <img src={coinIcon} className="bonusIconLeft" />
                 <span className="bonusText">x4</span>
-                <img src={plusIcon} className="bonusIconRight" />
+                <img src={swapIcon} className="bonusIconRight" />
               </div>
             {/* <img className="avatar" src={avatar} /> */}
           </div>
