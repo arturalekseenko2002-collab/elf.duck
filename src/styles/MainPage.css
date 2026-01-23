@@ -484,7 +484,7 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-350%);
+  transform: translate(-50%,-390%);
 
   font-family: Unbounded-Medium;
   font-size: 14px;
@@ -582,6 +582,18 @@ body {
   z-index: 10;
 }
 
+@media (max-width: 375px) {
+
+  .cardTitle2 {
+    transform: translate(-50%, -350%);
+  }
+
+  .newDropBadge {
+    font-size: 10px;
+  }
+  
+}
+
 @media (max-width: 320px) {
   .catalogButtons {
     width: 90%;
@@ -594,7 +606,7 @@ body {
   .cardTitle2 {
     transform: translate(-50%, -300%);
   }
-  
+
 }
 
 @media (max-width: 480px) {
