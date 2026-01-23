@@ -304,30 +304,30 @@ body {
 /* ================= CATALOG BUTTONS ================= */
 
 .catalogButtons {
-  width: 100%;
+  width: 75%;
   display: flex;
   gap: 12px;
-  margin-top: 14px;
+  margin: 4px auto 0px auto;
 }
 
 .catalogButton {
   flex: 1; /* 🔥 обе кнопки одинаковой ширины */
 
-  height: 44px;
-  padding: 0 14px;
+  height: 35px;
+  padding: 0 12px;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 22px;
+  background: #454545;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 12px;
 
   color: #fff;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 12px;
+  font-family: Unbounded-Medium;
 
   cursor: pointer;
   box-sizing: border-box;
@@ -485,8 +485,8 @@ body {
 }
 
 @font-face {
-  font-family: "Inter_18pt-Medium";
-  src: url("/public/fonts/Inter_18pt-Medium.ttf") format("truetype");
+  font-family: "Unbounded-Medium";
+  src: url("/public/fonts/Unbounded-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
