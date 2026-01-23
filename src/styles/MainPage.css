@@ -105,7 +105,7 @@ body {
   width: 100%;
   height: 66px;
 
-  padding: 0 6px;
+  padding: 0 12px;
   box-sizing: border-box;
 
   background: #0B0B0B;
@@ -115,7 +115,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 12px;
   flex-shrink: 0;
 }
 
@@ -229,12 +229,6 @@ body {
 }
 
 @media (max-width: 480px) {
-
-  .headerContainer {
-    flex-wrap: nowrap;
-    padding: 30px 18px;
-    margin-bottom: 1vh!important;
-  }
 
   .footerInner {
     padding: 15px 19px 30px 19px!important;
