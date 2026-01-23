@@ -52,6 +52,12 @@ const MainPage = () => {
           </div>
         </div>
 
+        <div className="sectionTitle">
+          <span className="sectionLine" />
+          <span className="sectionText">Полезная информация</span>
+          <span className="sectionLine" />
+        </div>
+
         </div> 
  
 
