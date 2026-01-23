@@ -98,388 +98,37 @@ body {
 /* ================= HEADER (адаптивный) ================= */
 
 .headerContainer {
-  position: relative;   /* 🔥 КЛЮЧЕВО */
-  top: auto;
-  z-index: 1002;
-
-  width: 100%;
-  min-height: 44px;
-
-  background: #0C0B15;
-  border-radius: 0px 0px 15px 15px;
-
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  /* ⬇️ safe area fix */
-  /* padding: calc(env(safe-area-inset-top) + 8px) 16px 8px; */
+  width: 100%;
+  height: 56px;
+
+  padding: 0 6px;
   box-sizing: border-box;
+
+  background: #0B0B0B;
 }
 
-.CircleAndNickNameContainer {
-  height: 100%;
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  /* пусть блок слева занимает достпное место */
-  flex: 1 1 auto;
-  min-width: 0;
-
-  gap: 12px;
-}
-
-.circleInHeaderContainer {
-  height: clamp(44px, 6vh, 56px);
-  width: auto;
-  margin-left: 0;
-}
-
-.circleName {
-  height: 100%;
-  aspect-ratio: 1/1;
-  background-color: #5736bb;
-  border-radius: 20%;
-
-  color: white;
+.headerLeft,
+.headerRight {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: clamp(12px, 1.6vh, 16px);
-}
-
-.userAvatar {
-  height: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 20%;
-}
-
-.nickNameContainer {
-  margin: 0;
-  width: auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  /* чтобы длинные имена не ломали хедер */
-  min-width: 0;
-}
-
-.nickNameContainerPart1 {
-  width: 100%;
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: clamp(14px, 1.9vh, 18px);
-  text-align: start;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.nickNameContainerPart2 {
-  width: 100%;
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: clamp(12px, 1.47vh, 15px);
-  text-align: start;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.deposit-ton-key-Container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
+  gap: 11px;
   flex-shrink: 0;
 }
 
-.tonBalanceContainer {
-  width: clamp(130px, 18vw, 170px);
-  height: 40px;
-  background-color: rgba(217, 217, 217, 0.15);
-  border-radius: 1vh;
-  overflow: hidden;
-
-  box-sizing: border-box;
-  margin-top: 0.15vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center !important;
-  gap: 1vh !important;
+.logo {
+  flex-shrink: 0;
 }
 
-.tonBalanceContainer h2 {
-  color: white;
-  font-family: "Inter_18pt-SemiBold";
-  font-size: 14px;
+.menuIcon {
+  height: 58px;
 }
 
-.tonBalanceContainer img {
-  height: 50%;
-  aspect-ratio: auto;
-}
 
-.keyBalanceContainer {
-  width: clamp(70px, 10vw, 90px);
-  height: 40px;
-  background-color: rgba(217, 217, 217, 0.15);
-  border-radius: 1vh;
-  overflow: hidden;
-
-  box-sizing: border-box;
-  margin-top: 0.15vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center !important;
-  gap: 0.5vh !important;
-}
-
-.keyBalanceContainer h2 {
-  color: white;
-  font-family: "Inter_18pt-SemiBold";
-  font-size: 14px;
-}
-
-.keyBalanceContainer img {
-  height: 50%;
-  aspect-ratio: auto;
-}
-
-.depositBalanceContainer {
-  width: 52px;
-  height: 40px;
-  background-color: rgba(217, 217, 217, 0.05);
-  border-radius: 1vh;
-  overflow: hidden;
-
-  border: 0.6px solid #ffffff;
-  box-sizing: border-box;
-  margin-top: 0.15vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center !important;
-  gap: 0.5vh !important;
-}
-
-.depositBalanceContainer img {
-  height: 45%;
-  aspect-ratio: auto;
-}
-
-/* ================= TITLES ================= */
-
-.titleAnimationContainer-cases {
-  position: relative;
-  width: 100%;
-  height: 5%;
-  display: flex;
-  justify-content: center;
-
-  margin-bottom: .5vh;
-}
-
-.titleAnimationContainer-cases h2 {
-  position: absolute;
-  color: #ffffff;
-  font-family: "Inter_18pt-Bold";
-  font-size: 2vh;
-}
-
-/* ================= GRID + CARDS ================= */
-
-.casesGrid {
-  width: 100%;
-  padding: 20px 10px 20px 10px;
-  box-sizing: border-box;
-
-  display: grid;
-  gap: 10px;
-
-  /* Самое главное: адаптивная сетка */
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-}
-
-.casesGridItem {
-  width: 100%;
-}
-
-.caseCard {
-  width: 100%;
-
-  /* пропорция карточки */
-  aspect-ratio: 173 / 183;
-
-  border-radius: 20px;
-  background: rgba(178, 174, 174, 0.1);
-
-  box-sizing: border-box;
-  padding: 12px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.caseCardImage {
-  height: 160px;
-  min-height: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 14px;
-  overflow: hidden;
-
-  position: relative;
-}
-
-.caseCardImage img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.caseCardTitle {
-  font-family: Inter_18pt-Regular;
-  font-size: 14px;
-  line-height: 1;
-  text-align: center;
-}
-
-.caseCardButton {
-  height: 34px;
-  border-radius: 12px;
-  border: 0;
-
-  font-family: Inter_18pt-Regular;
-  font-size: 13px;
-
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.85);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ================= открыть за X TON / ключей ================= */
-
-.caseCardActionRow {
-  height: 34px;
-  display: flex;
-  gap: 5px;
-}
-
-.caseOpenPill {
-  flex: 1;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: Inter_18pt-Regular;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.casePrice {
-  display: flex;
-  align-items: center;
-  /* gap: 8px; */
-  margin-right: .5vh;
-}
-
-.casePriceIconWrap {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.casePriceIconWrap.keys {
-  background: transparent;
-}
-
-.casePriceIconWrap img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
-}
-
-.casePriceValue {
-  font-family: Inter_18pt-Bold;
-  font-size: 16px;
-  line-height: 1;
-}
-
-/* ================= Progress (слева поверх картинки) ================= */
-
-.caseProgressBadge {
-  position: absolute;
-  top: 8px;
-  left: 0px;
-
-  height: 27px;
-  padding: 0 8px;
-  border-radius: 8px;
-
-  background: rgba(125, 118, 170, 0.85);
-  color: #fff;
-
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  font-family: Inter_18pt-Medium;
-  font-size: 11px;
-  z-index: 2;
-}
-
-/* ================= NEW (справа поверх картинки) ================= */
-
-.caseNewBadge {
-  position: absolute;
-  top: 8px;
-  right: 0px;
-
-  height: 27px;
-  padding: 0 6px;
-  border-radius: 10px;
-
-  background: #EF4444;
-  color: #fff;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: Inter_18pt-Medium;
-  font-size: 10px;
-  z-index: 2;
-}
+/* ================= FOOTER (адаптивный) ================= */
 
 .footerContainer{
   position: fixed;
@@ -568,61 +217,11 @@ body {
 }
 
 @media (max-width: 480px) {
-  .casesGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
-  /* ❗️СТРОГО ОДНА СТРОКА */
   .headerContainer {
     flex-wrap: nowrap;
     padding: 30px 18px;
     margin-bottom: 1vh!important;
-  }
-
-  .circleInHeaderContainer {
-    height: 40px;
-  }
-
-  .depositBalanceContainer {
-    width: 35px;
-    height: 27px;
-    border-radius: 6px;
-  }
-
-  .tonBalanceContainer {
-    width: 80px;
-    height: 27px;
-    border-radius: 6px;
-    gap: 6px !important;
-  }
-
-  .keyBalanceContainer {
-    width: 43px;
-    height: 27px;
-    border-radius: 6px;
-    gap: 6px !important;
-  }
-
-  .tonBalanceContainer h2,
-  .keyBalanceContainer h2 {
-    font-size: 12px;
-    line-height: 1;
-  }
-
-  .tonBalanceContainer img,
-  .keyBalanceContainer img,
-  .depositBalanceContainer img {
-    height: 60%;
-  }
-
-  .nickNameContainerPart1 {
-    font-size: 13px;
-    max-width: 120px;
-  }
-
-  .nickNameContainerPart2 {
-    font-size: 11px;
-    max-width: 120px;
   }
 
   .footerInner {
@@ -642,88 +241,10 @@ body {
     bottom: -11px;
     height: 50px;
   }
+
 }
 
-@media (min-width: 900px) {
-  .mainHomePageContainer {
-    padding: 0px;
-  }
-
-  .headerContainer {
-    height: 80px;
-    min-height: 80px;
-    padding: 15px 18px;
-    margin-bottom: 1vh!important;
-  }
-
-  .footerItem.active .footerActiveAnim {
-    bottom: -11px;
-    height: 50px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .mainHomePageContainer {
-    padding: 0px;
-  }
-
-  .headerContainer {
-    flex-wrap: nowrap;
-    padding: 15px 18px;
-    margin-bottom: 1vh!important;
-  }
-
-  .casesGrid {
-    /* На больших экранах: фикс ширина треков, пустые колонки схлопываются */
-    grid-template-columns: repeat(auto-fit, 300px);
-    justify-content: center;
-  }
-
-  .caseCardImage {
-    height: 200px;
-  }
-
-  .caseCardTitle {
-    font-size: 18px;
-  }
-
-  .caseCardButton {
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .caseProgressBadge {
-    font-size: 14px;
-    height: 36px;
-  }
-
-  .caseNewBadge {
-    font-size: 14px;
-    height: 36px;
-  }
-
-  .caseCardActionRow {
-    height: 40px;
-  }       
-
-  .caseOpenPill {
-    font-size: 16px;
-  }   
-
-  .casePriceIconWrap {
-    width: 40px;
-    height: 40px;
-  }
-
-  .casePriceValue {
-    font-size: 18px;
-  }
-
-  .footerItem.active .footerActiveAnim {
-    bottom: -11px;
-    height: 50px;
-  }
-}
+/* ================= FONTS ================= */
 
 @font-face {
   font-family: "Inter_18pt-SemiBold";

@@ -3,18 +3,9 @@ import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 
-import deposit from "../assets/deposit.png";
-import key from "../assets/key.png";
-import ton from "../assets/ton.png";
-import ufcCaseIMG from "../assets/ufcCaseIMG.png";
-import pinkCaseIMG from "../assets/pinkCaseIMG.png";
-import friendsIcon from "../assets/friendsIcon.png";
-import lotteryIcon from "../assets/lotteryIcon.png";
-import jetGiftsIcon from "../assets/jetGiftsIcon.png";
-import casesIcon from "../assets/casesIcon.png";
-import upgradeIcon from "../assets/upgradeIcon.png";
-import g63IMG from "../assets/g63IMG.png";
-import championIMG from "../assets/championIMG.png";
+import menuIcon from "../assets/menuIcon.png";
+import logo from "../assets/logo.png"; 
+import bonus from "../assets/bonus.png";
 
 
 const MainPage = () => {
@@ -29,7 +20,17 @@ const MainPage = () => {
 
         <div className="mainHomePageContainer">
 
+        <div className="headerContainer">
+          <div className="headerLeft">
+            <img className="menuIcon" src={menuIcon} />
+            <img className="logo" src={logo} />
+          </div>
 
+          {/* <div className="headerRight">
+            <img className="bonus" src={bonus} />
+            <img className="avatar" src={avatar} />
+          </div> */}
+        </div>
 
         </div> 
  
