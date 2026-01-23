@@ -301,6 +301,56 @@ body {
   background: white;
 }
 
+/* ================= CATALOG BUTTONS ================= */
+
+.catalogButtons {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.catalogButton {
+  flex: 1; /* 🔥 обе кнопки одинаковой ширины */
+
+  height: 44px;
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 22px;
+
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+  box-sizing: border-box;
+
+  white-space: nowrap;
+}
+
+.catalogButton img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.catalogButton.primary {
+  background: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.catalogButton:active {
+  transform: scale(0.97);
+}
+
 /* ================= FOOTER (адаптивный) ================= */
 
 .footerContainer{

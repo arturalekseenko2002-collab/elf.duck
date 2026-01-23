@@ -8,7 +8,8 @@ import logo from "../assets/logo.png";
 import coinIcon from "../assets/coinIcon.png";
 import swapIcon from "../assets/swapIcon.png";
 import banerIMG from "../assets/banerIMG.png";
-
+import categoriesIcon from "../assets/categoriesIcon.png";
+import allItemsIcon from "../assets/allItemsIcon.png";
 
 const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
@@ -79,6 +80,18 @@ const MainPage = () => {
             <span className="sectionLine" />
             <span className="sectionText">Наш каталог</span>
             <span className="sectionLine" />
+          </div>
+
+          <div className="catalogButtons">
+            <button className="catalogButton">
+              <img src={categoriesIcon} />
+              <span>Категории</span>
+            </button>
+
+            <button className="catalogButton primary">
+              <img src={allItemsIcon} />
+              <span>Все товары</span>
+            </button>
           </div>
 
         </div> 
