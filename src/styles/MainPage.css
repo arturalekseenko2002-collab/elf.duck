@@ -73,6 +73,26 @@ body {
   align-items: stretch;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.45s ease-out;
+}
+
+/* задержки */
+.reveal.delay-1 { transition-delay: 0.05s; }
+.reveal.delay-2 { transition-delay: 0.1s; }
+.reveal.delay-3 { transition-delay: 0.15s; }
+.reveal.delay-4 { transition-delay: 0.2s; }
+.reveal.delay-5 { transition-delay: 0.25s; }
+
 /* ================= HIDE SCROLLBAR (KEEP SCROLL) ================= */
 
 /* Chrome / Safari / Telegram WebView */
@@ -256,6 +276,7 @@ body {
 
 .bannerSection {
   width: 100%;
+  /* height: 20%; */ /* РАЗМЕР БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
 
   display: flex;
   flex-direction: column;

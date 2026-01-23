@@ -29,7 +29,7 @@ const MainPage = () => {
 
         <div className="mainHomePageContainer">
 
-          <div className="headerContainer">
+          <div className={`headerContainer reveal delay-1 ${mounted ? "visible" : ""}`}>
             <div className="headerLeft">
               <img className="menuIcon" src={menuIcon} />
               <img className="logo" src={logo} />
@@ -59,13 +59,13 @@ const MainPage = () => {
             </div>
           </div>
 
-          <div className="sectionTitle">
+          <div className={`sectionTitle reveal delay-2 ${mounted ? "visible" : ""}`}>
             <span className="sectionLine" />
             <span className="sectionText">Полезная информация</span>
             <span className="sectionLine" />
           </div>
 
-          <div className="bannerSection">
+          <div className={`bannerSection reveal delay-3 ${mounted ? "visible" : ""}`}>
             <div className="bannerWrapper">
               <img
                 src={banerIMG}
@@ -81,13 +81,13 @@ const MainPage = () => {
             </div>
           </div>
 
-          <div className="sectionTitle">
+          <div className={`sectionTitle reveal delay-2 ${mounted ? "visible" : ""}`}>
             <span className="sectionLine" />
             <span className="sectionText">Наш каталог</span>
             <span className="sectionLine" />
           </div>
 
-          <div className="catalogButtons">
+          <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`}>
             <button className="catalogButton">
               <img src={categoriesIcon} />
               <span>Категории</span>
@@ -98,7 +98,8 @@ const MainPage = () => {
               <span>Все товары</span>
             </button>
           </div>
-          <div className="categoriesGrid">
+
+          <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
 
             <div className="categoryCard">
               {/* 1 слой — фон */}
