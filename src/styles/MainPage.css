@@ -232,7 +232,7 @@ body {
   justify-content: center;
 
   gap: 12px; /* отступ между текстом и линиями */
-  margin: 20px 0;
+  margin: 15px 0;
   align-self: center;
 }
 
@@ -261,21 +261,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .bannerWrapper {
-  width: 92%;              /* как на макете */
-  max-width: 360px;        /* чтобы не раздувался на больших экранах */
-
-  aspect-ratio: 349 / 239; /* 🔥 пропорция с макета */
+  width: 93%; 
   
   border-radius: 20px;
   overflow: hidden;
 
   position: relative;
 
-  background: #111; /* на случай загрузки */
+  background: #111; 
+  border: solid 1px #CECECE;
 }
 
 .bannerImage {
@@ -287,14 +285,14 @@ body {
 
 .bannerPagination {
   display: flex;
-  gap: 8px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
 
   background: rgba(255, 255, 255, 0.3);
