@@ -13,6 +13,13 @@ const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
 
+  useEffect(() => {
+    if (!user?.photoUrl) return;
+
+    const img = new Image();
+    img.src = user.photoUrl;
+  }, [user?.photoUrl]);
+
   const navigate = useNavigate();
 
   return (
@@ -35,19 +42,12 @@ const MainPage = () => {
                 <img src={swapIcon} className="bonusIconRight" />
               </div>
             <div className="avatarHeaderContainer">
-              {user?.photoUrl && (
-                <div
-                  className={`avatarHeaderContainer ${
-                    avatarLoaded ? "visible" : "hidden"
-                  }`}
-                >
-                  <img
-                    src={user.photoUrl}
-                    className="userAvatar"
-                    onLoad={() => setAvatarLoaded(true)}
-                  />
-                </div>
-              )}
+              <img
+                src={user.photoUrl}
+                className="userAvatar"
+                loading="eager"
+                onLoad={() => setAvatarLoaded(true)}
+              />
             </div>
           </div>
         </div>
