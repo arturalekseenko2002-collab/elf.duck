@@ -360,6 +360,8 @@ body {
   width: 93%;
   margin: 20px 0px 14px;
 
+  align-self: center;
+
 }
 
 .categoryCard {
