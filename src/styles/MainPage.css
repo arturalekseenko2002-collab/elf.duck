@@ -357,7 +357,7 @@ body {
   position: relative;
 
   width: 100%;
-  aspect-ratio: 1 / 1; /* квадрат, как на макете */
+  aspect-ratio: 165 / 150;
   border-radius: 20px;
 
   overflow: hidden;
@@ -390,8 +390,8 @@ body {
   bottom: 0;
   left: 0;
 
-  width: 75%; /* можно подогнать */
-  height: auto;
+  width: auto; /* можно подогнать */
+  height: 90%;
 
   border-bottom-left-radius: 19px;
 
