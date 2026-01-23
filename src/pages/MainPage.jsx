@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Cases.css";
+import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { TitleAnimation } from "../components/TitleAnimation";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,7 @@ import g63IMG from "../assets/g63IMG.png";
 import championIMG from "../assets/championIMG.png";
 
 
-const Cases = () => {
+const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
 
   const items = [
@@ -252,4 +252,4 @@ const Cases = () => {
   );
 };
 
-export default Cases;
+export default MainPage;
