@@ -113,13 +113,13 @@ body {
 
 .headerLeft {
   height: 100%;
-  
+
   display: flex;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
 
-  max-width: 60%;
+  max-width: 40%;
   overflow: hidden;
 }
 
