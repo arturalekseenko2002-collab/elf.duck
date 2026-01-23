@@ -169,7 +169,7 @@ body {
 }
 
 .bonusText {
-  font-family: Unbouunded-Regular;
+  font-family: Unbounded-Regular;
   font-size: 14px;
   line-height: 1;
   color: rgba(255, 255, 255, 1);
@@ -312,8 +312,8 @@ body {
 }
 
 @font-face {
-  font-family: "Unbouunded-Regular";
-  src: url("/public/fonts/Unbouunded-Regular.ttf") format("truetype");
+  font-family: "Unbounded-Regular";
+  src: url("/public/fonts/Unbounded-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
