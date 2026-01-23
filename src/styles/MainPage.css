@@ -226,7 +226,7 @@ body {
 /* ================= SECTION TITLE ================= */
 
 .sectionTitle {
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,14 +239,14 @@ body {
   flex: 1;
   height: 1px;
 
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(123, 123, 123, 0.5);
 }
 
 .sectionText {
   font-family: Unbounded-Regular;
   font-size: 14px;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.45);
+  color: #7B7B7B;
 
   white-space: nowrap;
 }
