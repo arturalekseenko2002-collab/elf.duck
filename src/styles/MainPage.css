@@ -201,7 +201,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  background: transparent;
+  background: #131313;
 
   flex-shrink: 0; 
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
@@ -12,13 +12,6 @@ import swapIcon from "../assets/swapIcon.png";
 const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
-
-  useEffect(() => {
-    if (!user?.photoUrl) return;
-
-    const img = new Image();
-    img.src = user.photoUrl;
-  }, [user?.photoUrl]);
 
   const navigate = useNavigate();
 
@@ -42,12 +35,19 @@ const MainPage = () => {
                 <img src={swapIcon} className="bonusIconRight" />
               </div>
             <div className="avatarHeaderContainer">
-              <img
-                src={user.photoUrl}
-                className="userAvatar"
-                loading="eager"
-                onLoad={() => setAvatarLoaded(true)}
-              />
+              {user?.photoUrl && (
+                <div
+                  className={`avatarHeaderContainer ${
+                    avatarLoaded ? "visible" : "hidden"
+                  }`}
+                >
+                  <img
+                    src={user.photoUrl}
+                    className="userAvatar"
+                    onLoad={() => setAvatarLoaded(true)}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
