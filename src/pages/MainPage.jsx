@@ -7,6 +7,7 @@ import menuIcon from "../assets/menuIcon.png";
 import logo from "../assets/logo.png"; 
 import coinIcon from "../assets/coinIcon.png";
 import swapIcon from "../assets/swapIcon.png";
+import banerIMG from "../assets/banerIMG.png";
 
 
 const MainPage = () => {
@@ -56,6 +57,22 @@ const MainPage = () => {
           <span className="sectionLine" />
           <span className="sectionText">Полезная информация</span>
           <span className="sectionLine" />
+        </div>
+
+        <div className="bannerSection">
+          <div className="bannerWrapper">
+            <img
+              src={banerIMG}
+              alt="Banner"
+              className="bannerImage"
+            />
+          </div>
+
+          <div className="bannerPagination">
+            <span className="dot active" />
+            <span className="dot" />
+            <span className="dot" />
+          </div>
         </div>
 
         </div> 
