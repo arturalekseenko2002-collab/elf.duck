@@ -77,7 +77,7 @@ const MainPage = () => {
 
           <div className="titleAnimationContainer-cases">
             
-            <h2>БЕСПЛАТНЫЕ КЕЙСЫ</h2>
+            <h2>БЕСПЛАТНЫЕ КЕЙС</h2>
           </div>
 
           <div className="casesGrid">
