@@ -358,9 +358,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px 10px 14px 10px;
 
-  margin-top: 24px;
 }
 
 .categoryCard {
@@ -453,15 +452,16 @@ body {
 
 .cardTitle {
   position: absolute;
-  left: 16px;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
 
   font-family: Unbounded-Medium;
   font-size: 22px;
   color: #fff;
-
   text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
 }
 
 /* ================= FOOTER (адаптивный) ================= */
