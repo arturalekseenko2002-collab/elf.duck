@@ -411,6 +411,19 @@ body {
   z-index: 3;
 }
 
+.cardImageRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: auto; /* можно подогнать */
+  height: 60%;
+
+  border-bottom-right-radius: 19px;
+
+  z-index: 3;
+}
+
 .cardOverlay {
   position: absolute;
   inset: 0;
@@ -457,6 +470,20 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  font-family: Unbounded-Medium;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cardTitle2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-350%);
 
   font-family: Unbounded-Medium;
   font-size: 14px;

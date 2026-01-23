@@ -11,7 +11,10 @@ import banerIMG from "../assets/banerIMG.png";
 import categoriesIcon from "../assets/categoriesIcon.png";
 import allItemsIcon from "../assets/allItemsIcon.png";    
 import duckIMG from "../assets/duck.png";
-import categoryBG from "../assets/category-bg.png";
+import categoryBG from "../assets/category-bg.png"; 
+import duck2IMG from "../assets/duck2.png";
+import categoryBG2 from "../assets/categoryBG2.png";
+
 
 const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
@@ -125,31 +128,27 @@ const MainPage = () => {
               </div>
             </div>
 
-                        <div className="categoryCard">
+            <div className="categoryCard">
               {/* 1 слой — фон */}
               <div className="cardBg" />
 
               {/* 2 слой — фон-картинка */}
               <img
-                src={categoryBG}
+                src={categoryBG2}
                 className="cardImageFull"
                 alt=""
               />
 
               {/* 3 слой — персонаж */}
               <img
-                src={duckIMG}
-                className="cardImageLeft"
+                src={duck2IMG}
+                className="cardImageRight"
                 alt=""
               />
 
-              {/* 4 слой — затемнение */}
-              <div className="cardOverlay" />
-
               {/* 5 слой — контент */}
               <div className="cardContent">
-                <div className="newDropBadge">NEW DROP</div>
-                <div className="cardTitle">ЖИДКОСТИ</div>
+                <div className="cardTitle2">ОДНОРАЗКИ</div>
               </div>
             </div>
 
