@@ -124,6 +124,10 @@ body {
 }
 
 .menuIcon {
+  height: 24px;
+}
+
+.logo {
   height: 58px;
 }
 
