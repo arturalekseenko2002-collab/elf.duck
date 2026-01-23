@@ -33,7 +33,9 @@ const MainPage = () => {
                 <span className="bonusText">x4</span>
                 <img src={swapIcon} className="bonusIconRight" />
               </div>
-            {/* <img className="avatar" src={avatar} /> */}
+            <div className="avatarHeaderContainer">
+              <img src={user?.photoUrl} className="userAvatar"/>
+            </div>
           </div>
         </div>
 
