@@ -29,9 +29,7 @@ const MainPage = () => {
 
         <div className="mainHomePageContainer">
 
-          <div className="headerContainer">
-              
-          </div>
+
 
         </div> 
  
