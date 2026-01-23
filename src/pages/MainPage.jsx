@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +19,13 @@ import categoryBG2 from "../assets/categoryBG2.png";
 const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      setMounted(true);
+    });
+  }, []);
 
   const navigate = useNavigate();
 
