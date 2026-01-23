@@ -596,15 +596,20 @@ body {
 
 @media (max-width: 320px) {
   .catalogButtons {
-    width: 90%;
+    width: 95%;
   }
 
   .newDropBadge {
     font-size: 9px;
   }
 
+  .cardTitle {
+    font-size: 12px;
+  }
+
   .cardTitle2 {
-    transform: translate(-50%, -300%);
+    transform: translate(-50%, -330%);
+    font-size: 12px;
   }
 
 }
