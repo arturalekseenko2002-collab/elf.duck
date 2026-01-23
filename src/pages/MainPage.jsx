@@ -11,6 +11,7 @@ import swapIcon from "../assets/swapIcon.png";
 
 const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
+  const [avatarLoaded, setAvatarLoaded] = useState(false);
 
   const navigate = useNavigate();
 
@@ -34,7 +35,19 @@ const MainPage = () => {
                 <img src={swapIcon} className="bonusIconRight" />
               </div>
             <div className="avatarHeaderContainer">
-              <img src={user?.photoUrl} className="userAvatar"/>
+              {user?.photoUrl && (
+                <div
+                  className={`avatarHeaderContainer ${
+                    avatarLoaded ? "visible" : "hidden"
+                  }`}
+                >
+                  <img
+                    src={user.photoUrl}
+                    className="userAvatar"
+                    onLoad={() => setAvatarLoaded(true)}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
