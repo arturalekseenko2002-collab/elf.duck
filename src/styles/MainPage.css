@@ -591,6 +591,15 @@ body {
   .newDropBadge {
     font-size: 10px;
   }
+
+  .catalogButton img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .catalogButton {
+    font-size: 12px;
+  }
   
 }
 
@@ -609,6 +618,15 @@ body {
 
   .cardTitle2 {
     transform: translate(-50%, -330%);
+    font-size: 12px;
+  }
+
+  .catalogButton img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .catalogButton {
     font-size: 12px;
   }
 
