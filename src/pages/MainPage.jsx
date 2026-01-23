@@ -9,7 +9,8 @@ import coinIcon from "../assets/coinIcon.png";
 import swapIcon from "../assets/swapIcon.png";
 import banerIMG from "../assets/banerIMG.png";
 import categoriesIcon from "../assets/categoriesIcon.png";
-import allItemsIcon from "../assets/allItemsIcon.png";
+import allItemsIcon from "../assets/allItemsIcon.png";    
+import duckIMG from "../assets/duck.png";
 
 const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
@@ -107,7 +108,7 @@ const MainPage = () => {
 
             {/* 3 слой — персонаж */}
             <img
-              src="/images/duck.png"
+              src={duckIMG}
               className="cardImageLeft"
               alt=""
             />
