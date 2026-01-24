@@ -26,8 +26,31 @@ body {
   flex-direction: column;
 
   background:
-    radial-gradient(200% 150% at 0% 60%, rgba(85, 61, 158, 0.8), transparent 30%),
-    radial-gradient(100% 180% at 80% 80%, #000, #000);
+    /* Мягкое внутреннее заполнение */
+    radial-gradient(
+      120% 120% at 30% 50%,
+      rgba(85, 61, 158, 0.22) 0%,
+      transparent 60%
+    ),
+
+    /* Основной diamond-клин (-24°) */
+    linear-gradient(
+      66deg,
+      rgba(85, 61, 158, 0.85) 0%,
+      rgba(85, 61, 158, 0.45) 28%,
+      rgba(85, 61, 158, 0.18) 42%,
+      rgba(0, 0, 0, 0.9) 58%,
+      #000 100%
+    ),
+
+    /* Зеркальный клин для формы ромба */
+    linear-gradient(
+      -114deg,
+      rgba(85, 61, 158, 0.65) 0%,
+      rgba(85, 61, 158, 0.32) 26%,
+      rgba(0, 0, 0, 0.9) 56%,
+      #000 100%
+    );
   background-color: #000;
   background-blend-mode: screen;
   min-height: 0;
@@ -36,39 +59,6 @@ body {
   font-family: Muller;
   font-size: 2.2vh;
 }
-
-.App::after {
-  content: "";
-  position: fixed;
-
-  top: 0%;
-  right: -30%;
-  bottom: 0%;
-  left: -30%;
-
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      100% 150% at 0% 60%,
-      rgba(85, 61, 158, 0.35),
-      transparent 55%
-    ),
-    radial-gradient(
-      120% 120% at 70% 80%,
-      rgba(120, 90, 255, 0.2),
-      transparent 60%
-    );
-
-  filter: blur(80px);
-  opacity: 0.4;
-  z-index: 0;
-
-  animation: glowPulse 18s ease-in-out infinite;
-  will-change: filter, opacity;
-}
-
 
 .App p {
   margin: 0;
@@ -83,7 +73,7 @@ body {
   color: white;
   z-index: 1001;
   animation: fade-in 0.3s forwards;
-  overflow: hidden; /* скролл только в контенте */
+  overflow: hidden; 
   display: flex;
 }
 
@@ -93,12 +83,10 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
 
-  /* важное: это единственный скролл-контейнер */
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  /* полностью убираем "протягивание" выше хедера */
   overscroll-behavior-y: none;
 
   display: flex;
@@ -128,7 +116,6 @@ body {
 
 /* ================= HIDE SCROLLBAR (KEEP SCROLL) ================= */
 
-/* Chrome / Safari / Telegram WebView */
 .mainHomePageContainer::-webkit-scrollbar {
   width: 0px;
   height: 0px;
@@ -138,12 +125,10 @@ body {
   background: transparent;
 }
 
-/* Firefox */
 .mainHomePageContainer {
-  scrollbar-width: none; /* hide scrollbar */
+  scrollbar-width: none; 
 }
 
-/* Edge / old IE */
 .mainHomePageContainer {
   -ms-overflow-style: none;
 }
@@ -284,7 +269,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  gap: 12px; /* отступ между текстом и линиями */
+  gap: 12px; 
   margin: 15px 0;
   align-self: center;
 }
@@ -740,20 +725,7 @@ body {
 
 /* ================= ANIMATIONS ================= */
 
-@keyframes glowPulse {
-  0% {
-    filter: blur(90px);
-    opacity: 0.75;
-  }
-  50% {
-    filter: blur(110px);
-    opacity: 0.95;
-  }
-  100% {
-    filter: blur(90px);
-    opacity: 0.75;
-  }
-}
+
 
 html {
   overscroll-behavior-y: none;
