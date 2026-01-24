@@ -70,6 +70,8 @@ const MainPage = () => {
             </div>
           </div>
 
+          <div className="scrollContent">
+
           <div className={`sectionTitle reveal delay-2 ${mounted ? "visible" : ""}`}>
             <span className="sectionLine" />
             <span className="sectionText">Полезная информация</span>
@@ -215,6 +217,8 @@ const MainPage = () => {
               </div>
             </div>
 
+          </div>
+          
           </div>
 
         </div> 

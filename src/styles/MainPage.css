@@ -101,6 +101,22 @@ body {
   display: flex;
 }
 
+.scrollContent {
+  height: calc(100dvh - 72px); /* высота хедера */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  padding-bottom: 24px;
+}
+
+.scrollContent {
+  padding-top: 12px;
+}
+
+.headerContainer {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
 .mainHomePageContainer {
   width: 100%;
   max-width: 1800px;
@@ -160,6 +176,7 @@ body {
 /* ================= HEADER (адаптивный) ================= */
 
 .headerContainer {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,6 +188,8 @@ body {
   box-sizing: border-box;
 
   background: #0B0B0B;
+
+  flex-shrink: 0;
 }
 
 .headerLeft {
