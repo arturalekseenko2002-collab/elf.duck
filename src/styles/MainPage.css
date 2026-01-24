@@ -79,6 +79,9 @@ body {
   /* 🔥 ВОТ ОН — НАКЛОН КАК В FIGMA */
   transform: rotate(-32deg);
   transform-origin: left center;
+
+  opacity: 0;
+  animation: gradientReveal 0.9s ease-out forwards;
 }
 
 .App p {
@@ -746,7 +749,16 @@ body {
 
 /* ================= ANIMATIONS ================= */
 
-
+@keyframes gradientReveal {
+  0% {
+    opacity: 0;
+    transform: rotate(-32deg) translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-32deg) translateX(0);
+  }
+}
 
 html {
   overscroll-behavior-y: none;
