@@ -9,6 +9,8 @@ import logo from "../assets/logo.png";
 import coinIcon from "../assets/coinIcon.png";
 import swapIcon from "../assets/swapIcon.png";
 import banerIMG from "../assets/banerIMG.png";
+import baner2IMG from "../assets/banerIMG.png";
+import baner3IMG from "../assets/banerIMG.png";
 import categoriesIcon from "../assets/categoriesIcon.png";
 import allItemsIcon from "../assets/allItemsIcon.png";    
 import duckIMG from "../assets/duck.png";
@@ -76,12 +78,18 @@ const MainPage = () => {
           </div> */}
 
           <div className={`bannerSection reveal delay-3 ${mounted ? "visible" : ""}`}>
-            <div className="bannerWrapper">
-              <img
-                src={banerIMG}
-                alt="Banner"
-                className="bannerImage"
-              />
+            <div className="bannerScroll">
+              <div className="bannerSlide">
+                <img src={banerIMG} className="bannerImage" />
+              </div>
+
+              <div className="bannerSlide">
+                <img src={banerIMG} className="bannerImage" />
+              </div>
+
+              <div className="bannerSlide">
+                <img src={banerIMG} className="bannerImage" />
+              </div>
             </div>
 
             <div className="bannerPagination">

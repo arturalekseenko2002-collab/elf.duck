@@ -353,6 +353,43 @@ body {
   margin-top: 15px; /* РАС БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
 }
 
+.bannerScroll {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  scrollbar-width: none;
+}
+
+.bannerScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.bannerSlide {
+  flex: 0 0 93%;
+  scroll-snap-align: center;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  background: #111;
+  border: 1px solid #CECECE;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .bannerWrapper {
   width: 93%; 
   
