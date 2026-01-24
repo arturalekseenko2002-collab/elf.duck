@@ -92,7 +92,7 @@ const MainPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="App">
+    <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
 
       <div className="Main_Window">
 
@@ -130,7 +130,7 @@ const MainPage = () => {
             <span className="sectionLine" />
           </div> */}
 
-          <div className={`bannerSection reveal delay-3 ${mounted ? "visible" : ""}`}>
+          <div className={`bannerSection reveal delay-2 ${mounted ? "visible" : ""}`}>
             <div className="bannerScroll" ref={bannerScrollRef} onScroll={handleBannerScroll}>
               {banners.map((src, i) => (
                 <div key={i} className="bannerSlide" onClick={haptic.heavy}>
@@ -147,7 +147,7 @@ const MainPage = () => {
             </div>
           </div>
 
-          <div className={`sectionTitle reveal delay-2 ${mounted ? "visible" : ""}`}>
+          <div className={`sectionTitle reveal delay-3 ${mounted ? "visible" : ""}`}>
             <span className="sectionLine" />
             <span className="sectionText">Наш каталог</span>
             <span className="sectionLine" />
@@ -272,7 +272,7 @@ const MainPage = () => {
 
           </div>
 
-          <div className={`footerBar reveal delay-5 ${mounted ? "visible" : ""}`}>
+          <div className={`footerBar reveal delay-6 ${mounted ? "visible" : ""}`}>
             <div className="footerLeft">
               <span>ELF DUCK</span>
               <img src={telegramIcon} alt="" />
