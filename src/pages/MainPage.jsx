@@ -47,12 +47,12 @@ const MainPage = () => {
 
           <div className={`headerContainer reveal delay-1 ${mounted ? "visible" : ""}`}>
             <div className="headerLeft">
-              <img className="menuIcon" src={menuIcon} onClick={haptic.light} />
+              <img className="menuIcon" src={menuIcon} onClick={haptic.heavy} />
               <img className="logo" src={logo} />
             </div>
 
             <div className="headerRight">
-                <div className="bonusBlock" onClick={haptic.medium}>
+                <div className="bonusBlock" onClick={haptic.heavy}>
                   <img src={coinIcon} className="bonusIconLeft" />
                   <span className="bonusText">x4</span>
                   <img src={swapIcon} className="bonusIconRight" />
@@ -113,7 +113,7 @@ const MainPage = () => {
 
           <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
 
-            <div className="categoryCard" onClick={haptic.medium}>
+            <div className="categoryCard" onClick={haptic.heavy}>
               {/* 1 слой — фон */}
               <div className="cardBg" />
 
@@ -141,7 +141,7 @@ const MainPage = () => {
               </div>
             </div>
 
-            <div className="categoryCard">
+            <div className="categoryCard" onClick={haptic.heavy}>
               {/* 1 слой — фон */}
               <div className="cardBg" />
 
@@ -165,7 +165,7 @@ const MainPage = () => {
               </div>
             </div>
 
-            <div className="categoryCard">
+            <div className="categoryCard" onClick={haptic.heavy}>
               {/* 1 слой — фон */}
               <div className="cardBg" />
 
@@ -189,7 +189,7 @@ const MainPage = () => {
               </div>
             </div>
 
-            <div className="categoryCard">
+            <div className="categoryCard" onClick={haptic.heavy}>
               {/* 1 слой — фон */}
               <div className="cardBg" />
 
