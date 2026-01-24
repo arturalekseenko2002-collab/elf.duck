@@ -13,7 +13,11 @@ import allItemsIcon from "../assets/allItemsIcon.png";
 import duckIMG from "../assets/duck.png";
 import categoryBG from "../assets/category-bg.png"; 
 import duck2IMG from "../assets/duck2.png";
+import duck3IMG from "../assets/duck3.png";
+import duck4IMG from "../assets/duck4.png";
 import categoryBG2 from "../assets/categoryBG2.png";
+import categoryBG3 from "../assets/categoryBG3.png";
+import categoryBG4 from "../assets/categoryBG4.png";
 
 
 const MainPage = () => {
@@ -157,6 +161,57 @@ const MainPage = () => {
               {/* 5 слой — контент */}
               <div className="cardContent">
                 <div className="cardTitle2">ОДНОРАЗКИ</div>
+              </div>
+            </div>
+
+            <div className="categoryCard">
+              {/* 1 слой — фон */}
+              <div className="cardBg" />
+
+              {/* 2 слой — фон-картинка */}
+              <img
+                src={categoryBG3}
+                className="cardImageFull"
+                alt=""
+              />
+
+              {/* 3 слой — персонаж */}
+              <img
+                src={duck3IMG}
+                className="cardImageLeft2"
+                alt=""
+              />
+
+              {/* 5 слой — контент */}
+              <div className="cardContent">
+                <div className="cardTitle2">ПОДЫ</div>
+              </div>
+            </div>
+
+            <div className="categoryCard">
+              {/* 1 слой — фон */}
+              <div className="cardBg" />
+
+              {/* 2 слой — фон-картинка */}
+              <img
+                src={categoryBG4}
+                className="cardImageFull"
+                alt=""
+              />
+
+              {/* 3 слой — персонаж */}
+              <img
+                src={duck4IMG}
+                className="cardImageRight2"
+                alt=""
+              />
+
+              {/* 4 слой — затемнение */}
+              <div className="cardOverlay" />
+
+              {/* 5 слой — контент */}
+              <div className="cardContent">
+                <div className="cardTitle">КАРТРИДЖИ</div>
               </div>
             </div>
 
