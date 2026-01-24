@@ -349,6 +349,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+
+  margin-top: 15px; /* РАСТОЯНИЕ БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
 }
 
 .bannerWrapper {
@@ -615,22 +617,19 @@ body {
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  height: 44px;
-  padding: 0 16px;
+  height: auto;
+  padding: 0 22px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  background: transparent; /* как на макете */
+  background: transparent; 
   z-index: 900;
 
   box-sizing: border-box;
+
+  margin-bottom: 20px;
 }
 
 .footerLeft {
@@ -638,9 +637,9 @@ body {
   align-items: center;
   gap: 6px;
 
-  font-family: Inter_18pt-Regular;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.45);
+  font-family: Unbounded-Regular;
+  font-size: 10px;
+  color: #818181;
 }
 
 .footerLeft img {
@@ -654,15 +653,14 @@ body {
   align-items: center;
   gap: 6px;
 
-  font-family: Inter_18pt-Regular;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.45);
+  font-family: Unbounded-Regular;
+  font-size: 10px;
+  color: #818181;
 }
 
 .footerRight img {
   width: 16px;
   height: 16px;
-  opacity: 0.6;
 }
 
 .footerLeft,

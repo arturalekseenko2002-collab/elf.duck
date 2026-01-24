@@ -28,10 +28,6 @@ const MainPage = () => {
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // const hapticLight = () => tapHaptic("light");
-  // const hapticMedium = () => tapHaptic("medium");
-  // const hapticHeavy = () => tapHaptic("heavy");
-
   useEffect(() => {
     requestAnimationFrame(() => {
       setMounted(true);
@@ -73,11 +69,11 @@ const MainPage = () => {
 
           <div className="scrollContent">
 
-          <div className={`sectionTitle reveal delay-2 ${mounted ? "visible" : ""}`}>
+          {/* <div className={`sectionTitle reveal delay-2 ${mounted ? "visible" : ""}`}>
             <span className="sectionLine" />
             <span className="sectionText">Полезная информация</span>
             <span className="sectionLine" />
-          </div>
+          </div> */}
 
           <div className={`bannerSection reveal delay-3 ${mounted ? "visible" : ""}`}>
             <div className="bannerWrapper">
