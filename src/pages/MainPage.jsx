@@ -25,7 +25,6 @@ const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const haptic = () => tapHaptic("light");
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -96,8 +95,8 @@ const MainPage = () => {
             <span className="sectionLine" />
           </div>
 
-          <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`} onClick={() => {tapHaptic("light");}}>
-            <button className="catalogButton">
+          <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`}>
+            <button className="catalogButton" onClick={() => {tapHaptic("light");}}>
               <img src={categoriesIcon} />
               <span>Категории</span>
             </button>
