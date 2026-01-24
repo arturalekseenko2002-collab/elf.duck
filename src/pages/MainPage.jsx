@@ -133,10 +133,7 @@ const MainPage = () => {
           <div className={`bannerSection reveal delay-3 ${mounted ? "visible" : ""}`}>
             <div className="bannerScroll" ref={bannerScrollRef} onScroll={handleBannerScroll}>
               {banners.map((src, i) => (
-                <div
-                  key={i}
-                  className="bannerSlide"
-                >
+                <div key={i} className="bannerSlide" onClick={haptic.heavy}>
                   <img src={src} alt={`Banner ${i + 1}`} className="bannerImage" />
                 </div>
               ))}
