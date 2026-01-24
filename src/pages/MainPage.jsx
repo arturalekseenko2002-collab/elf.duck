@@ -216,7 +216,7 @@ const MainPage = () => {
 
           </div>
 
-          <div className="footerBar">
+          <div className={`footerBar reveal delay-5 ${mounted ? "visible" : ""}`}>
             <div className="footerLeft">
               <span>ELF DUCK</span>
               <img src={telegramIcon} alt="" />
