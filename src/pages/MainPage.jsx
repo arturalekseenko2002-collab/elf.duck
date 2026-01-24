@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useRef} from "react";
 import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
@@ -35,6 +35,48 @@ const MainPage = () => {
       setMounted(true);
     });
   }, []);
+
+  /* ================= BANNER DOTS SECTION ================= */
+
+  const banners = [banerIMG, baner2IMG, baner3IMG]; // потом заменишь на реальные изображения
+  const [activeBannerIndex, setActiveBannerIndex] = useState(0);
+
+  const bannerScrollRef = useRef(null);
+  const bannerSlideRefs = useRef([]);
+
+  const getDotCount = (n) => (n <= 3 ? n : 3);
+  const getActiveDotIndex = (index, n) => {
+    if (n <= 3) return index;
+    if (index === 0) return 0;
+    if (index === n - 1) return 2;
+    return 1;
+  };
+
+  useEffect(() => {
+    const root = bannerScrollRef.current;
+    if (!root) return;
+
+    bannerSlideRefs.current = bannerSlideRefs.current.slice(0, banners.length);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let best = null;
+        for (const entry of entries) {
+          if (!best || entry.intersectionRatio > best.intersectionRatio) best = entry;
+        }
+        if (!best) return;
+
+        const idx = Number(best.target.getAttribute("data-index"));
+        if (!Number.isNaN(idx)) setActiveBannerIndex(idx);
+      },
+      { root, threshold: [0.25, 0.5, 0.6, 0.75, 0.9] }
+    );
+
+    bannerSlideRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, [banners.length]);
+
+  /* ================= NAVIGATION ================= */
 
   const navigate = useNavigate();
 
@@ -78,24 +120,24 @@ const MainPage = () => {
           </div> */}
 
           <div className={`bannerSection reveal delay-3 ${mounted ? "visible" : ""}`}>
-            <div className="bannerScroll">
-              <div className="bannerSlide">
-                <img src={banerIMG} className="bannerImage" />
-              </div>
-
-              <div className="bannerSlide">
-                <img src={baner2IMG} className="bannerImage" />
-              </div>
-
-              <div className="bannerSlide">
-                <img src={baner3IMG} className="bannerImage" />
-              </div>
+            <div className="bannerScroll" ref={bannerScrollRef}>
+              {banners.map((src, i) => (
+                <div
+                  key={i}
+                  className="bannerSlide"
+                  data-index={i}
+                  ref={(el) => (bannerSlideRefs.current[i] = el)}
+                >
+                  <img src={src} alt={`Banner ${i + 1}`} className="bannerImage" />
+                </div>
+              ))}
             </div>
 
             <div className="bannerPagination">
-              <span className="dot active" />
-              <span className="dot" />
-              <span className="dot" />
+              {Array.from({ length: getDotCount(banners.length) }).map((_, i) => {
+                const activeDot = getActiveDotIndex(activeBannerIndex, banners.length);
+                return <span key={i} className={`dot ${i === activeDot ? "active" : ""}`} />;
+              })}
             </div>
           </div>
 

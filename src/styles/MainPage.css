@@ -383,23 +383,8 @@ body {
   border: 1px solid #CECECE;
 }
 
-.bannerImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.bannerWrapper {
-  width: 93%; 
-  
-  border-radius: 20px;
-  overflow: hidden;
-
-  position: relative;
-
-  background: #111; 
-  border: solid 1px #CECECE;
+.bannerSlide:active {
+  transform: scale(0.96);
 }
 
 .bannerImage {
