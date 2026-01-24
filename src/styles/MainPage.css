@@ -343,14 +343,14 @@ body {
 
 .bannerSection {
   width: 100%;
-  height: 22%; /* РАЗМЕР БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
+  /* height: 22%; РАЗМЕР БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
 
-  margin-top: 15px; /* РАСТОЯНИЕ БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
+  margin-top: 15px; /* РАС БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
 }
 
 .bannerWrapper {
