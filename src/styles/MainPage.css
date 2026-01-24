@@ -612,6 +612,69 @@ body {
   white-space: nowrap;
 }
 
+/* ================= FOOTER BAR (прозрачный) ================= */
+
+.footerBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 44px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: transparent; /* как на макете */
+  z-index: 900;
+
+  box-sizing: border-box;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-family: Inter_18pt-Regular;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footerLeft img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-family: Inter_18pt-Regular;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footerRight img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.footerLeft,
+.footerRight {
+  transition: opacity 0.2s ease;
+}
+
+.footerLeft:active,
+.footerRight:active {
+  opacity: 0.8;
+}
+
 /* ================= FOOTER (адаптивный) ================= */
 
 .footerContainer{

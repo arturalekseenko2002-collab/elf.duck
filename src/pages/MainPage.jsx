@@ -18,7 +18,9 @@ import duck3IMG from "../assets/duck3.png";
 import duck4IMG from "../assets/duck4.png";
 import categoryBG2 from "../assets/categoryBG2.png";
 import categoryBG3 from "../assets/categoryBG3.png";
-import categoryBG4 from "../assets/categoryBG4.png";
+import categoryBG4 from "../assets/categoryBG4.png";  
+import telegramIcon from "../assets/telegramIcon.png";
+import supportIcon from "../assets/supportIcon.png";
 
 
 const MainPage = () => {
@@ -218,6 +220,18 @@ const MainPage = () => {
 
           </div>
           
+          </div>
+
+          <div className="footerBar">
+            <div className="footerLeft">
+              <span>ELF DUCK</span>
+              <img src={telegramIcon} alt="" />
+            </div>
+
+            <div className="footerRight">
+              <span>Поддержка 24/7</span>
+              <img src={supportIcon} alt="" />
+            </div>
           </div>
 
         </div> 
