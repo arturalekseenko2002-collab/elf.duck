@@ -465,6 +465,10 @@ body {
 
 }
 
+.categoryCard:active {
+  transform: scale(0.96);
+}
+
 .cardBg {
   position: absolute;
   inset: 0;
