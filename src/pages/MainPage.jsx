@@ -23,6 +23,8 @@ import categoryBG3 from "../assets/categoryBG3.png";
 import categoryBG4 from "../assets/categoryBG4.png";  
 import telegramIcon from "../assets/telegramIcon.png";
 import supportIcon from "../assets/supportIcon.png";
+import productsChaserBG from "../assets/productsChaserBG.png";
+import chaserDuckIMG from "../assets/chaserDuck.png";
 
 
 const MainPage = () => {
@@ -289,8 +291,30 @@ const MainPage = () => {
           )}
 
           {catalogView === "all" && (
-            <div className={`allItemsPlaceholder reveal delay-5 ${mounted ? "visible" : ""}`}>
-              <span>Здесь будут отображаться все товары из каталога.</span>
+            <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
+              <div className="productsCard" onClick={haptic.heavy}>
+                {/* 1 слой — фон */}
+                <div className="cardBg" />
+
+                {/* 2 слой — фон-картинка */}
+                <img
+                  src={productsChaserBG}
+                  className="cardImageFull"
+                  alt=""
+                />
+
+                {/* 3 слой — персонаж */}
+                <img
+                  src={chaserDuckIMG}
+                  className="productsCardImageRight"
+                  alt=""
+                />
+
+                {/* 5 слой — контент */}
+                <div className="cardContent">
+                  <div className="cardTitle2">CHASER 30 ML</div>
+                </div>
+              </div>
             </div>
           )}
 

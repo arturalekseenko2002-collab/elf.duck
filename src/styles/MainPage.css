@@ -534,6 +534,19 @@ body {
 
 }
 
+.productsCard {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 220 / 358;
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  border: solid 1.1px #CECECE;
+
+}
+
 .categoryCard:active {
   transform: scale(0.96);
 }
@@ -593,6 +606,19 @@ body {
 
   width: auto; /* можно подогнать */
   height: 70%;
+
+  border-bottom-right-radius: 19px;
+
+  z-index: 3;
+}
+
+.productsCardImageRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: auto; /* можно подогнать */
+  height: 55%;
 
   border-bottom-right-radius: 19px;
 
