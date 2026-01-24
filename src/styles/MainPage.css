@@ -25,6 +25,33 @@ body {
   text-align: center;
   flex-direction: column;
 
+  /* background:
+    linear-gradient(
+      66deg,
+      rgba(85, 61, 158, 0.85) 0%,
+      rgba(85, 61, 158, 0.55) 18%,
+      rgba(85, 61, 158, 0.25) 30%,
+      rgba(0, 0, 0, 0.9) 55%,
+      #000 100%
+    ); */
+
+  background-color: #000;
+  background-blend-mode: screen;
+  min-height: 0;
+
+  color: white;
+  font-family: Muller;
+  font-size: 2.2vh;
+}
+
+.App::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  /* сам градиент */
   background:
     linear-gradient(
       66deg,
@@ -35,13 +62,21 @@ body {
       #000 100%
     );
 
-  background-color: #000;
-  background-blend-mode: screen;
-  min-height: 0;
-
-  color: white;
-  font-family: Muller;
-  font-size: 2.2vh;
+  /* 🔥 diamond-форма */
+  -webkit-mask-image:
+    radial-gradient(
+      35% 70% at 15% 40%,
+      black 0%,
+      black 30%,
+      transparent 65%
+    );
+  mask-image:
+    radial-gradient(
+      35% 70% at 15% 40%,
+      black 0%,
+      black 30%,
+      transparent 65%
+    );
 }
 
 .App p {
