@@ -315,7 +315,7 @@ body {
 
 .bannerSection {
   width: 100%;
-  /* height: 20%; */ /* РАЗМЕР БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
+  height: 22%; /* РАЗМЕР БАНЕРА К ОБСУЖДЕИНИЮ🚨 */
 
   display: flex;
   flex-direction: column;
