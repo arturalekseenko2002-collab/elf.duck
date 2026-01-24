@@ -102,15 +102,11 @@ body {
 }
 
 .scrollContent {
-  height: calc(100dvh - 72px); /* высота хедера */
+  height: calc(100dvh - 66px); /* высота хедера */
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-
-  padding-bottom: 24px;
-}
-
-.scrollContent {
-  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .headerContainer {
@@ -809,6 +805,6 @@ html {
   overscroll-behavior-y: none;
 }
 
-.mainHomePageContainer {
+/* .mainHomePageContainer {
   padding-bottom: 80px;
-}
+} */
