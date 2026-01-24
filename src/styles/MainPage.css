@@ -96,13 +96,13 @@ body {
     radial-gradient(
       40% 60% at 18% 45%,
       rgba(138, 97, 255, 0.35),
-      transparent 70%
+      transparent 200%
     );
 
-  filter: blur(20px); /* <-- вот он, объем ~20px */
-  opacity: 0;
+  filter: blur(10px); /* <-- вот он, объем ~20px */
+  opacity: 1;
 
-  animation: glowPulse 6s ease-in-out infinite alternate;
+  animation: glowPulse 2.6s ease-in-out infinite alternate;
 }
 
 .App p {
