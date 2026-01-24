@@ -215,8 +215,6 @@ const MainPage = () => {
             </div>
 
           </div>
-          
-          </div>
 
           <div className="footerBar">
             <div className="footerLeft">
@@ -228,6 +226,8 @@ const MainPage = () => {
               <span>Поддержка 24/7</span>
               <img src={supportIcon} alt="" />
             </div>
+          </div>
+          
           </div>
 
         </div> 
