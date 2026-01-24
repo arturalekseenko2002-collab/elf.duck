@@ -44,7 +44,7 @@ const MainPage = () => {
 
           <div className={`headerContainer reveal delay-1 ${mounted ? "visible" : ""}`}>
             <div className="headerLeft">
-              <img className="menuIcon" src={menuIcon} />
+              <img className="menuIcon" src={menuIcon} onClick={haptic} />
               <img className="logo" src={logo} />
             </div>
 
