@@ -47,7 +47,7 @@ body {
 .App::before {
   content: "";
   position: absolute;
-  inset: -30%; /* важно, чтобы при повороте не обрезалось */
+  inset: -30%; 
   z-index: 0;
   pointer-events: none;
 
@@ -70,14 +70,14 @@ body {
     );
   mask-image:
     radial-gradient(
-      35% 70% at 15% 40%,
-      black 0%,
+      20% 70% at 15% 45%,
+      black 20%,
       black 30%,
       transparent 65%
     );
 
   /* 🔥 ВОТ ОН — НАКЛОН КАК В FIGMA */
-  transform: rotate(-24deg);
+  transform: rotate(-32deg);
   transform-origin: left center;
 }
 
