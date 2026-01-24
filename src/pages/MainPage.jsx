@@ -2,6 +2,7 @@ import React, { useState, useEffect} from "react";
 import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
+import { tapHaptic } from "../utils/haptics";
 
 import menuIcon from "../assets/menuIcon.png";
 import logo from "../assets/logo.png"; 
@@ -24,6 +25,7 @@ const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const haptic = () => tapHaptic("light");
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -47,26 +49,20 @@ const MainPage = () => {
             </div>
 
             <div className="headerRight">
-                <div className="bonusBlock">
+                <div className="bonusBlock" onClick={() => tapHaptic("light")}>
                   <img src={coinIcon} className="bonusIconLeft" />
                   <span className="bonusText">x4</span>
                   <img src={swapIcon} className="bonusIconRight" />
                 </div>
-              <div className="avatarHeaderContainer">
-                {user?.photoUrl && (
-                  <div
-                    className={`avatarHeaderContainer ${
-                      avatarLoaded ? "visible" : "hidden"
-                    }`}
-                  >
+                <div className="avatarHeaderContainer">
+                  {user?.photoUrl && (
                     <img
                       src={user.photoUrl}
-                      className="userAvatar"
+                      className={`userAvatar ${avatarLoaded ? "visible" : "hidden"}`}
                       onLoad={() => setAvatarLoaded(true)}
                     />
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
             </div>
           </div>
 
@@ -100,7 +96,7 @@ const MainPage = () => {
             <span className="sectionLine" />
           </div>
 
-          <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`}>
+          <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`} onClick={() => {tapHaptic("light");}}>
             <button className="catalogButton">
               <img src={categoriesIcon} />
               <span>Категории</span>
