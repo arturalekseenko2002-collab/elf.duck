@@ -84,11 +84,11 @@ const MainPage = () => {
               </div>
 
               <div className="bannerSlide">
-                <img src={banerIMG} className="bannerImage" />
+                <img src={baner2IMG} className="bannerImage" />
               </div>
 
               <div className="bannerSlide">
-                <img src={banerIMG} className="bannerImage" />
+                <img src={baner3IMG} className="bannerImage" />
               </div>
             </div>
 
