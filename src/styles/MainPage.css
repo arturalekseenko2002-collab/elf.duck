@@ -242,7 +242,13 @@ body {
     inset 0 20px 5px rgba(0, 0, 0, 0.25);
 
   box-sizing: border-box;
-  flex-shrink: 0; /* 🔒 КРИТИЧНО */
+  flex-shrink: 0;
+
+  transition: transform 0.15s ease;
+}
+
+.bonusBlock:active {
+  transform: scale(0.96);
 }
 
 .bonusText {
