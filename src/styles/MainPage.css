@@ -40,12 +40,18 @@ body {
 .App::after {
   content: "";
   position: fixed;
-  inset: -30%;
+
+  top: 0%;
+  right: -30%;
+  bottom: 0%;
+  left: -30%;
+
+
   pointer-events: none;
 
   background:
     radial-gradient(
-      200% 150% at 0% 60%,
+      100% 150% at 0% 60%,
       rgba(85, 61, 158, 0.35),
       transparent 55%
     ),
@@ -56,9 +62,13 @@ body {
     );
 
   filter: blur(80px);
-  opacity: 0.8;
-  z-index: -1;
+  opacity: 0.4;
+  z-index: 0;
+
+  animation: glowPulse 18s ease-in-out infinite;
+  will-change: filter, opacity;
 }
+
 
 .App p {
   margin: 0;
@@ -728,10 +738,27 @@ body {
   font-style: normal;
 }
 
+/* ================= ANIMATIONS ================= */
+
+@keyframes glowPulse {
+  0% {
+    filter: blur(90px);
+    opacity: 0.75;
+  }
+  50% {
+    filter: blur(110px);
+    opacity: 0.95;
+  }
+  100% {
+    filter: blur(90px);
+    opacity: 0.75;
+  }
+}
+
 html {
   overscroll-behavior-y: none;
 }
-/* чтобы контент не прятался под футером */
+
 .mainHomePageContainer {
   padding-bottom: 80px;
 }
