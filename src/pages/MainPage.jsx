@@ -25,6 +25,7 @@ const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const haptic = () => tapHaptic("light");
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -48,7 +49,7 @@ const MainPage = () => {
             </div>
 
             <div className="headerRight">
-                <div className="bonusBlock" onClick={() => tapHaptic("light")}>
+                <div className="bonusBlock" onClick={haptic}>
                   <img src={coinIcon} className="bonusIconLeft" />
                   <span className="bonusText">x4</span>
                   <img src={swapIcon} className="bonusIconRight" />
@@ -96,12 +97,12 @@ const MainPage = () => {
           </div>
 
           <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`}>
-            <button className="catalogButton" onClick={() => {tapHaptic("light");}}>
+            <button className="catalogButton" onClick={haptic}>
               <img src={categoriesIcon} />
               <span>Категории</span>
             </button>
 
-            <button className="catalogButton primary">
+            <button className="catalogButton primary" onClick={haptic}>
               <img src={allItemsIcon} />
               <span>Все товары</span>
             </button>
