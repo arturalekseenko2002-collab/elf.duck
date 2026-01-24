@@ -87,22 +87,43 @@ body {
 .App::after {
   content: "";
   position: absolute;
-  inset: -10%; /* меньше чем before */
+  inset: -8%;
   z-index: 0;
   pointer-events: none;
 
-  /* локальный фиолетовый свет */
+  /*
+    Premium "переливание":
+    - base local purple glow (radial)
+    - a soft shimmer band (linear) that slowly moves across
+    Both are blurred to ~20px to keep the glow volume tight.
+  */
   background:
     radial-gradient(
-      40% 60% at 18% 45%,
-      rgba(138, 97, 255, 0.35),
-      transparent 200%
+      45% 65% at 18% 45%,
+      rgba(138, 97, 255, 0.45) 0%,
+      rgba(138, 97, 255, 0.18) 40%,
+      transparent 72%
+    ),
+    linear-gradient(
+      120deg,
+      transparent 35%,
+      rgba(190, 165, 255, 0.22) 50%,
+      transparent 65%
     );
 
-  filter: blur(10px); /* <-- вот он, объем ~20px */
-  opacity: 1;
+  /* Keep it local and "volumetric" */
+  filter: blur(20px);
+  opacity: 0.65;
 
-  animation: glowPulse 2.6s ease-in-out infinite alternate;
+  /* Move shimmer gently without pulsing the whole screen */
+  background-size: 100% 100%, 220% 220%;
+  background-position: 0 0, -40% -30%;
+
+  /* Optional: makes shimmer feel like light, not paint */
+  mix-blend-mode: screen;
+
+  animation: glowShimmer 7.5s ease-in-out infinite;
+  will-change: background-position, opacity, transform;
 }
 
 .App p {
@@ -919,18 +940,21 @@ body {
   }
 } */
 
-@keyframes glowPulse {
+@keyframes glowShimmer {
   0% {
-    opacity: 0.15;
-    transform: scale(1) translateX(0);
+    background-position: 0 0, -40% -30%;
+    opacity: 0.55;
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    opacity: 0.35;
-    transform: scale(1.04) translateX(6px);
+    background-position: 0 0, 110% 90%;
+    opacity: 0.72;
+    transform: translate3d(6px, -4px, 0);
   }
   100% {
-    opacity: 0.15;
-    transform: scale(1) translateX(0);
+    background-position: 0 0, -40% -30%;
+    opacity: 0.55;
+    transform: translate3d(0, 0, 0);
   }
 }
 
