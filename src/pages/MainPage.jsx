@@ -25,7 +25,10 @@ const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const haptic = () => tapHaptic("light");
+
+  const hapticLight = () => tapHaptic("light");
+  const hapticMedium = () => tapHaptic("medium");
+  const hapticHeavy = () => tapHaptic("heavy");
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -44,12 +47,12 @@ const MainPage = () => {
 
           <div className={`headerContainer reveal delay-1 ${mounted ? "visible" : ""}`}>
             <div className="headerLeft">
-              <img className="menuIcon" src={menuIcon} onClick={haptic} />
+              <img className="menuIcon" src={menuIcon} onClick={hapticLight} />
               <img className="logo" src={logo} />
             </div>
 
             <div className="headerRight">
-                <div className="bonusBlock" onClick={haptic}>
+                <div className="bonusBlock" onClick={hapticMedium}>
                   <img src={coinIcon} className="bonusIconLeft" />
                   <span className="bonusText">x4</span>
                   <img src={swapIcon} className="bonusIconRight" />
@@ -97,12 +100,12 @@ const MainPage = () => {
           </div>
 
           <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`}>
-            <button className="catalogButton" onClick={haptic}>
+            <button className="catalogButton" onClick={hapticHeavy}>
               <img src={categoriesIcon} />
               <span>Категории</span>
             </button>
 
-            <button className="catalogButton primary" onClick={haptic}>
+            <button className="catalogButton primary" onClick={hapticHeavy}>
               <img src={allItemsIcon} />
               <span>Все товары</span>
             </button>
@@ -110,7 +113,7 @@ const MainPage = () => {
 
           <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
 
-            <div className="categoryCard">
+            <div className="categoryCard" onClick={hapticMedium}>
               {/* 1 слой — фон */}
               <div className="cardBg" />
 
