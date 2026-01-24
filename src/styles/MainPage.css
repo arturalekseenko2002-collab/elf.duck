@@ -26,40 +26,10 @@ body {
   flex-direction: column;
 
   background:
-    /* 🔺 Левая верхняя точка */
-    radial-gradient(
-      60% 60% at 20% 0%,
-      rgba(120, 90, 255, 0.55) 0%,
-      rgba(120, 90, 255, 0.35) 25%,
-      rgba(120, 90, 255, 0.15) 45%,
-      transparent 65%
-    ),
-
-    /* 🔺 Правая верхняя точка */
-    radial-gradient(
-      60% 60% at 80% 0%,
-      rgba(255, 120, 200, 0.45) 0%,
-      rgba(255, 120, 200, 0.28) 25%,
-      rgba(255, 120, 200, 0.12) 45%,
-      transparent 65%
-    ),
-
-    /* 🔻 Нижняя центральная точка */
-    radial-gradient(
-      80% 80% at 50% 100%,
-      rgba(90, 180, 255, 0.35) 0%,
-      rgba(90, 180, 255, 0.22) 30%,
-      rgba(90, 180, 255, 0.1) 50%,
-      transparent 70%
-    ),
-
-    /* 🌑 Тёмная база */
-    linear-gradient(
-      180deg,
-      #050509 0%,
-      #000000 100%
-    );
-
+    radial-gradient(200% 150% at 0% 60%, rgba(85, 61, 158, 0.8), transparent 30%),
+    radial-gradient(100% 180% at 80% 80%, #000, #000);
+  background-color: #000;
+  background-blend-mode: screen;
   min-height: 0;
 
   color: white;
@@ -75,22 +45,18 @@ body {
 
   background:
     radial-gradient(
-      50% 50% at 20% 0%,
+      200% 150% at 0% 60%,
+      rgba(85, 61, 158, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      120% 120% at 70% 80%,
       rgba(120, 90, 255, 0.2),
-      transparent 70%
-    ),
-    radial-gradient(
-      50% 50% at 80% 0%,
-      rgba(255, 120, 200, 0.18),
-      transparent 70%
-    ),
-    radial-gradient(
-      70% 70% at 50% 100%,
-      rgba(90, 180, 255, 0.18),
-      transparent 75%
+      transparent 60%
     );
 
   filter: blur(80px);
+  opacity: 0.8;
   z-index: -1;
 }
 
