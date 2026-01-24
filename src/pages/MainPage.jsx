@@ -85,7 +85,9 @@ const MainPage = () => {
     return 1;
   };
 
-  // IntersectionObserver logic removed
+  /* ================= CATALOG VIEW STATE ================= */
+
+  const [catalogView, setCatalogView] = useState("categories");
 
   /* ================= NAVIGATION ================= */
 
@@ -154,123 +156,143 @@ const MainPage = () => {
           </div>
 
           <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`}>
-            <button className="catalogButton" onClick={haptic.heavy}>
+            <button
+              className={`catalogButton ${catalogView === "categories" ? "primary" : ""}`}
+              onClick={() => {
+                haptic.heavy();
+                setCatalogView("categories");
+              }}
+            >
               <img src={categoriesIcon} />
               <span>Категории</span>
             </button>
 
-            <button className="catalogButton primary" onClick={haptic.heavy}>
+            <button
+              className={`catalogButton ${catalogView === "all" ? "primary" : ""}`}
+              onClick={() => {
+                haptic.heavy();
+                setCatalogView("all");
+              }}
+            >
               <img src={allItemsIcon} />
               <span>Все товары</span>
             </button>
           </div>
 
-          <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
+          {catalogView === "categories" && (
+            <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
 
-            <div className="categoryCard" onClick={haptic.heavy}>
-              {/* 1 слой — фон */}
-              <div className="cardBg" />
+              <div className="categoryCard" onClick={haptic.heavy}>
+                {/* 1 слой — фон */}
+                <div className="cardBg" />
 
-              {/* 2 слой — фон-картинка */}
-              <img
-                src={categoryBG}
-                className="cardImageFull"
-                alt=""
-              />
+                {/* 2 слой — фон-картинка */}
+                <img
+                  src={categoryBG}
+                  className="cardImageFull"
+                  alt=""
+                />
 
-              {/* 3 слой — персонаж */}
-              <img
-                src={duckIMG}
-                className="cardImageLeft"
-                alt=""
-              />
+                {/* 3 слой — персонаж */}
+                <img
+                  src={duckIMG}
+                  className="cardImageLeft"
+                  alt=""
+                />
 
-              {/* 4 слой — затемнение */}
-              <div className="cardOverlay" />
+                {/* 4 слой — затемнение */}
+                <div className="cardOverlay" />
 
-              {/* 5 слой — контент */}
-              <div className="cardContent">
-                <div className="newDropBadge">NEW DROP</div>
-                <div className="cardTitle">ЖИДКОСТИ</div>
+                {/* 5 слой — контент */}
+                <div className="cardContent">
+                  <div className="newDropBadge">NEW DROP</div>
+                  <div className="cardTitle">ЖИДКОСТИ</div>
+                </div>
               </div>
-            </div>
 
-            <div className="categoryCard" onClick={haptic.heavy}>
-              {/* 1 слой — фон */}
-              <div className="cardBg" />
+              <div className="categoryCard" onClick={haptic.heavy}>
+                {/* 1 слой — фон */}
+                <div className="cardBg" />
 
-              {/* 2 слой — фон-картинка */}
-              <img
-                src={categoryBG2}
-                className="cardImageFull"
-                alt=""
-              />
+                {/* 2 слой — фон-картинка */}
+                <img
+                  src={categoryBG2}
+                  className="cardImageFull"
+                  alt=""
+                />
 
-              {/* 3 слой — персонаж */}
-              <img
-                src={duck2IMG}
-                className="cardImageRight"
-                alt=""
-              />
+                {/* 3 слой — персонаж */}
+                <img
+                  src={duck2IMG}
+                  className="cardImageRight"
+                  alt=""
+                />
 
-              {/* 5 слой — контент */}
-              <div className="cardContent">
-                <div className="cardTitle2">ОДНОРАЗКИ</div>
+                {/* 5 слой — контент */}
+                <div className="cardContent">
+                  <div className="cardTitle2">ОДНОРАЗКИ</div>
+                </div>
               </div>
-            </div>
 
-            <div className="categoryCard" onClick={haptic.heavy}>
-              {/* 1 слой — фон */}
-              <div className="cardBg" />
+              <div className="categoryCard" onClick={haptic.heavy}>
+                {/* 1 слой — фон */}
+                <div className="cardBg" />
 
-              {/* 2 слой — фон-картинка */}
-              <img
-                src={categoryBG3}
-                className="cardImageFull"
-                alt=""
-              />
+                {/* 2 слой — фон-картинка */}
+                <img
+                  src={categoryBG3}
+                  className="cardImageFull"
+                  alt=""
+                />
 
-              {/* 3 слой — персонаж */}
-              <img
-                src={duck3IMG}
-                className="cardImageLeft2"
-                alt=""
-              />
+                {/* 3 слой — персонаж */}
+                <img
+                  src={duck3IMG}
+                  className="cardImageLeft2"
+                  alt=""
+                />
 
-              {/* 5 слой — контент */}
-              <div className="cardContent">
-                <div className="cardTitle2">ПОДЫ</div>
+                {/* 5 слой — контент */}
+                <div className="cardContent">
+                  <div className="cardTitle2">ПОДЫ</div>
+                </div>
               </div>
-            </div>
 
-            <div className="categoryCard" onClick={haptic.heavy}>
-              {/* 1 слой — фон */}
-              <div className="cardBg" />
+              <div className="categoryCard" onClick={haptic.heavy}>
+                {/* 1 слой — фон */}
+                <div className="cardBg" />
 
-              {/* 2 слой — фон-картинка */}
-              <img
-                src={categoryBG4}
-                className="cardImageFull"
-                alt=""
-              />
+                {/* 2 слой — фон-картинка */}
+                <img
+                  src={categoryBG4}
+                  className="cardImageFull"
+                  alt=""
+                />
 
-              {/* 3 слой — персонаж */}
-              <img
-                src={duck4IMG}
-                className="cardImageRight2"
-                alt=""
-              />
+                {/* 3 слой — персонаж */}
+                <img
+                  src={duck4IMG}
+                  className="cardImageRight2"
+                  alt=""
+                />
 
-              {/* 4 слой — затемнение */}
-              <div className="cardOverlay" />
+                {/* 4 слой — затемнение */}
+                <div className="cardOverlay" />
 
-              {/* 5 слой — контент */}
-              <div className="cardContent">
-                <div className="cardTitle">КАРТРИДЖИ</div>
+                {/* 5 слой — контент */}
+                <div className="cardContent">
+                  <div className="cardTitle">КАРТРИДЖИ</div>
+                </div>
               </div>
-            </div>
 
-          </div>
+            </div>
+          )}
+
+          {catalogView === "all" && (
+            <div className={`allItemsPlaceholder reveal delay-5 ${mounted ? "visible" : ""}`}>
+              <span>Здесь будут отображаться все товары из каталога.</span>
+            </div>
+          )}
 
           <div className={`footerBar reveal delay-6 ${mounted ? "visible" : ""}`}>
             <div className="footerLeft">
