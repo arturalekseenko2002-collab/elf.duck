@@ -35,22 +35,6 @@ body {
       #000 100%
     );
 
-  /* 🔥 diamond-форма */
-  -webkit-mask-image:
-    radial-gradient(
-      35% 70% at 15% 40%,
-      black 0%,
-      black 35%,
-      transparent 65%
-    );
-  mask-image:
-    radial-gradient(
-      35% 70% at 15% 40%,
-      black 0%,
-      black 35%,
-      transparent 65%
-    );
-    
   background-color: #000;
   background-blend-mode: screen;
   min-height: 0;
