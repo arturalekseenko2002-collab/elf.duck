@@ -44,6 +44,17 @@ const MainPage = () => {
   const bannerScrollRef = useRef(null);
   const bannerSlideRefs = useRef([]);
 
+  const handleBannerScroll = () => {
+    const container = bannerScrollRef.current;
+    if (!container) return;
+
+    const slideWidth = container.firstChild?.offsetWidth;
+    if (!slideWidth) return;
+
+    const index = Math.round(container.scrollLeft / slideWidth);
+    setActiveBannerIndex(index);
+  };
+
   const getDotCount = (n) => (n <= 3 ? n : 3);
   const getActiveDotIndex = (index, n) => {
     if (n <= 3) return index;
@@ -120,7 +131,7 @@ const MainPage = () => {
           </div> */}
 
           <div className={`bannerSection reveal delay-3 ${mounted ? "visible" : ""}`}>
-            <div className="bannerScroll" ref={bannerScrollRef}>
+            <div className="bannerScroll" ref={bannerScrollRef} onScroll={handleBannerScroll}>
               {banners.map((src, i) => (
                 <div
                   key={i}
