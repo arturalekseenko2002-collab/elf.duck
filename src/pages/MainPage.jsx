@@ -42,17 +42,39 @@ const MainPage = () => {
   const [activeBannerIndex, setActiveBannerIndex] = useState(0);
 
   const bannerScrollRef = useRef(null);
-  const bannerSlideRefs = useRef([]);
+
+  const rafScrollRef = useRef(0);
 
   const handleBannerScroll = () => {
     const container = bannerScrollRef.current;
     if (!container) return;
 
-    const slideWidth = container.firstChild?.offsetWidth;
-    if (!slideWidth) return;
+    if (rafScrollRef.current) return;
+    rafScrollRef.current = requestAnimationFrame(() => {
+      rafScrollRef.current = 0;
 
-    const index = Math.round(container.scrollLeft / slideWidth);
-    setActiveBannerIndex(index);
+      const firstSlide = container.querySelector(".bannerSlide");
+      if (!firstSlide) return;
+
+      const slideWidth = firstSlide.offsetWidth;
+      if (!slideWidth) return;
+
+      // Read flex gap from CSS (fallback to 0 if not set)
+      const styles = window.getComputedStyle(container);
+      const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+
+      const step = slideWidth + gap;
+      if (!step) return;
+
+      const raw = container.scrollLeft / step;
+      if (!Number.isFinite(raw)) return;
+
+      let idx = Math.round(raw);
+      // Clamp to valid range to avoid a transient "no active dot" state
+      idx = Math.max(0, Math.min(banners.length - 1, idx));
+
+      setActiveBannerIndex((prev) => (prev === idx ? prev : idx));
+    });
   };
 
   const getDotCount = (n) => (n <= 3 ? n : 3);
@@ -63,29 +85,7 @@ const MainPage = () => {
     return 1;
   };
 
-  useEffect(() => {
-    const root = bannerScrollRef.current;
-    if (!root) return;
-
-    bannerSlideRefs.current = bannerSlideRefs.current.slice(0, banners.length);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let best = null;
-        for (const entry of entries) {
-          if (!best || entry.intersectionRatio > best.intersectionRatio) best = entry;
-        }
-        if (!best) return;
-
-        const idx = Number(best.target.getAttribute("data-index"));
-        if (!Number.isNaN(idx)) setActiveBannerIndex(idx);
-      },
-      { root, threshold: [0.25, 0.5, 0.6, 0.75, 0.9] }
-    );
-
-    bannerSlideRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, [banners.length]);
+  // IntersectionObserver logic removed
 
   /* ================= NAVIGATION ================= */
 
@@ -136,8 +136,6 @@ const MainPage = () => {
                 <div
                   key={i}
                   className="bannerSlide"
-                  data-index={i}
-                  ref={(el) => (bannerSlideRefs.current[i] = el)}
                 >
                   <img src={src} alt={`Banner ${i + 1}`} className="bannerImage" />
                 </div>
