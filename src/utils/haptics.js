@@ -1,4 +1,4 @@
-export const tapHaptic = {
+export const haptic = {
   light: () => window.Telegram?.WebApp?.HapticFeedback?.impactOccurred("light"),
   medium: () => window.Telegram?.WebApp?.HapticFeedback?.impactOccurred("medium"),
   heavy: () => window.Telegram?.WebApp?.HapticFeedback?.impactOccurred("heavy"),

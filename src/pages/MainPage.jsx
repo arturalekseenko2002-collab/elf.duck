@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
-import { tapHaptic } from "../utils/haptics";
+import { haptic } from "../utils/haptics";
 
 import menuIcon from "../assets/menuIcon.png";
 import logo from "../assets/logo.png"; 
@@ -26,9 +26,9 @@ const MainPage = () => {
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const hapticLight = () => tapHaptic("light");
-  const hapticMedium = () => tapHaptic("medium");
-  const hapticHeavy = () => tapHaptic("heavy");
+  // const hapticLight = () => tapHaptic("light");
+  // const hapticMedium = () => tapHaptic("medium");
+  // const hapticHeavy = () => tapHaptic("heavy");
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -47,12 +47,12 @@ const MainPage = () => {
 
           <div className={`headerContainer reveal delay-1 ${mounted ? "visible" : ""}`}>
             <div className="headerLeft">
-              <img className="menuIcon" src={menuIcon} onClick={hapticLight} />
+              <img className="menuIcon" src={menuIcon} onClick={haptic.light} />
               <img className="logo" src={logo} />
             </div>
 
             <div className="headerRight">
-                <div className="bonusBlock" onClick={hapticMedium}>
+                <div className="bonusBlock" onClick={haptic.medium}>
                   <img src={coinIcon} className="bonusIconLeft" />
                   <span className="bonusText">x4</span>
                   <img src={swapIcon} className="bonusIconRight" />
@@ -100,12 +100,12 @@ const MainPage = () => {
           </div>
 
           <div className={`catalogButtons reveal delay-4 ${mounted ? "visible" : ""}`}>
-            <button className="catalogButton" onClick={hapticHeavy}>
+            <button className="catalogButton" onClick={haptic.heavy}>
               <img src={categoriesIcon} />
               <span>Категории</span>
             </button>
 
-            <button className="catalogButton primary" onClick={hapticHeavy}>
+            <button className="catalogButton primary" onClick={haptic.heavy}>
               <img src={allItemsIcon} />
               <span>Все товары</span>
             </button>
@@ -113,7 +113,7 @@ const MainPage = () => {
 
           <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
 
-            <div className="categoryCard" onClick={hapticMedium}>
+            <div className="categoryCard" onClick={haptic.medium}>
               {/* 1 слой — фон */}
               <div className="cardBg" />
 
