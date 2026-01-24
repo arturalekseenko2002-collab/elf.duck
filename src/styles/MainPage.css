@@ -448,7 +448,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   width: 93%;
-  margin: 20px 0px 14px;
+  margin: 20px 0px 18px;
 
   align-self: center;
 
