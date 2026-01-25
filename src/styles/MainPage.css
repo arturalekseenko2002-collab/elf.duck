@@ -756,7 +756,12 @@ body {
 }
 
 .actionBadge.sale {
-  background: #ff3b3b;
+  background: linear-gradient(
+    180deg,
+    #FF4949 0%,
+    #FF2323 100%
+  );
+  
   color: white;
 
   font-size: 10px;
