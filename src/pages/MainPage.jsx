@@ -353,6 +353,114 @@ const MainPage = () => {
 
                 </div>
 
+                                <div className="productCard">
+
+                  {/* 1. фон */}
+                  <div className="cardBg" />
+
+                  {/* 2. фон-картинка */}
+                  <img src={productsChaserBG} className="cardImageFull" alt="" />
+
+                  {/* 3. персонаж */}
+                  <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
+
+                  {/* 4. контент сверху */}
+                  <div className="productTop">
+                    <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
+
+                    <div className="priceBadge">
+                      <span className="priceValue">55</span>
+                      <img src={zlotyIcon} className="priceCoin" />
+                    </div>
+                  </div>
+
+                  {/* 5. action-кнопки */}
+                  <div className="productActions">
+                    <div className="actionBadge sale">NEW</div>
+
+                    <button className="actionButton cart pulse">
+                      <img src={buyIcon} />
+                    </button>
+
+                    <button className="actionButton fav pulse">
+                      <img src={likedIcon} />
+                    </button>
+                  </div>
+
+                </div>
+
+                                <div className="productCard">
+
+                  {/* 1. фон */}
+                  <div className="cardBg" />
+
+                  {/* 2. фон-картинка */}
+                  <img src={productsChaserBG} className="cardImageFull" alt="" />
+
+                  {/* 3. персонаж */}
+                  <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
+
+                  {/* 4. контент сверху */}
+                  <div className="productTop">
+                    <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
+
+                    <div className="priceBadge">
+                      <span className="priceValue">55</span>
+                      <img src={zlotyIcon} className="priceCoin" />
+                    </div>
+                  </div>
+
+                  {/* 5. action-кнопки */}
+                  <div className="productActions">
+                    <div className="actionBadge sale">NEW</div>
+
+                    <button className="actionButton cart pulse">
+                      <img src={buyIcon} />
+                    </button>
+
+                    <button className="actionButton fav pulse">
+                      <img src={likedIcon} />
+                    </button>
+                  </div>
+
+                </div>
+
+                                <div className="productCard">
+
+                  {/* 1. фон */}
+                  <div className="cardBg" />
+
+                  {/* 2. фон-картинка */}
+                  <img src={productsChaserBG} className="cardImageFull" alt="" />
+
+                  {/* 3. персонаж */}
+                  <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
+
+                  {/* 4. контент сверху */}
+                  <div className="productTop">
+                    <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
+
+                    <div className="priceBadge">
+                      <span className="priceValue">55</span>
+                      <img src={zlotyIcon} className="priceCoin" />
+                    </div>
+                  </div>
+
+                  {/* 5. action-кнопки */}
+                  <div className="productActions">
+                    <div className="actionBadge sale">NEW</div>
+
+                    <button className="actionButton cart pulse">
+                      <img src={buyIcon} />
+                    </button>
+
+                    <button className="actionButton fav pulse">
+                      <img src={likedIcon} />
+                    </button>
+                  </div>
+
+                </div>
+
               </div>
 
             )}
