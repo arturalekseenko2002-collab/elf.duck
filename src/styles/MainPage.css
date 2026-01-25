@@ -808,12 +808,8 @@ body {
 }
 
 .actionButton.pulse {
-  /* Start with a gentle glow */
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.14),
-    0 8px 22px rgba(0, 0, 0, 0.30);
-  animation: actionButtonPulse 2.8s ease-in-out infinite;
-  will-change: box-shadow, transform, filter;
+  animation: actionButtonPulse 3.6s ease-in-out infinite;
+  will-change: box-shadow, opacity;
 }
 
 /* Slightly different accent for fav (optional, keeps it premium and consistent) */
@@ -1116,22 +1112,22 @@ body {
 
 @keyframes actionButtonPulse {
   0% {
-    transform: translateZ(0) scale(1);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.10),
-      0 6px 16px rgba(0, 0, 0, 0.26);
+      0 0 0 1px rgba(255,255,255,0.10),
+      0 0 12px rgba(255,255,255,0.12);
+    opacity: 0.9;
   }
   50% {
-    transform: translateZ(0) scale(1.03);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.20),
-      0 10px 26px rgba(0, 0, 0, 0.34);
+      0 0 0 1px rgba(255,255,255,0.22),
+      0 0 22px rgba(255,255,255,0.22);
+    opacity: 1;
   }
   100% {
-    transform: translateZ(0) scale(1);
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.10),
-      0 6px 16px rgba(0, 0, 0, 0.26);
+      0 0 0 1px rgba(255,255,255,0.10),
+      0 0 12px rgba(255,255,255,0.12);
+    opacity: 0.9;
   }
 }
 
