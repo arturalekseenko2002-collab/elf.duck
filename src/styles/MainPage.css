@@ -761,7 +761,7 @@ body {
     #FF4949 0%,
     #FF2323 100%
   );
-  
+
   color: white;
 
   font-size: 10px;
@@ -792,8 +792,8 @@ body {
 }
 
 .actionButton img {
-  width: 26px;
-  height: 26px;
+  width: 16px;
+  height: 16px;
 }
 
 .actionButton:active {
