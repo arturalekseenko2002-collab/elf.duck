@@ -814,7 +814,7 @@ body {
 
 /* Slightly different accent for fav (optional, keeps it premium and consistent) */
 .actionButton.fav.pulse {
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.22));
+  box-shadow: 0 0 18px rgba(255,215,0,0.22);
 }
 
 /* Slightly different accent for cart (optional) */
