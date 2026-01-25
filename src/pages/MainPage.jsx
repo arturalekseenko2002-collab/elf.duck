@@ -291,31 +291,47 @@ const MainPage = () => {
           )}
 
           {catalogView === "all" && (
+
             <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
-              <div className="productsCard" onClick={haptic.heavy}>
-                {/* 1 слой — фон */}
+
+              <div className="productCard">
+
+                {/* 1. фон */}
                 <div className="cardBg" />
 
-                {/* 2 слой — фон-картинка */}
-                <img
-                  src={productsChaserBG}
-                  className="cardImageFull"
-                  alt=""
-                />
+                {/* 2. фон-картинка */}
+                <img src={productBg} className="cardImageFull" alt="" />
 
-                {/* 3 слой — персонаж */}
-                <img
-                  src={chaserDuckIMG}
-                  className="productsCardImageRight"
-                  alt=""
-                />
+                {/* 3. персонаж */}
+                <img src={duckIMG} className="productsCardImageRight" alt="" />
 
-                {/* 5 слой — контент */}
-                <div className="cardContent">
-                  <div className="cardTitle2">CHASER 30 ML</div>
+                {/* 4. контент сверху */}
+                <div className="productTop">
+                  <div className="productTitle">CHASER 30 ML</div>
+
+                  <div className="priceBadge">
+                    <span className="priceValue">55</span>
+                    <img src={coinIcon} className="priceCoin" />
+                  </div>
                 </div>
+
+                {/* 5. action-кнопки */}
+                <div className="productActions">
+                  <div className="actionBadge sale">SALE</div>
+
+                  <button className="actionButton cart">
+                    <img src={cartIcon} />
+                  </button>
+
+                  <button className="actionButton fav">
+                    <img src={starIcon} />
+                  </button>
+                </div>
+
               </div>
+
             </div>
+            
           )}
 
           <div className={`footerBar reveal delay-6 ${mounted ? "visible" : ""}`}>

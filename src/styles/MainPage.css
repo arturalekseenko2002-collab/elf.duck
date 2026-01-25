@@ -534,19 +534,6 @@ body {
 
 }
 
-.productsCard {
-  position: relative;
-
-  width: 100%;
-  aspect-ratio: 220 / 290;
-  border-radius: 20px;
-
-  overflow: hidden;
-
-  border: solid 1.1px #CECECE;
-
-}
-
 .categoryCard:active {
   transform: scale(0.96);
 }
@@ -606,19 +593,6 @@ body {
 
   width: auto; /* можно подогнать */
   height: 70%;
-
-  border-bottom-right-radius: 19px;
-
-  z-index: 3;
-}
-
-.productsCardImageRight {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-  width: auto; /* можно подогнать */
-  height: 55%;
 
   border-bottom-right-radius: 19px;
 
@@ -705,6 +679,137 @@ body {
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
+}
+
+/* ================= PRODUCTS GRID ================= */
+
+.productsCard {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 220 / 290;
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  border: solid 1.1px #CECECE;
+
+}
+
+.productTop {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  z-index: 5;
+}
+
+.productTitle {
+  font-family: Unbounded-Medium;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.priceBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 14px;
+  background: #ffffff;
+  border-radius: 999px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.priceValue {
+  font-family: Unbounded-Medium;
+  font-size: 20px;
+  color: #1f1f1f;
+}
+
+.priceCoin {
+  width: 18px;
+  height: 18px;
+}
+
+.productActions {
+  position: absolute;
+  right: 10px;
+  bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  z-index: 6;
+}
+
+.actionBadge.sale {
+  background: #ff3b3b;
+  color: white;
+
+  font-size: 10px;
+  font-family: Unbounded-Medium;
+
+  padding: 4px 8px;
+  border-radius: 999px;
+
+  transform: rotate(-20deg);
+  align-self: flex-end;
+}
+
+.actionButton {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+  border: none;
+
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.actionButton img {
+  width: 18px;
+  height: 18px;
+}
+
+.actionButton:active {
+  transform: scale(0.92);
+}
+
+.priceBadge {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.35),
+    0 6px 18px rgba(0,0,0,0.35);
+}
+
+.productsCardImageRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: auto; /* можно подогнать */
+  height: 55%;
+
+  border-bottom-right-radius: 19px;
+
+  z-index: 3;
 }
 
 /* ================= FOOTER BAR (прозрачный) ================= */
