@@ -312,7 +312,7 @@ const MainPage = () => {
 
                 {/* 4. контент сверху */}
                 <div className="productTop">
-                  <div className="productTitle">CHASER 30 ML</div>
+                  <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
 
                   <div className="priceBadge">
                     <span className="priceValue">55</span>
@@ -322,7 +322,7 @@ const MainPage = () => {
 
                 {/* 5. action-кнопки */}
                 <div className="productActions">
-                  <div className="actionBadge sale">SALE</div>
+                  <div className="actionBadge sale">NEW</div>
 
                   <button className="actionButton cart">
                     <img src={buyIcon} />

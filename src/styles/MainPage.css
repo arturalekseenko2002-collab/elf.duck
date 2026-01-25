@@ -743,7 +743,7 @@ body {
 
 .productActions {
   position: absolute;
-  left: 19px;
+  left: 14px;
   bottom: 18px;
 
   display: flex;
@@ -812,7 +812,7 @@ body {
   right: 0;
 
   width: auto; /* можно подогнать */
-  height: 55%;
+  height: 60%;
 
   border-bottom-right-radius: 19px;
 
