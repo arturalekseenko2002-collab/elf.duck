@@ -808,7 +808,7 @@ body {
 }
 
 .actionButton.pulse {
-  animation: actionButtonPulse 3.6s ease-in-out infinite;
+  animation: actionButtonPulse 1.6s ease-in-out infinite;
   will-change: box-shadow, opacity;
 }
 
