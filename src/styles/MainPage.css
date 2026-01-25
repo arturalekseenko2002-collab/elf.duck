@@ -177,6 +177,10 @@ body {
   transform: translateY(14px);
 }
 
+.catalogContent.reveal {
+  transform: none;
+}
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
@@ -859,10 +863,14 @@ body {
   transform: translate3d(14px, 0, 0);
 }
 
-/* Staggered reveal of cards (premium feel) */
-.catalogGridAnimated.enter > * {
+/* Базовое состояние карточек */
+.catalogGridAnimated > * {
   opacity: 0;
   transform: translateY(14px);
+}
+
+/* Staggered reveal of cards (premium feel) */
+.catalogGridAnimated.enter > * {
   animation: cardEnter 420ms ease-out forwards;
 }
 

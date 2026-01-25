@@ -353,7 +353,7 @@ const MainPage = () => {
 
                 </div>
 
-                                <div className="productCard">
+                <div className="productCard">
 
                   {/* 1. фон */}
                   <div className="cardBg" />
@@ -389,7 +389,7 @@ const MainPage = () => {
 
                 </div>
 
-                                <div className="productCard">
+                <div className="productCard">
 
                   {/* 1. фон */}
                   <div className="cardBg" />
@@ -425,7 +425,7 @@ const MainPage = () => {
 
                 </div>
 
-                                <div className="productCard">
+                <div className="productCard">
 
                   {/* 1. фон */}
                   <div className="cardBg" />
