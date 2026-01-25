@@ -96,6 +96,23 @@ const MainPage = () => {
 
   const [catalogView, setCatalogView] = useState("categories");
 
+  const [isSwitchingCatalog, setIsSwitchingCatalog] = useState(false);
+  const [transitionDir, setTransitionDir] = useState("right");
+
+  const switchCatalog = (view) => {
+    if (view === catalogView) return;
+
+    // direction-aware (премиум ощущение)
+    setTransitionDir(view === "all" ? "left" : "right");
+
+    setIsSwitchingCatalog(true);
+
+    setTimeout(() => {
+      setCatalogView(view);
+      setIsSwitchingCatalog(false);
+    }, 220); // должно совпадать с CSS
+  };
+
   /* ================= NAVIGATION ================= */
 
   const navigate = useNavigate();
@@ -167,7 +184,7 @@ const MainPage = () => {
               className={`catalogButton ${catalogView === "categories" ? "primary" : ""}`}
               onClick={() => {
                 haptic.heavy();
-                setCatalogView("categories");
+                switchCatalog("categories");
               }}
             >
               <img src={categoriesIcon} />
@@ -178,7 +195,7 @@ const MainPage = () => {
               className={`catalogButton ${catalogView === "all" ? "primary" : ""}`}
               onClick={() => {
                 haptic.heavy();
-                setCatalogView("all");
+                switchCatalog("all");
               }}
             >
               <img src={allItemsIcon} />
@@ -186,158 +203,160 @@ const MainPage = () => {
             </button>
           </div>
 
-          {catalogView === "categories" && (
-            <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
+          <div className={`catalogContent ${isSwitchingCatalog ? "fade-out" : "fade-in"} ${transitionDir}`}>
+            {catalogView === "categories" && (
+              <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
 
-              <div className="categoryCard" onClick={haptic.heavy}>
-                {/* 1 слой — фон */}
-                <div className="cardBg" />
+                <div className="categoryCard" onClick={haptic.heavy}>
+                  {/* 1 слой — фон */}
+                  <div className="cardBg" />
 
-                {/* 2 слой — фон-картинка */}
-                <img
-                  src={categoryBG}
-                  className="cardImageFull"
-                  alt=""
-                />
+                  {/* 2 слой — фон-картинка */}
+                  <img
+                    src={categoryBG}
+                    className="cardImageFull"
+                    alt=""
+                  />
 
-                {/* 3 слой — персонаж */}
-                <img
-                  src={duckIMG}
-                  className="cardImageLeft"
-                  alt=""
-                />
+                  {/* 3 слой — персонаж */}
+                  <img
+                    src={duckIMG}
+                    className="cardImageLeft"
+                    alt=""
+                  />
 
-                {/* 4 слой — затемнение */}
-                <div className="cardOverlay" />
+                  {/* 4 слой — затемнение */}
+                  <div className="cardOverlay" />
 
-                {/* 5 слой — контент */}
-                <div className="cardContent">
-                  <div className="newDropBadge">NEW DROP</div>
-                  <div className="cardTitle">ЖИДКОСТИ</div>
-                </div>
-              </div>
-
-              <div className="categoryCard" onClick={haptic.heavy}>
-                {/* 1 слой — фон */}
-                <div className="cardBg" />
-
-                {/* 2 слой — фон-картинка */}
-                <img
-                  src={categoryBG2}
-                  className="cardImageFull"
-                  alt=""
-                />
-
-                {/* 3 слой — персонаж */}
-                <img
-                  src={duck2IMG}
-                  className="cardImageRight"
-                  alt=""
-                />
-
-                {/* 5 слой — контент */}
-                <div className="cardContent">
-                  <div className="cardTitle2">ОДНОРАЗКИ</div>
-                </div>
-              </div>
-
-              <div className="categoryCard" onClick={haptic.heavy}>
-                {/* 1 слой — фон */}
-                <div className="cardBg" />
-
-                {/* 2 слой — фон-картинка */}
-                <img
-                  src={categoryBG3}
-                  className="cardImageFull"
-                  alt=""
-                />
-
-                {/* 3 слой — персонаж */}
-                <img
-                  src={duck3IMG}
-                  className="cardImageLeft2"
-                  alt=""
-                />
-
-                {/* 5 слой — контент */}
-                <div className="cardContent">
-                  <div className="cardTitle2">ПОДЫ</div>
-                </div>
-              </div>
-
-              <div className="categoryCard" onClick={haptic.heavy}>
-                {/* 1 слой — фон */}
-                <div className="cardBg" />
-
-                {/* 2 слой — фон-картинка */}
-                <img
-                  src={categoryBG4}
-                  className="cardImageFull"
-                  alt=""
-                />
-
-                {/* 3 слой — персонаж */}
-                <img
-                  src={duck4IMG}
-                  className="cardImageRight2"
-                  alt=""
-                />
-
-                {/* 4 слой — затемнение */}
-                <div className="cardOverlay" />
-
-                {/* 5 слой — контент */}
-                <div className="cardContent">
-                  <div className="cardTitle">КАРТРИДЖИ</div>
-                </div>
-              </div>
-
-            </div>
-          )}
-
-          {catalogView === "all" && (
-
-            <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
-
-              <div className="productCard">
-
-                {/* 1. фон */}
-                <div className="cardBg" />
-
-                {/* 2. фон-картинка */}
-                <img src={productsChaserBG} className="cardImageFull" alt="" />
-
-                {/* 3. персонаж */}
-                <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
-
-                {/* 4. контент сверху */}
-                <div className="productTop">
-                  <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
-
-                  <div className="priceBadge">
-                    <span className="priceValue">55</span>
-                    <img src={zlotyIcon} className="priceCoin" />
+                  {/* 5 слой — контент */}
+                  <div className="cardContent">
+                    <div className="newDropBadge">NEW DROP</div>
+                    <div className="cardTitle">ЖИДКОСТИ</div>
                   </div>
                 </div>
 
-                {/* 5. action-кнопки */}
-                <div className="productActions">
-                  <div className="actionBadge sale">NEW</div>
+                <div className="categoryCard" onClick={haptic.heavy}>
+                  {/* 1 слой — фон */}
+                  <div className="cardBg" />
 
-                  <button className="actionButton cart pulse">
-                    <img src={buyIcon} />
-                  </button>
+                  {/* 2 слой — фон-картинка */}
+                  <img
+                    src={categoryBG2}
+                    className="cardImageFull"
+                    alt=""
+                  />
 
-                  <button className="actionButton fav pulse">
-                    <img src={likedIcon} />
-                  </button>
+                  {/* 3 слой — персонаж */}
+                  <img
+                    src={duck2IMG}
+                    className="cardImageRight"
+                    alt=""
+                  />
+
+                  {/* 5 слой — контент */}
+                  <div className="cardContent">
+                    <div className="cardTitle2">ОДНОРАЗКИ</div>
+                  </div>
+                </div>
+
+                <div className="categoryCard" onClick={haptic.heavy}>
+                  {/* 1 слой — фон */}
+                  <div className="cardBg" />
+
+                  {/* 2 слой — фон-картинка */}
+                  <img
+                    src={categoryBG3}
+                    className="cardImageFull"
+                    alt=""
+                  />
+
+                  {/* 3 слой — персонаж */}
+                  <img
+                    src={duck3IMG}
+                    className="cardImageLeft2"
+                    alt=""
+                  />
+
+                  {/* 5 слой — контент */}
+                  <div className="cardContent">
+                    <div className="cardTitle2">ПОДЫ</div>
+                  </div>
+                </div>
+
+                <div className="categoryCard" onClick={haptic.heavy}>
+                  {/* 1 слой — фон */}
+                  <div className="cardBg" />
+
+                  {/* 2 слой — фон-картинка */}
+                  <img
+                    src={categoryBG4}
+                    className="cardImageFull"
+                    alt=""
+                  />
+
+                  {/* 3 слой — персонаж */}
+                  <img
+                    src={duck4IMG}
+                    className="cardImageRight2"
+                    alt=""
+                  />
+
+                  {/* 4 слой — затемнение */}
+                  <div className="cardOverlay" />
+
+                  {/* 5 слой — контент */}
+                  <div className="cardContent">
+                    <div className="cardTitle">КАРТРИДЖИ</div>
+                  </div>
+                </div>
+
+              </div>
+            )}
+
+            {catalogView === "all" && (
+
+              <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
+
+                <div className="productCard">
+
+                  {/* 1. фон */}
+                  <div className="cardBg" />
+
+                  {/* 2. фон-картинка */}
+                  <img src={productsChaserBG} className="cardImageFull" alt="" />
+
+                  {/* 3. персонаж */}
+                  <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
+
+                  {/* 4. контент сверху */}
+                  <div className="productTop">
+                    <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
+
+                    <div className="priceBadge">
+                      <span className="priceValue">55</span>
+                      <img src={zlotyIcon} className="priceCoin" />
+                    </div>
+                  </div>
+
+                  {/* 5. action-кнопки */}
+                  <div className="productActions">
+                    <div className="actionBadge sale">NEW</div>
+
+                    <button className="actionButton cart pulse">
+                      <img src={buyIcon} />
+                    </button>
+
+                    <button className="actionButton fav pulse">
+                      <img src={likedIcon} />
+                    </button>
+                  </div>
+
                 </div>
 
               </div>
 
-            </div>
-
-          )}
+            )}
+          </div>
 
           <div className={`footerBar reveal delay-6 ${mounted ? "visible" : ""}`}>
             <div className="footerLeft">
