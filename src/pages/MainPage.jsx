@@ -25,6 +25,11 @@ import telegramIcon from "../assets/telegramIcon.png";
 import supportIcon from "../assets/supportIcon.png";
 import productsChaserBG from "../assets/productsChaserBG.png";
 import chaserDuckIMG from "../assets/chaserDuck.png";
+import saleIcon from "../assets/saleIcon.png";
+import likedIcon from "../assets/likedIcon.png";
+import buyIcon from "../assets/buyIcon.png";
+import zlotyIcon from "../assets/zlotyIcon.png";
+
 
 
 const MainPage = () => {
@@ -300,10 +305,10 @@ const MainPage = () => {
                 <div className="cardBg" />
 
                 {/* 2. фон-картинка */}
-                <img src={productBg} className="cardImageFull" alt="" />
+                <img src={productsChaserBG} className="cardImageFull" alt="" />
 
                 {/* 3. персонаж */}
-                <img src={duckIMG} className="productsCardImageRight" alt="" />
+                <img src={chaserDuckIMG} className="productsCardImageRight" alt="" />
 
                 {/* 4. контент сверху */}
                 <div className="productTop">
@@ -311,7 +316,7 @@ const MainPage = () => {
 
                   <div className="priceBadge">
                     <span className="priceValue">55</span>
-                    <img src={coinIcon} className="priceCoin" />
+                    <img src={zlotyIcon} className="priceCoin" />
                   </div>
                 </div>
 
@@ -320,18 +325,18 @@ const MainPage = () => {
                   <div className="actionBadge sale">SALE</div>
 
                   <button className="actionButton cart">
-                    <img src={cartIcon} />
+                    <img src={buyIcon} />
                   </button>
 
                   <button className="actionButton fav">
-                    <img src={starIcon} />
+                    <img src={likedIcon} />
                   </button>
                 </div>
 
               </div>
 
             </div>
-            
+
           )}
 
           <div className={`footerBar reveal delay-6 ${mounted ? "visible" : ""}`}>
