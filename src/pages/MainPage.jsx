@@ -205,7 +205,7 @@ const MainPage = () => {
 
           <div className={`catalogContent ${isSwitchingCatalog ? "fade-out" : "fade-in"} ${transitionDir}`}>
             {catalogView === "categories" && (
-              <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
+              <div key={catalogView} className="categoriesGrid catalogGridAnimated enter">
 
                 <div className="categoryCard" onClick={haptic.heavy}>
                   {/* 1 слой — фон */}
@@ -315,7 +315,7 @@ const MainPage = () => {
 
             {catalogView === "all" && (
 
-              <div className={`categoriesGrid reveal delay-5 ${mounted ? "visible" : ""}`}>
+              <div key={catalogView} className="categoriesGrid catalogGridAnimated enter">
 
                 <div className="productCard">
 
