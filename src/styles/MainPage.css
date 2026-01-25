@@ -723,12 +723,19 @@ body {
   align-items: center;
   gap: 5px;
 
-  padding: 3px 17px;
+  padding: 3px 15px;
   background: #ffffff;
   border-radius: 999px;
 
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
+
+.priceBadge {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.35),
+    0 8px 20px rgba(0,0,0,0.35);
+}
+
 
 .priceValue {
   font-family: Unbounded-Medium;
@@ -800,13 +807,26 @@ body {
   transform: scale(0.92);
 }
 
-.priceBadge {
+.actionButton.pulse {
+  /* Start with a gentle glow */
   box-shadow:
-    0 0 0 1px rgba(255,255,255,0.35),
-    0 8px 20px rgba(0,0,0,0.35);
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 8px 22px rgba(0, 0, 0, 0.30);
+  animation: actionButtonPulse 2.8s ease-in-out infinite;
+  will-change: box-shadow, transform, filter;
 }
 
-.productsCardImageRight {
+/* Slightly different accent for fav (optional, keeps it premium and consistent) */
+.actionButton.fav.pulse {
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.22));
+}
+
+/* Slightly different accent for cart (optional) */
+.actionButton.cart.pulse {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
+}
+
+.productCardImageRight {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -966,6 +986,12 @@ body {
   z-index: 10;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .actionButton.pulse {
+    animation: none;
+  }
+}
+
 @media (max-width: 375px) {
 
   .cardTitle2 {
@@ -1070,17 +1096,6 @@ body {
 
 /* ================= ANIMATIONS ================= */
 
-/* @keyframes gradientReveal {
-  0% {
-    opacity: 0;
-    transform: rotate(-32deg) translateX(-60px);
-  }
-  100% {
-    opacity: 1;
-    transform: rotate(-32deg) translateX(0);
-  }
-} */
-
 @keyframes glowShimmer {
   0% {
     background-position: 0 0, -40% -30%;
@@ -1096,6 +1111,27 @@ body {
     background-position: 0 0, -40% -30%;
     opacity: 0.55;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes actionButtonPulse {
+  0% {
+    transform: translateZ(0) scale(1);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.10),
+      0 6px 16px rgba(0, 0, 0, 0.26);
+  }
+  50% {
+    transform: translateZ(0) scale(1.03);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.20),
+      0 10px 26px rgba(0, 0, 0, 0.34);
+  }
+  100% {
+    transform: translateZ(0) scale(1);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.10),
+      0 6px 16px rgba(0, 0, 0, 0.26);
   }
 }
 

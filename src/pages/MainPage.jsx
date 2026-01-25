@@ -308,7 +308,7 @@ const MainPage = () => {
                 <img src={productsChaserBG} className="cardImageFull" alt="" />
 
                 {/* 3. персонаж */}
-                <img src={chaserDuckIMG} className="productsCardImageRight" alt="" />
+                <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
 
                 {/* 4. контент сверху */}
                 <div className="productTop">
@@ -324,11 +324,11 @@ const MainPage = () => {
                 <div className="productActions">
                   <div className="actionBadge sale">NEW</div>
 
-                  <button className="actionButton cart">
+                  <button className="actionButton cart pulse">
                     <img src={buyIcon} />
                   </button>
 
-                  <button className="actionButton fav">
+                  <button className="actionButton fav pulse">
                     <img src={likedIcon} />
                   </button>
                 </div>
