@@ -1061,6 +1061,47 @@ body {
   .catalogButton {
     font-size: 12px;
   }
+
+  .productTitle {
+    font-size: 13px;
+  }
+
+  .productTop {
+    top: 12px;
+    left: 6px;
+    right: 6px;
+    gap: 9px;
+  }
+
+  .priceValue {
+    font-size: 14px;
+  }
+
+  .priceCoin {
+    width: 16px;
+    height: 16px;
+  }  
+
+  .productActions  {
+    left: 12px;
+    bottom: 16px;
+    gap: 14px;
+  }
+
+  .actionBadge.sale {
+    font-size: 7px;
+  }
+
+  .actionButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+  }
+
+  .actionButton img {
+    width: 12px;
+    height: 12px;
+  }
   
 }
 
@@ -1089,6 +1130,47 @@ body {
 
   .catalogButton {
     font-size: 12px;
+  }
+
+  .productTop {
+    top: 12px;
+    left: 6px;
+    right: 6px;
+    gap: 6px;
+  }
+
+  .productTitle {
+    font-size: 11.5px;
+  }
+
+  .priceValue {
+    font-size: 12px;
+  }
+
+  .priceCoin {
+    width: 14px;
+    height: 14px;
+  }   
+
+  .productActions  {
+    left: 11px;
+    bottom: 12px;
+    gap: 12px;
+  }
+
+  .actionBadge.sale {
+    font-size: 7px;
+  }
+
+  .actionButton {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+
+  .actionButton img {
+    width: 12px;
+    height: 12px;
   }
 
 }
