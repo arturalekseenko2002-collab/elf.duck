@@ -1219,7 +1219,7 @@ body {
 
 .checkoutSelect {
   width: 100%;
-  height: 46px;
+  height: 40px;
   border-radius: 14px;
 
   display: flex;
@@ -1275,7 +1275,7 @@ body {
 
 .checkoutActionBtn {
   width: 100%;
-  height: 46px;
+  height: 40px;
   border-radius: 14px;
 
   border: none;
