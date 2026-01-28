@@ -25,7 +25,7 @@ import telegramIcon from "../assets/telegramIcon.png";
 import supportIcon from "../assets/supportIcon.png";
 import productsChaserBG from "../assets/productsChaserBG.png";
 import chaserDuckIMG from "../assets/chaserDuck.png";
-import saleIcon from "../assets/saleIcon.png";
+import backIcon from "../assets/backIcon.png";
 import likedIcon from "../assets/likedIcon.png";
 import buyIcon from "../assets/buyIcon.png";
 import zlotyIcon from "../assets/zlotyIcon.png";
@@ -506,7 +506,8 @@ const MainPage = () => {
                   className="sheetBackButton"
                   onClick={() => setIsCheckoutOpen(false)}
                 >
-                  ← Вернуться назад
+                  <img src={backIcon} />
+                  <span>Вернуться назад</span>
                 </button>
 
                 {/* сюда потом вынесем CheckoutCard */}
