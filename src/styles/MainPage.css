@@ -923,16 +923,16 @@ body {
   z-index: 101;
 
   /* 🔥 GOLD DIAMOND GLOW */
-  background:
+  /* background:
     radial-gradient(
       120% 90% at 50% 0%,
       rgba(120, 93, 6, 0.55) 0%,
       rgba(120, 93, 6, 0.28) 28%,
       rgba(0, 0, 0, 0.92) 60%,
       #000 100%
-    );
+    ); */
 
-  border-top: 1px solid rgba(255, 215, 120, 0.55);
+  border-top: 1px solid rgba(255, 200, 22, 1);
 
   /* subtle glow softness */
   box-shadow:
@@ -959,19 +959,25 @@ body {
 .sheetBackButton {
   background: rgb(165 127 8 / 70%);
   color: white;
-  border-radius: 14px;
-  padding: 10px 14px;
-  margin-bottom: 12px;
+  border-radius: 10px;
+  padding: 7px 17px;
+  margin: 0 auto 12px; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
 
   font-family: Unbounded-Regular;
   font-size: 11px;
 
-  gap: 5px;
+  gap: 6px;
 }
 
 .sheetBackButton img {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
 }
 
 /* ================= FOOTER BAR (прозрачный) ================= */
