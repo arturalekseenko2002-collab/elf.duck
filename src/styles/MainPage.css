@@ -1222,7 +1222,7 @@ body {
 }
 
 .checkoutFooter {
-  padding-top: 20px 14px 0px 14px;
+  padding: 20px 14px 0px 14px;
 
   display: flex;
   justify-content: space-between;
