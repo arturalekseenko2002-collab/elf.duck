@@ -543,7 +543,7 @@ const MainPage = () => {
                     <button
                       type="button"
                       className="checkoutSelect"
-                      onClick={() => tapHaptic("light")}
+                      onClick={() => haptic.light()}
                     >
                       <div className="checkoutSelectLeft">
                         <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
