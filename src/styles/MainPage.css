@@ -939,6 +939,8 @@ body {
 
   transform: translateY(100%);
   animation: sheetUp 360ms cubic-bezier(.22,1,.36,1) forwards;
+
+  overflow-x: hidden;
 }
 
 .checkoutSheet::before {
@@ -1121,6 +1123,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  overflow-x: hidden;
 }
 
 .checkoutCard {
