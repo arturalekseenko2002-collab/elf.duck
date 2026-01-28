@@ -1232,6 +1232,15 @@ body {
   color: rgba(255,255,255,0.6);
 }
 
+.checkoutSheet {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkoutContent {
+  flex: 1;
+}
+
 .footerLeft {
   display: flex;
   align-items: center;
