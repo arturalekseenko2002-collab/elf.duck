@@ -29,6 +29,7 @@ import backIcon from "../assets/backIcon.png";
 import likedIcon from "../assets/likedIcon.png";
 import buyIcon from "../assets/buyIcon.png";
 import zlotyIcon from "../assets/zlotyIcon.png";
+import heroImage from "../assets/heroImage.png";
 
 
 
