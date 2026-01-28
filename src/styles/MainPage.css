@@ -1114,9 +1114,7 @@ body {
 
 /* чтобы модалка не вылезала за экран на маленьких телефонах */
 .checkoutSheet {
-  max-height: 82dvh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
 .checkoutContent {
@@ -1124,7 +1122,10 @@ body {
   display: flex;
   justify-content: center;
 
-  overflow-x: hidden;
+  overflow-x: hidden;  
+  overflow-y: auto;  
+
+  flex: 1;
 }
 
 .checkoutCard {
@@ -1330,10 +1331,8 @@ body {
 .checkoutSheet {
   display: flex;
   flex-direction: column;
-}
 
-.checkoutContent {
-  flex: 1;
+  max-height: 82dvh;
 }
 
 .footerLeft {
