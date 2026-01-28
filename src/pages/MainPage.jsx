@@ -561,19 +561,21 @@ const MainPage = () => {
                       </button>
                     </div>
 
-                    <div className="checkoutFooter">
-                      <div className="footerLeft">
-                        <span>ELF DUCK</span>
-                        <img src={telegramIcon} alt="" />
-                      </div>
-
-                      <div className="footerRight">
-                        <span>Поддержка 24/7</span>
-                        <img src={supportIcon} alt="" />
-                      </div>
-                    </div>
-
                   </div>
+                </div>
+
+                <div className="checkoutFooter">
+                  
+                  <div className="footerLeft">
+                    <span>ELF DUCK</span>
+                    <img src={telegramIcon} alt="" />
+                  </div>
+
+                  <div className="footerRight">
+                    <span>Поддержка 24/7</span>
+                    <img src={supportIcon} alt="" />
+                  </div>
+
                 </div>
 
               </div>
