@@ -930,17 +930,11 @@ body {
       rgba(120, 93, 6, 0.28) 28%,
       rgba(0, 0, 0, 0.92) 60%,
       #000 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 215, 100, 0.08),
-      transparent 60%
     );
-
+    
   /* subtle glow softness */
   box-shadow:
-    0 -12px 40px rgba(120, 93, 6, 0.35),
-    0 -2px 12px rgba(120, 93, 6, 0.25);
+    0 -8px 30px rgba(255, 200, 22, 0.8);
 
   transform: translateY(100%);
   animation: sheetUp 360ms cubic-bezier(.22,1,.36,1) forwards;
