@@ -984,6 +984,40 @@ body {
   transform: scale(0.96);
 }
 
+/* ================= CHECKOUT SHEET TITLE (like sectionTitle) ================= */
+.checkoutSectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  margin: 6px 0 14px;
+
+  opacity: 0.9;
+}
+
+.checkoutSectionLine {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.checkoutSectionText {
+  font-family: Unbounded-Regular;
+  font-size: 14px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.42);
+  white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+  .checkoutSectionText {
+    font-size: 13px;
+  }
+}
+
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {

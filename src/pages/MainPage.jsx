@@ -510,10 +510,17 @@ const MainPage = () => {
                   <span>Вернуться назад</span>
                 </button>
 
+                <div className="checkoutSectionTitle">
+                  <span className="checkoutSectionLine" />
+                  <span className="checkoutSectionText">Добавление товара в корзину</span>
+                  <span className="checkoutSectionLine" />
+                </div>
+
                 {/* сюда потом вынесем CheckoutCard */}
                 <div className="checkoutContent">
                   {/* твой макет */}
                 </div>
+
               </div>
             </>
           )}
