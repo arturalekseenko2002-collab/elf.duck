@@ -992,7 +992,7 @@ body {
   gap: 10px;
 
   width: 100%;
-  margin: 8px 0 14px;
+  margin: 8px 0 18px;
 
   opacity: 0.9;
 }
@@ -1036,7 +1036,7 @@ body {
 .checkoutCard {
   width: min(98%, 520px);
   border-radius: 22px;
-  border: 1.1px solid rgba(206, 206, 206, 0.95);
+  border: 1px solid rgba(255,255,255,1);
 
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(10px);
@@ -1061,8 +1061,8 @@ body {
 }
 
 .checkoutHero {
-  width: 100%;
-  border-radius: 18px;
+  width: 99.5%;
+  border-radius: 22px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,1);
 }
@@ -1081,6 +1081,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+
+  margin-bottom: 12px;
 }
 
 .checkoutName {
@@ -1186,7 +1188,7 @@ body {
   background: rgba(120, 120, 120, 0.35);
 
   color: rgba(255,255,255,0.28);
-  font-family: Unbounded-Medium;
+  font-family: Unbounded-Regular;
   font-size: 14px;
   text-transform: uppercase;
 
