@@ -953,7 +953,7 @@ body {
   height: 4px;
   border-radius: 999px;
   background: rgba(255,255,255,0.25);
-  margin: 6px auto 12px;
+  margin: 6px auto 14px;
 }
 
 .sheetBackButton {
@@ -969,7 +969,7 @@ body {
 
   border: none;
 
-  font-family: Unbounded-Regular;
+  font-family: Unbounded-Light;
   font-size: 11px;
 
   gap: 6px;
@@ -1297,8 +1297,8 @@ body {
 }
 
 @font-face {
-  font-family: "Inter_18pt-Bold";
-  src: url("/public/fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-family: "Unbounded-Light";
+  src: url("/public/fonts/Unbounded-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
