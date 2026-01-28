@@ -519,20 +519,24 @@ const MainPage = () => {
                 {/* сюда потом вынесем CheckoutCard */}
                 <div className="checkoutContent">
                   <div className="checkoutCard">
+
                     <div className="checkoutHero">
                       <img
-                        src={/* поставь сюда картинку товара */ categoryBG4}
+                        src={heroImage}
                         className="checkoutHeroImg"
                         alt=""
                       />
                     </div>
 
-                    <div className="checkoutMetaRow">
-                      <div className="checkoutName">ELF DUCK TRIO 40K</div>
+                    <div className="checkoutCardBody">
+                      <div className="checkoutMetaRow">
 
-                      <div className="checkoutPriceBadge" aria-label="Price">
-                        <span className="checkoutPriceValue">110</span>
-                        <img className="checkoutPriceCoin" src={coinIcon} alt="" />
+                        <div className="checkoutName">ELF DUCK TRIO 40K</div>
+
+                        <div className="checkoutPriceBadge" aria-label="Price">
+                          <span className="checkoutPriceValue">110</span>
+                          <img className="checkoutPriceCoin" src={coinIcon} alt="" />
+                        </div>
                       </div>
                     </div>
 
