@@ -1222,6 +1222,20 @@ body {
   margin-bottom: 24px;
 }
 
+.checkoutFooter {
+  margin-top: 18px;
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(255,255,255,0.15);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+}
+
 .footerLeft {
   display: flex;
   align-items: center;
