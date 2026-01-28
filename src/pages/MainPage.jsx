@@ -518,7 +518,44 @@ const MainPage = () => {
 
                 {/* сюда потом вынесем CheckoutCard */}
                 <div className="checkoutContent">
-                  {/* твой макет */}
+                  <div className="checkoutCard">
+                    <div className="checkoutHero">
+                      <img
+                        src={/* поставь сюда картинку товара */ categoryBG4}
+                        className="checkoutHeroImg"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="checkoutMetaRow">
+                      <div className="checkoutName">ELF DUCK TRIO 40K</div>
+
+                      <div className="checkoutPriceBadge" aria-label="Price">
+                        <span className="checkoutPriceValue">110</span>
+                        <img className="checkoutPriceCoin" src={coinIcon} alt="" />
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="checkoutSelect"
+                      onClick={() => tapHaptic("light")}
+                    >
+                      <div className="checkoutSelectLeft">
+                        <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
+                        <span className="checkoutSelectText">Выберите вкус</span>
+                      </div>
+                      <span className="checkoutSelectCaret" />
+                    </button>
+
+                    <button type="button" className="checkoutActionBtn" disabled>
+                      ДОБАВИТЬ ВКУС
+                    </button>
+
+                    <button type="button" className="checkoutActionBtn" disabled>
+                      ДОБАВИТЬ ЗАКАЗ В КОРЗИНУ
+                    </button>
+                  </div>
                 </div>
 
               </div>

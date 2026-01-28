@@ -1018,6 +1018,182 @@ body {
   }
 }
 
+/* ================= CHECKOUT CONTENT CARD ================= */
+
+/* чтобы модалка не вылезала за экран на маленьких телефонах */
+.checkoutSheet {
+  max-height: 82dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.checkoutContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.checkoutCard {
+  width: min(92%, 520px);
+  border-radius: 22px;
+  border: 1.1px solid rgba(206, 206, 206, 0.95);
+
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 14px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+.checkoutHero {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.checkoutHeroImg {
+  width: 100%;
+  height: clamp(170px, 26vh, 240px);
+  object-fit: cover;
+  display: block;
+}
+
+.checkoutMetaRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.checkoutName {
+  font-family: Unbounded-Medium;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.checkoutPriceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.35),
+    0 8px 20px rgba(0,0,0,0.35);
+
+  flex-shrink: 0;
+}
+
+.checkoutPriceValue {
+  font-family: Unbounded-Medium;
+  font-size: 18px;
+  color: #1f1f1f;
+  line-height: 1;
+}
+
+.checkoutPriceCoin {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.checkoutSelect {
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 0 14px;
+  box-sizing: border-box;
+
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.55);
+
+  color: rgba(255,255,255,0.92);
+  font-family: Unbounded-Regular;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.checkoutSelectLeft {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.checkoutSelectIcon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.checkoutSelectText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.checkoutSelectCaret {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid rgba(255,255,255,0.9);
+  flex-shrink: 0;
+}
+
+.checkoutSelect:active {
+  transform: scale(0.98);
+}
+
+.checkoutActionBtn {
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+
+  border: none;
+  background: rgba(120, 120, 120, 0.35);
+
+  color: rgba(255,255,255,0.28);
+  font-family: Unbounded-Medium;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  cursor: not-allowed;
+}
+
+.checkoutActionBtn:active {
+  transform: none;
+}
+
+@media (max-width: 360px) {
+  .checkoutName { font-size: 15px; }
+  .checkoutPriceValue { font-size: 16px; }
+  .checkoutActionBtn { font-size: 13px; }
+}
+
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {
