@@ -952,7 +952,7 @@ body {
   height: 4px;
   border-radius: 999px;
   background: rgba(255,255,255,0.25);
-  margin: 6px auto 14px;
+  margin: 6px auto 18px;
 }
 
 .sheetBackButton {
@@ -960,7 +960,7 @@ body {
   color: white;
   border-radius: 10px;
   padding: 7px 17px;
-  margin: 0 auto 12px; 
+  margin: 0 auto 16px; 
 
   display: flex;
   align-items: center;
@@ -1035,11 +1035,10 @@ body {
 .checkoutCard {
   width: min(99%, 520px);
   border-radius: 24px;
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid rgba(206, 206, 206, 1);
 
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 
   /* padding: 14px; */
   box-sizing: border-box;
@@ -1063,7 +1062,7 @@ body {
   width: 99.6%;
   border-radius: 22px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid rgba(206, 206, 206, 1);
 }
 
 
@@ -1223,10 +1222,7 @@ body {
 }
 
 .checkoutFooter {
-  margin-top: 18px;
-  padding-top: 14px;
-
-  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 20px 14px 0px 14px;
 
   display: flex;
   justify-content: space-between;
