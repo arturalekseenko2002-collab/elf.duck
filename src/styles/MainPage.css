@@ -980,6 +980,10 @@ body {
   height: 16px;
 }
 
+.sheetBackButton:active {
+  transform: scale(0.96);
+}
+
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {
