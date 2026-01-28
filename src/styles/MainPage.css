@@ -1148,7 +1148,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 
   box-shadow: 0 10px 28px rgba(0,0,0,0.45);
 }
@@ -1182,8 +1182,6 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
-  margin-bottom: 12px;
 }
 
 .checkoutName {
@@ -1233,6 +1231,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+
+  margin-top: 8px;
 
   padding: 0 14px;
   box-sizing: border-box;
