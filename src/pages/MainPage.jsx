@@ -29,7 +29,6 @@ import backIcon from "../assets/backIcon.png";
 import likedIcon from "../assets/likedIcon.png";
 import buyIcon from "../assets/buyIcon.png";
 import zlotyIcon from "../assets/zlotyIcon.png";
-import heroImage from "../assets/heroImage.png";
 
 
 
@@ -520,31 +519,27 @@ const MainPage = () => {
                 {/* сюда потом вынесем CheckoutCard */}
                 <div className="checkoutContent">
                   <div className="checkoutCard">
-
                     <div className="checkoutHero">
                       <img
-                        src={heroImage}
+                        src={/* поставь сюда картинку товара */ categoryBG4}
                         className="checkoutHeroImg"
                         alt=""
                       />
                     </div>
 
-                    <div className="checkoutCardBody">
-                      <div className="checkoutMetaRow">
+                    <div className="checkoutMetaRow">
+                      <div className="checkoutName">ELF DUCK TRIO 40K</div>
 
-                        <div className="checkoutName">ELF DUCK TRIO 40K</div>
-
-                        <div className="checkoutPriceBadge" aria-label="Price">
-                          <span className="checkoutPriceValue">110</span>
-                          <img className="checkoutPriceCoin" src={coinIcon} alt="" />
-                        </div>
+                      <div className="checkoutPriceBadge" aria-label="Price">
+                        <span className="checkoutPriceValue">110</span>
+                        <img className="checkoutPriceCoin" src={coinIcon} alt="" />
                       </div>
                     </div>
 
                     <button
                       type="button"
                       className="checkoutSelect"
-                      onClick={() => haptic.light()}
+                      onClick={() => tapHaptic("light")}
                     >
                       <div className="checkoutSelectLeft">
                         <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
