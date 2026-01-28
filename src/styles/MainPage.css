@@ -959,7 +959,7 @@ body {
   background: rgb(165 127 8 / 70%);
   color: white;
   border-radius: 10px;
-  padding: 7px 17px;
+  padding: 7px 18px;
   margin: 0 auto 12px; 
 
   display: flex;
@@ -969,7 +969,7 @@ body {
   border: none;
 
   font-family: Unbounded-Light;
-  font-size: 11px;
+  font-size: 12px;
 
   gap: 6px;
 }
@@ -993,7 +993,7 @@ body {
   width: 100%;
   margin: 8px 0 20px;
 
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 
 .checkoutSectionLine {
