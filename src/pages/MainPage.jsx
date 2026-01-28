@@ -117,6 +117,10 @@ const MainPage = () => {
 
   const navigate = useNavigate();
 
+  /* ================= CREATE ORDER ================= */
+
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+
   return (
     <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
 
@@ -342,7 +346,13 @@ const MainPage = () => {
                   <div className="productActions">
                     <div className="actionBadge sale">NEW</div>
 
-                    <button className="actionButton cart pulse">
+                    <button
+                      className="actionButton cart pulse"
+                      onClick={() => {
+                        haptic.heavy();
+                        setIsCheckoutOpen(true);
+                      }}
+                    >
                       <img src={buyIcon} />
                     </button>
 
@@ -479,6 +489,33 @@ const MainPage = () => {
           </div>
           
           </div>
+
+          {isCheckoutOpen && (
+            <>
+              {/* Backdrop */}
+              <div
+                className="checkoutBackdrop"
+                onClick={() => setIsCheckoutOpen(false)}
+              />
+
+              {/* Bottom Sheet */}
+              <div className="checkoutSheet">
+                <div className="sheetHandle" />
+
+                <button
+                  className="sheetBackButton"
+                  onClick={() => setIsCheckoutOpen(false)}
+                >
+                  ← Вернуться назад
+                </button>
+
+                {/* сюда потом вынесем CheckoutCard */}
+                <div className="checkoutContent">
+                  {/* твой макет */}
+                </div>
+              </div>
+            </>
+          )}
 
         </div> 
  
