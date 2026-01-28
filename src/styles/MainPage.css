@@ -1070,7 +1070,7 @@ body {
 
 .checkoutHeroImg {
   width: 100%;
-  height: clamp(170px, 26vh, 240px);
+  /* height: clamp(170px, 26vh, 240px); */
   object-fit: cover;
   display: block;
 }
