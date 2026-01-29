@@ -56,7 +56,13 @@ const MainPage = () => {
 
       // картинки карточки
       cardBg: productsChaserBG,
+
       cardDuck: chaserDuckIMG,
+      classCardDuck: "productCardImageRight",
+
+      classActions: "productActionsRight",
+
+      newBadge: "NEW",
 
       // картинка модалки
       orderIMG: chaserForPodsOrderModal,
@@ -70,7 +76,13 @@ const MainPage = () => {
 
       // картинки карточки
       cardBg: solanaBG,
+
       cardDuck: solanaDuckIMG,
+      classCardDuck: "productCardImageLeft",
+      
+      classActions: "productActionsLeft",
+
+      newBadge: null,
 
       // картинка модалки
       orderIMG: solanaOrderModal,
@@ -400,7 +412,7 @@ const MainPage = () => {
                     <img src={product.cardBg} className="cardImageFull" />
 
                     {/* 3. персонаж */}
-                    <img src={product.cardDuck} className="productCardImageRight" alt="" />
+                    <img src={product.cardDuck} className={product.classCardDuck} alt="" />
 
                     {/* 4. контент сверху */}
                     <div className="productTop">
@@ -413,55 +425,8 @@ const MainPage = () => {
                     </div>
 
                     {/* 5. action-кнопки */}
-                    <div className="productActionsRight">
-                      <div className="actionBadge sale">NEW</div>
-
-                      <button
-                        className="actionButton cart pulse"
-                        onPointerDown={() => {
-                          preloadImage(product.orderIMG); // 👈 preload КАРТИНКИ МОДАЛКИ
-                        }}
-                        onClick={() => {
-                          haptic.heavy();
-                          setActiveProduct(product);
-                          setIsCheckoutOpen(true);
-                        }}
-                      >
-                        <img src={buyIcon} />
-                      </button>
-
-                      <button className="actionButton fav pulse">
-                        <img src={likedIcon} />
-                      </button>
-                    </div>
-
-                  </div>
-                ))}
-
-                {PRODUCTS.map((product) => (
-                  <div key={product.id} className="productCard">
-
-                    {/* 1. фон */}
-                    <div className="cardBg" />
-
-                    {/* 2. фон-картинка */}
-                    <img src={product.cardBg} className="cardImageFull" />
-
-                    {/* 3. персонаж */}
-                    <img src={product.cardDuck} className="productCardImageLeft" alt="" />
-
-                    {/* 4. контент сверху */}
-                    <div className="productTop">
-                      <div className="productTitle">{product.title1}</div>
-
-                      <div className="priceBadge">
-                        <span className="priceValue">{product.price}</span>
-                        <img src={zlotyIcon} className="priceCoin" />
-                      </div>
-                    </div>
-
-                    {/* 5. action-кноки */}
-                    <div className="productActionsLeft">
+                    <div className={product.classActions}>
+                      <div className="actionBadge sale">{product.newBadge}</div>
 
                       <button
                         className="actionButton cart pulse"
@@ -594,7 +559,7 @@ const MainPage = () => {
                     </div>
 
                   </div>
-                  
+
                 </div>
 
               </div>
