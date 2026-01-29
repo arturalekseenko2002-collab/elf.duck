@@ -34,6 +34,12 @@ import chaserForPodsOrderModal from "../assets/chaserForPods-orderModal.png";
 import solanaBG from "../assets/solanaBG.png";
 import solanaDuckIMG from "../assets/solanaDuck.png";
 import solanaOrderModal from "../assets/solanaOrderModal.png";
+import chaserSpecialBG from "../assets/chaserSpecialBG.png";
+import chaserSpecialDuckIMG from "../assets/chaserSpecialDuck.png";
+import chaserSpecialOrderModal from "../assets/chaserSpecialOrderModal.png";
+import vozolBG from "../assets/vozolBG.png";
+import vozolDuckIMG from "../assets/vozolDuck.png";
+import vozolOrderModal from "../assets/vozolOrderModal.png";
 
 
 
