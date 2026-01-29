@@ -458,7 +458,7 @@ const MainPage = () => {
                       </div>
                     </div>
 
-                    {/* 5. action-кнопки */}
+                    {/* 5. action-кноки */}
                     <div className="productActionsLeft">
 
                       <button
