@@ -1162,19 +1162,35 @@ body {
 }
 
 .checkoutHero {
-  width: 99.6%;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid rgba(206, 206, 206, 1);
+  position: relative;
 }
 
-
-.checkoutHeroImg {
+.checkoutHeroSkeleton {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center; 
-  display: block;
+  border-radius: 22px;
+  background: linear-gradient(
+    110deg,
+    rgba(255,255,255,0.06) 30%,
+    rgba(255,255,255,0.10) 45%,
+    rgba(255,255,255,0.06) 60%
+  );
+  background-size: 220% 100%;
+  animation: checkoutShimmer 1.1s ease-in-out infinite;
+}
+
+.checkoutHeroImg {
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.checkoutHeroImg.loaded {
+  opacity: 1;
+}
+
+@keyframes checkoutShimmer {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
 }
 
 .checkoutMetaRow {
