@@ -49,7 +49,9 @@ const MainPage = () => {
 
     {
       id: 1,
-      title: "CHASER FOR PODS 30 ML",
+      title1: "CHASER",
+      title2: "FOR PODS 30 ML",
+      titleModal: "CHASER FOR PODS 30 ML",
       price: 55,
 
       // картинки карточки
@@ -62,7 +64,8 @@ const MainPage = () => {
 
     {
       id: 2,
-      title: "SOLANA 30 ML",
+      title1: "SOLANA 30 ML",
+      titleModal: "SOLANA 30 ML",
       price: 50,
 
       // картинки карточки
@@ -399,7 +402,7 @@ const MainPage = () => {
 
                     {/* 4. контент сверху */}
                     <div className="productTop">
-                      <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
+                      <div className="productTitle">{product.title1}<br/>{product.title2}</div>
 
                       <div className="priceBadge">
                         <span className="priceValue">{product.price}</span>
@@ -447,7 +450,7 @@ const MainPage = () => {
 
                     {/* 4. контент сверху */}
                     <div className="productTop">
-                      <div className="productTitle">{product.title}</div>
+                      <div className="productTitle">{product.title1}</div>
 
                       <div className="priceBadge">
                         <span className="priceValue">{product.price}</span>
@@ -615,7 +618,7 @@ const MainPage = () => {
                       <div className="checkoutCardBody">
                         <div className="checkoutMetaRow">
 
-                        <div className="checkoutName">{activeProduct.title}</div>
+                        <div className="checkoutName">{activeProduct.titleModal}</div>
 
                           <div className="checkoutPriceBadge" aria-label="Price">
                             <span className="checkoutPriceValue">{activeProduct.price}</span>
