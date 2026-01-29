@@ -938,6 +938,15 @@ body {
   to { opacity: 1; }
 }
 
+@keyframes backdropFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.checkoutBackdrop.closing {
+  animation: backdropFadeOut 220ms ease-in forwards;
+}
+
 /* ================= CHECKOUT SHEET ================= */
 
 .checkoutSheet {
@@ -1072,6 +1081,16 @@ body {
   to {
     transform: translateY(0);
   }
+}
+
+@keyframes sheetDown {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.checkoutSheet.closing {
+  animation: sheetDown 260ms cubic-bezier(.22,1,.36,1) forwards;
 }
 
 .sheetHandle {

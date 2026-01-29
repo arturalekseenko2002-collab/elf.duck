@@ -225,6 +225,21 @@ const MainPage = () => {
   /* ================= CREATE ORDER ================= */
 
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isCheckoutClosing, setIsCheckoutClosing] = useState(false);
+
+  const closeCheckout = () => {
+    if (isCheckoutClosing) return;
+
+    setIsCheckoutClosing(true);
+
+    // Важно: ждём окончание анимации
+    setTimeout(() => {
+      setIsCheckoutOpen(false);
+      setIsCheckoutClosing(false);
+      // если хочешь, можно очищать товар только после анимации:
+      // setActiveProduct(null);
+    }, 300);
+  };
 
   return (
     <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
@@ -460,6 +475,7 @@ const MainPage = () => {
                         onClick={() => {
                           haptic.heavy();
                           setActiveProduct(product);
+                          setIsCheckoutClosing(false);
                           setIsCheckoutOpen(true);
                         }}
                       >
@@ -493,23 +509,23 @@ const MainPage = () => {
           
           </div>
 
-          {isCheckoutOpen && activeProduct && (
+          {(isCheckoutOpen || isCheckoutClosing) && activeProduct && (
             <>
               {/* Backdrop */}
               <div
-                className="checkoutBackdrop"
+                className={`checkoutBackdrop ${isCheckoutClosing ? "closing" : ""}`}
                 onClick={() => setIsCheckoutOpen(false)}
               />
 
               {/* Bottom Sheet */}
-              <div className="checkoutSheet">
+              <div className={`checkoutSheet ${isCheckoutClosing ? "closing" : ""}`}>
                 <div className="sheetHandle" />
 
                 <div className="checkoutScrollArea">
 
                   <button
                     className="sheetBackButton"
-                    onClick={() => setIsCheckoutOpen(false)}
+                    onClick={closeCheckout}
                   >
                     <img src={backIcon} />
                     <span>Вернуться назад</span>
