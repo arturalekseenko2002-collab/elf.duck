@@ -516,15 +516,17 @@ const MainPage = () => {
               <div className="checkoutSheet">
                 <div className="sheetHandle" />
 
-                <button
-                  className="sheetBackButton"
-                  onClick={() => setIsCheckoutOpen(false)}
-                >
-                  <img src={backIcon} />
-                  <span>Вернуться назад</span>
-                </button>
-
                 <div className="checkoutScrollArea">
+
+                  <button
+                    className="sheetBackButton"
+                    onClick={() => setIsCheckoutOpen(false)}
+                  >
+                    <img src={backIcon} />
+                    <span>Вернуться назад</span>
+                  </button>
+
+
                   <div className="checkoutSectionTitle">
                     <span className="checkoutSectionLine" />
                     <span className="checkoutSectionText">Добавление товара в корзину</span>
@@ -592,6 +594,7 @@ const MainPage = () => {
                     </div>
 
                   </div>
+                  
                 </div>
 
               </div>
