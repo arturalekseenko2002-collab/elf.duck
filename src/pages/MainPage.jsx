@@ -62,6 +62,7 @@ const MainPage = () => {
 
       classActions: "productActionsRight",
 
+      classNewBadge: "actionBadge sale",
       newBadge: "NEW",
 
       // картинка модалки
@@ -82,6 +83,7 @@ const MainPage = () => {
       
       classActions: "productActionsLeft",
 
+      classNewBadge: null,
       newBadge: null,
 
       // картинка модалки
@@ -426,7 +428,7 @@ const MainPage = () => {
 
                     {/* 5. action-кнопки */}
                     <div className={product.classActions}>
-                      <div className="actionBadge sale">{product.newBadge}</div>
+                      <div className={product.classNewBadge}>{product.newBadge}</div>
 
                       <button
                         className="actionButton cart pulse"
