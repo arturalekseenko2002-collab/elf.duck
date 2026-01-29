@@ -1119,6 +1119,15 @@ body {
 
 /* ================= CHECKOUT CONTENT CARD ================= */
 
+.checkoutScrollArea {
+  flex: 1;                /* занимает всё между title и footer */
+  min-height: 0;          /* 🔥 критично для flex-скролла */
+  overflow-y: auto;
+
+  display: flex;
+  justify-content: center;
+}
+
 /* чтобы модалка не вылезала за экран на маленьких телефонах */
 .checkoutSheet {
   overflow: hidden;
@@ -1169,7 +1178,7 @@ body {
 
 .checkoutHeroImg {
   width: 100%;
-  height: 100%;
+  height: auto;
   
   object-position: center;
   object-fit: cover;
@@ -1340,7 +1349,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  max-height: 80dvh;
+  max-height: calc(100dvh - 66px - 10px);
 }
 
 .footerLeft {

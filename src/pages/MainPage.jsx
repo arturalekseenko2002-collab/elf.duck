@@ -544,51 +544,53 @@ const MainPage = () => {
                 </div>
 
                 {/* сюда потом вынесем CheckoutCard */}
-                <div className="checkoutContent">
-                  <div className="checkoutCard">
+                <div className="checkoutScrollArea">
+                  <div className="checkoutContent">
+                    <div className="checkoutCard">
 
-                    <div className="checkoutHero">
-                      <img
-                        src={activeProduct.hero}
-                        className="checkoutHeroImg"
-                        decoding="async"
-                        loading="eager"
-                        alt=""
-                      />
-                    </div>
-
-                    <div className="checkoutCardBody">
-                      <div className="checkoutMetaRow">
-
-                      <div className="checkoutName">ELF DUCK TRIO 40K</div>
-
-                        <div className="checkoutPriceBadge" aria-label="Price">
-                          <span className="checkoutPriceValue">110</span>
-                          <img className="checkoutPriceCoin" src={coinIcon} alt="" />
-                        </div>
+                      <div className="checkoutHero">
+                        <img
+                          src={activeProduct.hero}
+                          className="checkoutHeroImg"
+                          decoding="async"
+                          loading="eager"
+                          alt=""
+                        />
                       </div>
-                    
-                      <button
-                        type="button"
-                        className="checkoutSelect"
-                        onClick={() => tapHaptic("light")}
-                      >
-                        <div className="checkoutSelectLeft">
-                          <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
-                          <span className="checkoutSelectText">Выберите вкус</span>
+
+                      <div className="checkoutCardBody">
+                        <div className="checkoutMetaRow">
+
+                        <div className="checkoutName">{activeProduct.title}</div>
+
+                          <div className="checkoutPriceBadge" aria-label="Price">
+                            <span className="checkoutPriceValue">{activeProduct.price}</span>
+                            <img className="checkoutPriceCoin" src={coinIcon} alt="" />
+                          </div>
                         </div>
-                        <span className="checkoutSelectCaret" />
-                      </button>
+                      
+                        <button
+                          type="button"
+                          className="checkoutSelect"
+                          onClick={() => tapHaptic("light")}
+                        >
+                          <div className="checkoutSelectLeft">
+                            <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
+                            <span className="checkoutSelectText">Выберите вкус</span>
+                          </div>
+                          <span className="checkoutSelectCaret" />
+                        </button>
 
-                      <button type="button" className="checkoutActionBtn" disabled>
-                        ДОБАВИТЬ ВКУС
-                      </button>
+                        <button type="button" className="checkoutActionBtn" disabled>
+                          ДОБАВИТЬ ВКУС
+                        </button>
 
-                      <button type="button" className="checkoutActionBtn" disabled>
-                        ДОБАВИТЬ ЗАКАЗ В КОРЗИНУ
-                      </button>
+                        <button type="button" className="checkoutActionBtn" disabled>
+                          ДОБАВИТЬ ЗАКАЗ В КОРЗИНУ
+                        </button>
+                      </div>
+
                     </div>
-
                   </div>
                 </div>
 
