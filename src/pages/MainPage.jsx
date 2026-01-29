@@ -3,6 +3,7 @@ import "../styles/MainPage.css";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 import { haptic } from "../utils/haptics";
+import { preloadImage } from "../utils/preloadImage";
 
 import menuIcon from "../assets/menuIcon.png";
 import logo from "../assets/logo.png"; 
@@ -37,6 +38,23 @@ const MainPage = () => {
   const { user, userLoading, initials, displayName, displayUsername } = useUser();
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
+
+  const PRODUCTS = [
+    {
+      id: 1,
+      title: "CHASER FOR PODS 30 ML",
+      price: 55,
+
+      // картинки карточки
+      cardBg: productsChaserBG,
+      cardDuck: chaserDuckIMG,
+
+      // картинка модалки
+      hero: heroImage,
+    },
+
+    // дальше другие товары
+  ];
 
   useEffect(() => {
     requestAnimationFrame(() => {
@@ -322,47 +340,53 @@ const MainPage = () => {
 
               <div key={catalogView} className="categoriesGrid catalogGridAnimated enter">
 
-                <div className="productCard">
+                {PRODUCTS.map((product) => (
+                  <div key={product.id} className="productCard">
 
-                  {/* 1. фон */}
-                  <div className="cardBg" />
+                    {/* 1. фон */}
+                    <div className="cardBg" />
 
-                  {/* 2. фон-картинка */}
-                  <img src={productsChaserBG} className="cardImageFull" alt="" />
+                    {/* 2. фон-картинка */}
+                    <img src={product.cardBg} className="cardImageFull" />
 
-                  {/* 3. персонаж */}
-                  <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
+                    {/* 3. персонаж */}
+                    <img src={product.cardDuck} className="productCardImageRight" alt="" />
 
-                  {/* 4. контент сверху */}
-                  <div className="productTop">
-                    <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
+                    {/* 4. контент сверху */}
+                    <div className="productTop">
+                      <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
 
-                    <div className="priceBadge">
-                      <span className="priceValue">55</span>
-                      <img src={zlotyIcon} className="priceCoin" />
+                      <div className="priceBadge">
+                        <span className="priceValue">55</span>
+                        <img src={zlotyIcon} className="priceCoin" />
+                      </div>
                     </div>
+
+                    {/* 5. action-кнопки */}
+                    <div className="productActions">
+                      <div className="actionBadge sale">NEW</div>
+
+                      <button
+                        className="actionButton cart pulse"
+                        onPointerDown={() => {
+                          preloadImage(product.hero); // 👈 preload КАРТИНКИ МОДАЛКИ
+                        }}
+                        onClick={() => {
+                          haptic.heavy();
+                          setActiveProduct(product);
+                          setIsCheckoutOpen(true);
+                        }}
+                      >
+                        <img src={buyIcon} />
+                      </button>
+
+                      <button className="actionButton fav pulse">
+                        <img src={likedIcon} />
+                      </button>
+                    </div>
+
                   </div>
-
-                  {/* 5. action-кнопки */}
-                  <div className="productActions">
-                    <div className="actionBadge sale">NEW</div>
-
-                    <button
-                      className="actionButton cart pulse"
-                      onClick={() => {
-                        haptic.heavy();
-                        setIsCheckoutOpen(true);
-                      }}
-                    >
-                      <img src={buyIcon} />
-                    </button>
-
-                    <button className="actionButton fav pulse">
-                      <img src={likedIcon} />
-                    </button>
-                  </div>
-
-                </div>
+              ))}
 
                 <div className="productCard">
 
@@ -491,7 +515,7 @@ const MainPage = () => {
           
           </div>
 
-          {isCheckoutOpen && (
+          {isCheckoutOpen && activeProduct && (
             <>
               {/* Backdrop */}
               <div
@@ -523,8 +547,10 @@ const MainPage = () => {
 
                     <div className="checkoutHero">
                       <img
-                        src={heroImage}
+                        src={activeProduct.hero}
                         className="checkoutHeroImg"
+                        decoding="async"
+                        loading="eager"
                         alt=""
                       />
                     </div>
