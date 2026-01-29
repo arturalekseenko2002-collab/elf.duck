@@ -536,7 +536,7 @@ const MainPage = () => {
                   <img src={backIcon} />
                   <span>Вернуться назад</span>
                 </button>
-                
+
                 <div className="checkoutScrollArea">
                   <div className="checkoutSectionTitle">
                     <span className="checkoutSectionLine" />
@@ -591,20 +591,20 @@ const MainPage = () => {
 
                     </div>
                   </div>
-                </div>
 
-                <div className="checkoutFooter">
-                  
-                  <div className="footerLeft">
-                    <span>ELF DUCK</span>
-                    <img src={telegramIcon} alt="" />
+                  <div className="checkoutFooter">
+                    
+                    <div className="footerLeft">
+                      <span>ELF DUCK</span>
+                      <img src={telegramIcon} alt="" />
+                    </div>
+
+                    <div className="footerRight">
+                      <span>Поддержка 24/7</span>
+                      <img src={supportIcon} alt="" />
+                    </div>
+
                   </div>
-
-                  <div className="footerRight">
-                    <span>Поддержка 24/7</span>
-                    <img src={supportIcon} alt="" />
-                  </div>
-
                 </div>
 
               </div>
