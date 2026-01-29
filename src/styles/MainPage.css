@@ -1149,8 +1149,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
 }
 
 
@@ -1172,8 +1170,10 @@ body {
 .checkoutHeroImg {
   width: 100%;
   height: 100%;
+  
+  object-position: center;
   object-fit: cover;
-  object-position: center; 
+  
   display: block;
 }
 

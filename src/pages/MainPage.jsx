@@ -39,6 +39,8 @@ const MainPage = () => {
   const [avatarLoaded, setAvatarLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
 
+  const [activeProduct, setActiveProduct] = useState(null);
+
   const PRODUCTS = [
     {
       id: 1,
@@ -139,8 +141,6 @@ const MainPage = () => {
   /* ================= CREATE ORDER ================= */
 
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
-
-  const [activeProduct, setActiveProduct] = useState(null);
 
   return (
     <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
