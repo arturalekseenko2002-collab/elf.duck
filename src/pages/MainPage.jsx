@@ -140,6 +140,8 @@ const MainPage = () => {
 
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
+  const [activeProduct, setActiveProduct] = useState(null);
+
   return (
     <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
 
