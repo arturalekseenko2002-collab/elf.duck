@@ -1347,7 +1347,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  max-height: calc(100dvh - 66px - 10px);
+  max-height: calc(100dvh - 112px);
 }
 
 .footerLeft {
