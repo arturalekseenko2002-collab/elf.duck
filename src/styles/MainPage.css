@@ -1171,17 +1171,15 @@ body {
 .checkoutHero {
   width: 99.6%;
   border-radius: 22px;
-  overflow: hidden;
+  /* overflow: hidden; */
   border: 1px solid rgba(206, 206, 206, 1);
 }
 
 
 .checkoutHeroImg {
   width: 100%;
-  height: auto;
-  
-  object-position: center;
-  object-fit: cover;
+
+  border-radius: 22px;
   
   display: block;
 }
