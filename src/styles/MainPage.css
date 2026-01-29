@@ -1171,8 +1171,9 @@ body {
 
 .checkoutHeroImg {
   width: 100%;
-  /* height: clamp(170px, 26vh, 240px); */
+  height: 100%;
   object-fit: cover;
+  object-position: center; 
   display: block;
 }
 
@@ -1339,7 +1340,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  max-height: 82dvh;
+  max-height: 80dvh;
 }
 
 .footerLeft {
