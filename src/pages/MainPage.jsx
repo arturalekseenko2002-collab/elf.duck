@@ -30,7 +30,11 @@ import backIcon from "../assets/backIcon.png";
 import likedIcon from "../assets/likedIcon.png";
 import buyIcon from "../assets/buyIcon.png";
 import zlotyIcon from "../assets/zlotyIcon.png";
-import heroImage from "../assets/heroImage.png";
+import chaserForPodsOrderModal from "../assets/chaserForPods-orderModal.png";
+import solanaBG from "../assets/solanaBG.png";
+import solanaDuckIMG from "../assets/solanaDuck.png";
+import solanaOrderModal from "../assets/solanaOrderModal.png";
+
 
 
 
@@ -42,6 +46,7 @@ const MainPage = () => {
   const [activeProduct, setActiveProduct] = useState(null);
 
   const PRODUCTS = [
+
     {
       id: 1,
       title: "CHASER FOR PODS 30 ML",
@@ -52,9 +57,47 @@ const MainPage = () => {
       cardDuck: chaserDuckIMG,
 
       // картинка модалки
-      hero: heroImage,
+      orderIMG: chaserForPodsOrderModal,
     },
 
+    {
+      id: 2,
+      title: "SOLANA 30 ML",
+      price: 50,
+
+      // картинки карточки
+      cardBg: solanaBG,
+      cardDuck: solanaDuckIMG,
+
+      // картинка модалки
+      orderIMG: solanaOrderModal,
+    },
+
+    {
+      id: 3,
+      title: "CHASER FOR PODS 30 ML",
+      price: 55,
+
+      // картинки карточки
+      cardBg: productsChaserBG,
+      cardDuck: chaserDuckIMG,
+
+      // картинка модалки
+      orderIMG: chaserForPodsOrderModal,
+    },
+
+    {
+      id: 4,
+      title: "CHASER FOR PODS 30 ML",
+      price: 55,
+
+      // картинки карточки
+      cardBg: productsChaserBG,
+      cardDuck: chaserDuckIMG,
+
+      // картинка модалки
+      orderIMG: chaserForPodsOrderModal,
+    },
     // дальше другие товары
   ];
 
@@ -359,7 +402,7 @@ const MainPage = () => {
                       <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
 
                       <div className="priceBadge">
-                        <span className="priceValue">55</span>
+                        <span className="priceValue">{product.price}</span>
                         <img src={zlotyIcon} className="priceCoin" />
                       </div>
                     </div>
@@ -371,7 +414,7 @@ const MainPage = () => {
                       <button
                         className="actionButton cart pulse"
                         onPointerDown={() => {
-                          preloadImage(product.hero); // 👈 preload КАРТИНКИ МОДАЛКИ
+                          preloadImage(product.orderIMG); // 👈 preload КАРТИНКИ МОДАЛКИ
                         }}
                         onClick={() => {
                           haptic.heavy();
@@ -388,43 +431,55 @@ const MainPage = () => {
                     </div>
 
                   </div>
-              ))}
+                ))}
 
-                <div className="productCard">
+                {PRODUCTS.map((product) => (
+                  <div key={product.id} className="productCard">
 
-                  {/* 1. фон */}
-                  <div className="cardBg" />
+                    {/* 1. фон */}
+                    <div className="cardBg" />
 
-                  {/* 2. фон-картинка */}
-                  <img src={productsChaserBG} className="cardImageFull" alt="" />
+                    {/* 2. фон-картинка */}
+                    <img src={product.cardBg} className="cardImageFull" />
 
-                  {/* 3. персонаж */}
-                  <img src={chaserDuckIMG} className="productCardImageRight" alt="" />
+                    {/* 3. персонаж */}
+                    <img src={product.cardDuck} className="productCardImageRight" alt="" />
 
-                  {/* 4. контент сверху */}
-                  <div className="productTop">
-                    <div className="productTitle">CHASER <br/> FOR PODS 30 ML</div>
+                    {/* 4. контент сверху */}
+                    <div className="productTop">
+                      <div className="productTitle">{product.title}</div>
 
-                    <div className="priceBadge">
-                      <span className="priceValue">55</span>
-                      <img src={zlotyIcon} className="priceCoin" />
+                      <div className="priceBadge">
+                        <span className="priceValue">{product.price}</span>
+                        <img src={zlotyIcon} className="priceCoin" />
+                      </div>
                     </div>
+
+                    {/* 5. action-кнопки */}
+                    <div className="productActions">
+                      <div className="actionBadge sale">NEW</div>
+
+                      <button
+                        className="actionButton cart pulse"
+                        onPointerDown={() => {
+                          preloadImage(product.orderIMG); // 👈 preload КАРТИНКИ МОДАЛКИ
+                        }}
+                        onClick={() => {
+                          haptic.heavy();
+                          setActiveProduct(product);
+                          setIsCheckoutOpen(true);
+                        }}
+                      >
+                        <img src={buyIcon} />
+                      </button>
+
+                      <button className="actionButton fav pulse">
+                        <img src={likedIcon} />
+                      </button>
+                    </div>
+
                   </div>
-
-                  {/* 5. action-кнопки */}
-                  <div className="productActions">
-                    <div className="actionBadge sale">NEW</div>
-
-                    <button className="actionButton cart pulse">
-                      <img src={buyIcon} />
-                    </button>
-
-                    <button className="actionButton fav pulse">
-                      <img src={likedIcon} />
-                    </button>
-                  </div>
-
-                </div>
+                ))}
 
                 <div className="productCard">
 
@@ -549,7 +604,7 @@ const MainPage = () => {
 
                       <div className="checkoutHero">
                         <img
-                          src={activeProduct.hero}
+                          src={activeProduct.orderIMG}
                           className="checkoutHeroImg"
                           decoding="async"
                           loading="eager"
@@ -571,7 +626,7 @@ const MainPage = () => {
                         <button
                           type="button"
                           className="checkoutSelect"
-                          onClick={() => tapHaptic("light")}
+                          onClick={haptic.light}
                         >
                           <div className="checkoutSelectLeft">
                             <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
