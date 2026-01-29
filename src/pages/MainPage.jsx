@@ -411,7 +411,7 @@ const MainPage = () => {
                     </div>
 
                     {/* 5. action-кнопки */}
-                    <div className="productActions">
+                    <div className="productActionsRight">
                       <div className="actionBadge sale">NEW</div>
 
                       <button
@@ -446,7 +446,7 @@ const MainPage = () => {
                     <img src={product.cardBg} className="cardImageFull" />
 
                     {/* 3. персонаж */}
-                    <img src={product.cardDuck} className="productCardImageRight" alt="" />
+                    <img src={product.cardDuck} className="productCardImageLeft" alt="" />
 
                     {/* 4. контент сверху */}
                     <div className="productTop">
@@ -459,8 +459,7 @@ const MainPage = () => {
                     </div>
 
                     {/* 5. action-кнопки */}
-                    <div className="productActions">
-                      <div className="actionBadge sale">NEW</div>
+                    <div className="productActionsLeft">
 
                       <button
                         className="actionButton cart pulse"

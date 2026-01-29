@@ -754,9 +754,23 @@ body {
   height: 20px;
 }
 
-.productActions {
+.productActionsRight {
   position: absolute;
   left: 14px;
+  bottom: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  gap: 14px;
+
+  z-index: 6;
+}
+
+.productActionsLeft {
+  position: absolute;
+  right: 14px;
   bottom: 18px;
 
   display: flex;
@@ -837,6 +851,19 @@ body {
   height: 60%;
 
   border-bottom-right-radius: 19px;
+
+  z-index: 3;
+}
+
+.productCardImageLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: auto; /* можно подогнать */
+  height: 60%;
+
+  border-bottom-left-radius: 19px;
 
   z-index: 3;
 }
