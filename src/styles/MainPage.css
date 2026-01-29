@@ -1120,12 +1120,12 @@ body {
 /* ================= CHECKOUT CONTENT CARD ================= */
 
 .checkoutScrollArea {
-  flex: 1;                /* занимает всё между title и footer */
-  min-height: 0;          /* 🔥 критично для flex-скролла */
+  flex: 1;         
+  min-height: 0;   
   overflow-y: auto;
 
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 /* чтобы модалка не вылезала за экран на маленьких телефонах */

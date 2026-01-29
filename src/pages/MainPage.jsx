@@ -536,15 +536,14 @@ const MainPage = () => {
                   <img src={backIcon} />
                   <span>Вернуться назад</span>
                 </button>
-
-                <div className="checkoutSectionTitle">
-                  <span className="checkoutSectionLine" />
-                  <span className="checkoutSectionText">Добавление товара в корзину</span>
-                  <span className="checkoutSectionLine" />
-                </div>
-
-                {/* сюда потом вынесем CheckoutCard */}
+                
                 <div className="checkoutScrollArea">
+                  <div className="checkoutSectionTitle">
+                    <span className="checkoutSectionLine" />
+                    <span className="checkoutSectionText">Добавление товара в корзину</span>
+                    <span className="checkoutSectionLine" />
+                  </div>
+
                   <div className="checkoutContent">
                     <div className="checkoutCard">
 
