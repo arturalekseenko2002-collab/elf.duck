@@ -92,32 +92,48 @@ const MainPage = () => {
 
     {
       id: 3,
-      title1: "CHASER SPECIAL 30 ML",
+      title1: "CHASER",
+      title2: "SPECIAL 30 ML",
       titleModal: "CHASER SPECIAL 30 ML",
       price: 55,
 
       // картинки карточки
-      cardBg: productsChaserBG,
-      cardDuck: chaserDuckIMG,
+      cardBg: chaserSpecialBG,
+
+      cardDuck: chaserSpecialDuckIMG,
+      classCardDuck: "productCardImageLeft",
+      
+      classActions: "productActionsLeft",
+
+      classNewBadge: null,
+      newBadge: null,
 
       // картинка модалки
-      orderIMG: chaserForPodsOrderModal,
+      orderIMG: chaserSpecialOrderModal,
     },
 
     {
       id: 4,
-      title1: "VOZOL PRIME 30 ML",
+      title1: "VOZOL",
+      title2: "PRIME 30 ML",
       titleModal: "VOZOL PRIME 30 ML",
       price: 50,
 
       // картинки карточки
-      cardBg: productsChaserBG,
-      cardDuck: chaserDuckIMG,
+      cardBg: vozolBG,
+
+      cardDuck: vozolDuckIMG,
+      classCardDuck: "productCardImageRight",
+      
+      classActions: "productActionsRight",
+
+      classNewBadge: "actionBadge sale",
+      newBadge: "NEW",
 
       // картинка модалки
-      orderIMG: chaserForPodsOrderModal,
+      orderIMG: vozolOrderModal,
     },
-    // дальше другие товары
+    
   ];
 
   useEffect(() => {
