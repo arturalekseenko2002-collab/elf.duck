@@ -73,6 +73,7 @@ const MainPage = () => {
 
       // картинка модалки
       orderIMG: chaserForPodsOrderModal,
+      accentColor: "32, 130, 231",
     },
 
     {
@@ -94,6 +95,7 @@ const MainPage = () => {
 
       // картинка модалки
       orderIMG: solanaOrderModal,
+      accentColor: "106, 191, 39",
     },
 
     {
@@ -116,6 +118,7 @@ const MainPage = () => {
 
       // картинка модалки
       orderIMG: chaserSpecialOrderModal,
+      accentColor: "155, 30, 220",
     },
 
     {
@@ -138,6 +141,7 @@ const MainPage = () => {
 
       // картинка модалки
       orderIMG: vozolOrderModal,
+      accentColor: "231, 70, 140",
     },
     
   ];
@@ -518,7 +522,12 @@ const MainPage = () => {
               />
 
               {/* Bottom Sheet */}
-              <div className={`checkoutSheet ${isCheckoutClosing ? "closing" : ""}`}>
+              <div className={`checkoutSheet ${isCheckoutClosing ? "closing" : ""}`}
+                  style={{
+                    "--accent-color": activeProduct.accentColor,
+                  }}
+                >
+                  
                 <div className="sheetHandle" />
 
                 <div className="checkoutScrollArea">
