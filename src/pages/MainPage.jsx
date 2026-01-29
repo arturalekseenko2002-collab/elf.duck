@@ -44,19 +44,6 @@ const MainPage = () => {
     });
   }, []);
 
-  /* ================= LOADING ORDER IMAGE ================= */
-
-  const [checkoutHeroLoaded, setCheckoutHeroLoaded] = useState(false);
-
-  // рядом с другими useEffect
-  useEffect(() => {
-    const img = new Image();
-    img.src = heroImage;
-
-    // ранняя декодировка — убирает “поп-ин”
-    if (img.decode) img.decode().catch(() => {});
-  }, []);
-
   /* ================= BANNER DOTS SECTION ================= */
 
   const banners = [banerIMG, baner2IMG, baner3IMG]; // потом заменишь на реальные изображения
@@ -535,15 +522,10 @@ const MainPage = () => {
                   <div className="checkoutCard">
 
                     <div className="checkoutHero">
-                      {!checkoutHeroLoaded && <div className="checkoutHeroSkeleton" />}
-
                       <img
                         src={heroImage}
-                        className={`checkoutHeroImg ${checkoutHeroLoaded ? "loaded" : ""}`}
+                        className="checkoutHeroImg"
                         alt=""
-                        decoding="async"
-                        loading="eager"
-                        onLoad={() => setCheckoutHeroLoaded(true)}
                       />
                     </div>
 
