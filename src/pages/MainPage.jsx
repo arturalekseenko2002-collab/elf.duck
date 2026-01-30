@@ -614,7 +614,11 @@ const MainPage = () => {
                           }}
                         >
                           <div className="checkoutSelectLeft">
-                            <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
+                            <img
+                              className="checkoutSelectIcon"
+                              src={selectedFlavor ? footerBar : categoriesIcon}
+                              alt=""
+                            />
                             <span className="checkoutSelectText">
                               {selectedFlavor ? selectedFlavor.label : "Выберите вкус"}
                             </span>
@@ -655,10 +659,17 @@ const MainPage = () => {
                                 </div>
 
                                 <button
-                                  className="flavorAction"
+                                  className={`flavorAction
+                                    ${!flavor.available ? "disabled" : ""}
+                                    ${selectedFlavor?.id === flavor.id ? "selected" : ""}
+                                  `}
                                   disabled={!flavor.available}
                                 >
-                                  {flavor.available ? "выбрать" : "нет в наличии"}
+                                  {!flavor.available
+                                    ? "нет в наличии"
+                                    : selectedFlavor?.id === flavor.id
+                                      ? "выбран"
+                                      : "выбрать"}
                                 </button>
                               </div>
                             ))}

@@ -1434,10 +1434,18 @@ body {
   font-family: Unbounded-Regular;
   font-size: 11px;
   cursor: pointer;
+
+  transition: 0.25s ease;
 }
 
+.flavorAction.selected {
+  background: rgba(82, 255, 70, 0.2);
+  color: #F0F0F0;
+}
+
+.flavorAction.disabled,
 .flavorAction:disabled {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.12);
   color: rgba(255,255,255,0.35);
   cursor: not-allowed;
 }
