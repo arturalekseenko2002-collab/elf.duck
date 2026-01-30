@@ -637,17 +637,22 @@ const MainPage = () => {
                                   setIsFlavorOpen(false);
                                 }}
                               >
-                                <span
-                                  className="flavorBar"
-                                  style={{
-                                    background: `linear-gradient(
-                                      180deg,
-                                      ${flavor.gradient[0]} 0%,
-                                      ${flavor.gradient[1]} 100%
-                                    )`,
-                                  }}
-                                />
-                                <span className="flavorLabel">{flavor.label}</span>
+                                <div className="flavorLeft">
+                                  <span
+                                    className="flavorBar"
+                                    style={{
+                                      background: `linear-gradient(
+                                        180deg,
+                                        ${flavor.gradient[0]} 0%,
+                                        ${flavor.gradient[1]} 100%
+                                      )`,
+                                    }}
+                                  />
+
+                                  <span className="flavorLabel">
+                                    {flavor.label}
+                                  </span>
+                                </div>
 
                                 <button
                                   className="flavorAction"

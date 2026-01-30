@@ -1405,6 +1405,12 @@ body {
   opacity: 0.45;
 }
 
+.flavorLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .flavorBar {
   width: 6px;
   height: 18px;
