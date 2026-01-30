@@ -76,10 +76,31 @@ const MainPage = () => {
       accentColor: "32, 130, 231",
 
       flavors: [
-        { id: "cool-menthol", label: "Cool Menthol ❄️", available: true },
-        { id: "la-grape", label: "La Grape 🍇", available: true },
-        { id: "pineapple-lime", label: "Pineapple Lime 🍍", available: false },
-        { id: "strawberry-dragon", label: "Sour Strawberry Dragonfruit 🍓", available: true },
+
+        { id: "cool-menthol",
+          label: "Cool Menthol ❄️",
+          available: true,
+          gradient: ["#92B8CB", "#31460E"],
+        },
+
+        { id: "la-grape",
+          label: "La Grape 🍇",
+          available: true,
+          gradient: ["#B27FF0", "#42275A"],
+        },
+
+        { id: "pineapple-lime",
+          label: "Pineapple Lime 🍍",
+          available: false,
+          gradient: ["#FDEB71", "#F8D800"],
+        },
+
+        { id: "strawberry-dragon",
+          label: "Sour Strawberry Dragonfruit 🍓",
+          available: true,
+          gradient: ["#FF9A8B", "#FF6A88", "#FF99AC"],
+        },
+
       ],
 
     },
@@ -604,28 +625,43 @@ const MainPage = () => {
 
                         {isFlavorOpen && (
                           <div className="flavorDropdown">
-                            {activeProduct.flavors.map(flavor => (
-                              <div
-                                key={flavor.id}
-                                className={`flavorItem ${!flavor.available ? "disabled" : ""}`}
-                                onClick={() => {
-                                  if (!flavor.available) return;
+                          {activeProduct.flavors.map(flavor => (
+                            <div
+                              key={flavor.id}
+                              className={`flavorItem ${!flavor.available ? "disabled" : ""}`}
+                              onClick={() => {
+                                if (!flavor.available) return;
 
-                                  haptic.light();
-                                  setSelectedFlavor(flavor);
-                                  setIsFlavorOpen(false);
-                                }}
-                              >
-                                <span className="flavorLabel">{flavor.label}</span>
+                                haptic.light();
+                                setSelectedFlavor(flavor);
+                                setIsFlavorOpen(false);
+                              }}
+                            >
+                              <div className="flavorLeft">
+                                <span
+                                  className="flavorBar"
+                                  style={{
+                                    background: `linear-gradient(
+                                      180deg,
+                                      ${flavor.gradient[0]} 0%,
+                                      ${flavor.gradient[1]} 100%
+                                    )`,
+                                  }}
+                                />
 
-                                <button
-                                  className="flavorAction"
-                                  disabled={!flavor.available}
-                                >
-                                  {flavor.available ? "выбрать" : "нет в наличии"}
-                                </button>
+                                <span className="flavorLabel">
+                                  {flavor.label}
+                                </span>
                               </div>
-                            ))}
+
+                              <button
+                                className="flavorAction"
+                                disabled={!flavor.available}
+                              >
+                                {flavor.available ? "выбрать" : "нет в наличии"}
+                              </button>
+                            </div>
+                          ))}
                           </div>
                         )}
 
@@ -644,7 +680,7 @@ const MainPage = () => {
                         >
                           ДОБАВИТЬ ЗАКАЗ В КОРЗИНУ
                         </button>
-                        
+
                       </div>
 
                     </div>
