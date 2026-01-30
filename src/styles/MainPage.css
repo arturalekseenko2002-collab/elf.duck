@@ -1499,6 +1499,10 @@ body {
   border-color: rgba(var(--accent-color), 0.8);
 }
 
+.deliveryButton:active {
+  transform: scale(0.96);
+}
+
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {
