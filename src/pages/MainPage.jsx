@@ -366,6 +366,23 @@ const MainPage = () => {
   const [selectedFlavor, setSelectedFlavor] = useState(null); 
   const [deliveryType, setDeliveryType] = useState("delivery"); 
 
+  const [pickupPoint, setPickupPoint] = useState(null);
+  const [isPickupOpen, setIsPickupOpen] = useState(false);
+
+  useEffect(() => {
+    if (deliveryType === "delivery") {
+      setPickupPoint(null);
+      setIsPickupOpen(false);
+    }
+  }, [deliveryType]);
+
+  const PICKUP_POINTS = [
+    { id: "p1", label: "ul. Krucza 03, Śródmieście", available: true },
+    { id: "p2", label: "ul. Opytków 7A, Praga-Południe", available: false },
+    { id: "p3", label: "ul. Tagore’a 1, Mokotów", available: true },
+    { id: "p4", label: "ul. Ordona-WSA, Wola", available: false },
+  ];
+
   return (
     <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
 
@@ -805,6 +822,61 @@ const MainPage = () => {
                               </div>
                             ))}
                           </div>
+                        )}
+
+                        {selectedFlavor && deliveryType === "pickup" && (
+                          <>
+                            <button
+                              type="button"
+                              className={`checkoutSelect pickup ${isPickupOpen ? "open" : ""}`}
+                              onClick={() => {
+                                haptic.light();
+                                setIsPickupOpen(v => !v);
+                              }}
+                            >
+                              <div className="checkoutSelectLeft">
+                                <img
+                                  className="checkoutSelectIcon"
+                                  src={pickupIcon}
+                                  alt=""
+                                />
+                                <span className="checkoutSelectText">
+                                  {pickupPoint ? pickupPoint.label : "Выбрать точку самовывоза"}
+                                </span>
+                              </div>
+
+                              <span className={`checkoutSelectCaret ${isPickupOpen ? "up" : ""}`} />
+                            </button>
+
+                            {isPickupOpen && (
+                              <div className="pickupDropdown">
+                                {PICKUP_POINTS.map(point => (
+                                  <div
+                                    key={point.id}
+                                    className={`pickupItem ${!point.available ? "disabled" : ""}`}
+                                    onClick={() => {
+                                      if (!point.available) return;
+
+                                      haptic.light();
+                                      setPickupPoint(point);
+                                      setIsPickupOpen(false);
+                                    }}
+                                  >
+                                    <span className="pickupLabel">{point.label}</span>
+
+                                    <button
+                                      className={`pickupAction ${
+                                        !point.available ? "disabled" : ""
+                                      }`}
+                                      disabled={!point.available}
+                                    >
+                                      {point.available ? "выбрать" : "нет в наличии"}
+                                    </button>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </>
                         )}
 
                         <button

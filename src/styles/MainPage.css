@@ -1503,6 +1503,47 @@ body {
   transform: scale(0.96);
 }
 
+/* ================= PICKUP DROPDOWN ================= */
+
+.checkoutSelect.pickup {
+  background: rgba(217, 217, 217, 0.4);
+}
+
+.pickupDropdown {
+  margin-top: 10px;
+  border-radius: 16px;
+  padding: 10px;
+  background: rgba(217, 217, 217, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pickupItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pickupItem.disabled {
+  opacity: 0.45;
+}
+
+.pickupAction {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border: none;
+  font-size: 13px;
+}
+
+.pickupAction.disabled {
+  background: rgba(0,0,0,0.25);
+  color: rgba(255,255,255,0.5);
+}
+
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {
