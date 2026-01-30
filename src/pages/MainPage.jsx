@@ -74,6 +74,14 @@ const MainPage = () => {
       // картинка модалки
       orderIMG: chaserForPodsOrderModal,
       accentColor: "32, 130, 231",
+
+      flavors: [
+        { id: "cool-menthol", label: "Cool Menthol ❄️", available: true },
+        { id: "la-grape", label: "La Grape 🍇", available: true },
+        { id: "pineapple-lime", label: "Pineapple Lime 🍍", available: false },
+        { id: "strawberry-dragon", label: "Sour Strawberry Dragonfruit 🍓", available: true },
+      ],
+
     },
 
     {
@@ -244,6 +252,11 @@ const MainPage = () => {
       // setActiveProduct(null);
     }, 300);
   };
+
+  
+
+  const [isFlavorOpen, setIsFlavorOpen] = useState(false);
+  const [selectedFlavor, setSelectedFlavor] = useState(null); 
 
   return (
     <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
@@ -573,23 +586,65 @@ const MainPage = () => {
                       
                         <button
                           type="button"
-                          className="checkoutSelect"
-                          onClick={haptic.light}
+                          className={`checkoutSelect ${isFlavorOpen ? "open" : ""}`}
+                          onClick={() => {
+                            haptic.light();
+                            setIsFlavorOpen(v => !v);
+                          }}
                         >
                           <div className="checkoutSelectLeft">
                             <img className="checkoutSelectIcon" src={categoriesIcon} alt="" />
-                            <span className="checkoutSelectText">Выберите вкус</span>
+                            <span className="checkoutSelectText">
+                              {selectedFlavor ? selectedFlavor.label : "Выберите вкус"}
+                            </span>
                           </div>
-                          <span className="checkoutSelectCaret" />
+
+                          <span className={`checkoutSelectCaret ${isFlavorOpen ? "up" : ""}`} />
                         </button>
 
-                        <button type="button" className="checkoutActionBtn" disabled>
+                        {isFlavorOpen && (
+                          <div className="flavorDropdown">
+                            {activeProduct.flavors.map(flavor => (
+                              <div
+                                key={flavor.id}
+                                className={`flavorItem ${!flavor.available ? "disabled" : ""}`}
+                                onClick={() => {
+                                  if (!flavor.available) return;
+
+                                  haptic.light();
+                                  setSelectedFlavor(flavor);
+                                  setIsFlavorOpen(false);
+                                }}
+                              >
+                                <span className="flavorLabel">{flavor.label}</span>
+
+                                <button
+                                  className="flavorAction"
+                                  disabled={!flavor.available}
+                                >
+                                  {flavor.available ? "выбрать" : "нет в наличии"}
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        <button
+                          type="button"
+                          className="checkoutActionBtn"
+                          disabled={!selectedFlavor}
+                        >
                           ДОБАВИТЬ ВКУС
                         </button>
 
-                        <button type="button" className="checkoutActionBtn" disabled>
+                        <button
+                          type="button"
+                          className="checkoutActionBtn"
+                          disabled={!selectedFlavor}
+                        >
                           ДОБАВИТЬ ЗАКАЗ В КОРЗИНУ
                         </button>
+                        
                       </div>
 
                     </div>

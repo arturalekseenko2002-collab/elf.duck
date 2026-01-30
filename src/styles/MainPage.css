@@ -1360,6 +1360,72 @@ body {
   .checkoutActionBtn { font-size: 13px; }
 }
 
+/* ================= FLAVOR DROPDOWN ================= */
+
+.flavorDropdown {
+  margin-top: 10px;
+  padding: 8px;
+
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  animation: dropdownIn 180ms ease-out;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flavorItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.04);
+}
+
+.flavorItem.disabled {
+  opacity: 0.45;
+}
+
+.flavorLabel {
+  font-family: Unbounded-Regular;
+  font-size: 14px;
+}
+
+.flavorAction {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: none;
+
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.flavorAction:disabled {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.35);
+  cursor: not-allowed;
+}
+
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {
