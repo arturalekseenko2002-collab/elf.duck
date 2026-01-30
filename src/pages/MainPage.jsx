@@ -616,7 +616,7 @@ const MainPage = () => {
                           <div className="checkoutSelectLeft">
                             <img
                               className="checkoutSelectIcon"
-                              src={selectedFlavor ? footerBar : categoriesIcon}
+                              src={selectedFlavor ? flavorBar : categoriesIcon}
                               alt=""
                             />
                             <span className="checkoutSelectText">
