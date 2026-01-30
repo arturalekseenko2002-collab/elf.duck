@@ -1136,7 +1136,7 @@ body {
   gap: 10px;
 
   width: 100%;
-  margin: 8px 0 20px;
+  margin: 16px 0 20px;
 
   /* opacity: 0.9; */
 }
@@ -1733,6 +1733,15 @@ body {
     width: 12px;
     height: 12px;
   }
+
+  .deliveryButton {
+    width: 45%;
+    font-size: 13px;
+  }
+
+  .deliveryButton img {
+    height: 17px;
+  }
   
 }
 
@@ -1802,6 +1811,15 @@ body {
   .actionButton img {
     width: 12px;
     height: 12px;
+  }
+
+  .deliveryButton {
+  width: 45%;
+  font-size: 11px;
+}
+
+  .deliveryButton img {
+    height: 16px;
   }
 
 }
