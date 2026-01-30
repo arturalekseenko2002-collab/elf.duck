@@ -1470,7 +1470,7 @@ body {
 
 .deliveryButton {
   flex: 1;
-  height: 44px;
+  height: 36px;
 
   display: flex;
   align-items: center;
@@ -1482,7 +1482,7 @@ body {
   background: rgba(255,255,255,0.05);
 
   color: #fff;
-  font-weight: 600;
+  font-family: Unbounded-Regular;
   font-size: 14px;
 
   transition: all .2s ease;
