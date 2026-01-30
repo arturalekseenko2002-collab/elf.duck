@@ -78,27 +78,27 @@ const MainPage = () => {
       flavors: [
 
         { id: "cool-menthol",
-          label: "Cool Menthol ❄️",
+          label: "Cool Menthol",
           available: true,
           gradient: ["#92B8CB", "#31460E"],
         },
 
         { id: "la-grape",
-          label: "La Grape 🍇",
+          label: "La Grape",
           available: true,
-          gradient: ["#B27FF0", "#42275A"],
+          gradient: ["#811947", "#811947"],
         },
 
         { id: "pineapple-lime",
-          label: "Pineapple Lime 🍍",
+          label: "Pineapple Lime",
           available: false,
-          gradient: ["#FDEB71", "#F8D800"],
+          gradient: ["#B76224", "#FFE65D"],
         },
 
         { id: "strawberry-dragon",
-          label: "Sour Strawberry Dragonfruit 🍓",
+          label: "Sour Strawberry Dragonfruit",
           available: true,
-          gradient: ["#FF9A8B", "#FF6A88", "#FF99AC"],
+          gradient: ["#B01E1E", "#C7BB18"],
         },
 
       ],
