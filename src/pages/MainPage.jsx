@@ -101,24 +101,6 @@ const MainPage = () => {
           gradient: ["#B01E1E", "#C7BB18"],
         },
 
-        { id: "la-grape",
-          label: "La Grape",
-          available: true,
-          gradient: ["#811947", "#811947"],
-        },
-
-        { id: "pineapple-lime",
-          label: "Pineapple Lime",
-          available: false,
-          gradient: ["#B76224", "#FFE65D"],
-        },
-
-        { id: "strawberry-dragon",
-          label: "Sour Strawberry Dragonfruit",
-          available: true,
-          gradient: ["#B01E1E", "#C7BB18"],
-        },
-
       ],
 
     },
@@ -143,6 +125,34 @@ const MainPage = () => {
       // картинка модалки
       orderIMG: solanaOrderModal,
       accentColor: "106, 191, 39",
+
+      flavors: [
+
+        { id: "cool-menthol",
+          label: "Cool Menthol",
+          available: true,
+          gradient: ["#92B8CB", "#31460E"],
+        },
+
+        { id: "la-grape",
+          label: "La Grape",
+          available: true,
+          gradient: ["#811947", "#811947"],
+        },
+
+        { id: "pineapple-lime",
+          label: "Pineapple Lime",
+          available: false,
+          gradient: ["#B76224", "#FFE65D"],
+        },
+
+        { id: "strawberry-dragon",
+          label: "Sour Strawberry Dragonfruit",
+          available: true,
+          gradient: ["#B01E1E", "#C7BB18"],
+        },
+
+      ],
     },
 
     {
@@ -166,6 +176,34 @@ const MainPage = () => {
       // картинка модалки
       orderIMG: chaserSpecialOrderModal,
       accentColor: "155, 30, 220",
+
+      flavors: [
+
+        { id: "cool-menthol",
+          label: "Cool Menthol",
+          available: true,
+          gradient: ["#92B8CB", "#31460E"],
+        },
+
+        { id: "la-grape",
+          label: "La Grape",
+          available: true,
+          gradient: ["#811947", "#811947"],
+        },
+
+        { id: "pineapple-lime",
+          label: "Pineapple Lime",
+          available: false,
+          gradient: ["#B76224", "#FFE65D"],
+        },
+
+        { id: "strawberry-dragon",
+          label: "Sour Strawberry Dragonfruit",
+          available: true,
+          gradient: ["#B01E1E", "#C7BB18"],
+        },
+
+      ],
     },
 
     {
@@ -189,6 +227,34 @@ const MainPage = () => {
       // картинка модалки
       orderIMG: vozolOrderModal,
       accentColor: "231, 70, 140",
+
+      flavors: [
+
+        { id: "cool-menthol",
+          label: "Cool Menthol",
+          available: true,
+          gradient: ["#92B8CB", "#31460E"],
+        },
+
+        { id: "la-grape",
+          label: "La Grape",
+          available: true,
+          gradient: ["#811947", "#811947"],
+        },
+
+        { id: "pineapple-lime",
+          label: "Pineapple Lime",
+          available: false,
+          gradient: ["#B76224", "#FFE65D"],
+        },
+
+        { id: "strawberry-dragon",
+          label: "Sour Strawberry Dragonfruit",
+          available: true,
+          gradient: ["#B01E1E", "#C7BB18"],
+        },
+
+      ],
     },
     
   ];
