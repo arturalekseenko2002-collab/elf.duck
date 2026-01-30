@@ -678,11 +678,13 @@ const MainPage = () => {
 
                         <button
                           type="button"
-                          className="checkoutActionBtn"
+                          className={`checkoutActionBtn ${
+                            selectedFlavor ? "active" : ""
+                          }`}
                           disabled={!selectedFlavor}
                         >
                           ДОБАВИТЬ ВКУС
-                        </button>
+                        </button> 
 
                         <button
                           type="button"

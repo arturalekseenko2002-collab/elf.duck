@@ -1350,8 +1350,12 @@ body {
   cursor: not-allowed;
 }
 
-.checkoutActionBtn:active {
-  transform: none;
+.checkoutActionBtn.active {
+  background: rgba(var(--accent-color), 0.85);
+  color: #F0F0F0;
+  box-shadow:
+    0 0 0 1px rgba(var(--accent-color), 0.4),
+    0 8px 20px rgba(var(--accent-color), 0.35);
 }
 
 @media (max-width: 360px) {
