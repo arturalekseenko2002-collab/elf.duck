@@ -1464,13 +1464,13 @@ body {
 
 .checkoutDeliveryButtons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin: 14px 0 18px;
   justify-content: center;
 }
 
 .deliveryButton {
-  width: 35%;
+  width: 42%;
   height: 36px;
 
   display: flex;
