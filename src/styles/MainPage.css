@@ -1514,7 +1514,7 @@ body {
 .pickupDropdown {
   margin-top: -8px;
   border-radius: 16px;
-  padding: 10px;
+  padding: 10px 16px;
   background: rgba(217, 217, 217, 0.4);
   display: flex;
   flex-direction: column;
@@ -1526,6 +1526,10 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+
+  text-align: start;
+  font-family: Unbounded-Light;
+  font-size: 13px;
 }
 
 .pickupItem.disabled {
@@ -1533,12 +1537,13 @@ body {
 }
 
 .pickupAction {
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 8px 16px;
+  border-radius: 16px;
   background: rgba(0,0,0,0.35);
   color: #fff;
   border: none;
-  font-size: 13px;
+  font-size: 11px;
+  font-family: Unbounded-Light;
 }
 
 .pickupAction.disabled {
