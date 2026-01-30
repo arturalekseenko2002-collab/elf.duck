@@ -101,6 +101,24 @@ const MainPage = () => {
           gradient: ["#B01E1E", "#C7BB18"],
         },
 
+        { id: "la-grape",
+          label: "La Grape",
+          available: true,
+          gradient: ["#811947", "#811947"],
+        },
+
+        { id: "pineapple-lime",
+          label: "Pineapple Lime",
+          available: false,
+          gradient: ["#B76224", "#FFE65D"],
+        },
+
+        { id: "strawberry-dragon",
+          label: "Sour Strawberry Dragonfruit",
+          available: true,
+          gradient: ["#B01E1E", "#C7BB18"],
+        },
+
       ],
 
     },
