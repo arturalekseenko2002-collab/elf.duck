@@ -1507,10 +1507,12 @@ body {
 
 .checkoutSelect.pickup {
   background: rgba(217, 217, 217, 0.4);
+  border: none;
+  margin-top: -4px;
 }
 
 .pickupDropdown {
-  margin-top: 10px;
+  margin-top: -8px;
   border-radius: 16px;
   padding: 10px;
   background: rgba(217, 217, 217, 0.4);
