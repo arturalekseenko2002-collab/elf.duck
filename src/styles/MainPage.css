@@ -1363,11 +1363,11 @@ body {
 /* ================= FLAVOR DROPDOWN ================= */
 
 .flavorDropdown {
-  margin-top: 10px;
-  padding: 8px;
+  margin-top: -6px;
+  padding: 12px 8px 12px 8px;
 
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 16px;
 
   display: flex;
@@ -1393,10 +1393,12 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  padding: 10px 12px;
-  border-radius: 12px;
+  padding: 10px 8px;
+  border-radius: 16px;
 
-  background: rgba(255,255,255,0.04);
+  /* background: rgba(255,255,255,0.04); */
+
+  text-align: start;
 }
 
 .flavorItem.disabled {
@@ -1409,14 +1411,15 @@ body {
 }
 
 .flavorAction {
-  padding: 6px 12px;
+  padding: 8px 18px;
   border-radius: 999px;
   border: none;
 
-  background: rgba(255,255,255,0.18);
+  background: rgba(217, 217, 217, 0.2);
   color: #fff;
 
-  font-size: 12px;
+  font-family: Unbounded-Regular;
+  font-size: 11px;
   cursor: pointer;
 }
 
