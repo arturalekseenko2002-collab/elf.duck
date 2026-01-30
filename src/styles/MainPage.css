@@ -1421,6 +1421,13 @@ body {
   flex-shrink: 0;
 }
 
+.checkoutSelectFlavorBar {
+  width: 6px;
+  height: 18px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
 .flavorLabel {
   font-family: Unbounded-Regular;
   font-size: 14px;

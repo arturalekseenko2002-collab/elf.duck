@@ -614,11 +614,25 @@ const MainPage = () => {
                           }}
                         >
                           <div className="checkoutSelectLeft">
-                            <img
-                              className="checkoutSelectIcon"
-                              src={selectedFlavor ? flavorBar : categoriesIcon}
-                              alt=""
-                            />
+                            {selectedFlavor ? (
+                              <span
+                                className="checkoutSelectFlavorBar"
+                                style={{
+                                  background: `linear-gradient(
+                                    180deg,
+                                    ${selectedFlavor.gradient[0]} 0%,
+                                    ${selectedFlavor.gradient[1]} 100%
+                                  )`,
+                                }}
+                              />
+                            ) : (
+                              <img
+                                className="checkoutSelectIcon"
+                                src={categoriesIcon}
+                                alt=""
+                              />
+                            )}
+
                             <span className="checkoutSelectText">
                               {selectedFlavor ? selectedFlavor.label : "Выберите вкус"}
                             </span>
