@@ -1460,6 +1460,44 @@ body {
   cursor: not-allowed;
 }
 
+/* ================= CHECKOUT DELIVERY BUTTONS ================= */
+
+.checkoutDeliveryButtons {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.deliveryButton {
+  flex: 1;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.05);
+
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+
+  transition: all .2s ease;
+}
+
+.deliveryButton img {
+  width: 18px;
+  height: 18px;
+}
+
+.deliveryButton.primary {
+  background: rgba(var(--accent-color), 0.35);
+  border-color: rgba(var(--accent-color), 0.8);
+}
+
 /* ================= FOOTER BAR (прозрачный) ================= */
 
 .footerBar {

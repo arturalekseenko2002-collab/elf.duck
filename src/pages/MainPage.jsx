@@ -40,6 +40,8 @@ import chaserSpecialOrderModal from "../assets/chaserSpecialOrderModal.png";
 import vozolBG from "../assets/vozolBG.png";
 import vozolDuckIMG from "../assets/vozolDuckIMG.png";
 import vozolOrderModal from "../assets/vozolOrderModal.png";
+import deliveryIcon from "../assets/deliveryIcon.png";
+import pickupIcon from "../assets/pickupIcon.png";
 
 
 
@@ -362,6 +364,7 @@ const MainPage = () => {
 
   const [isFlavorOpen, setIsFlavorOpen] = useState(false);
   const [selectedFlavor, setSelectedFlavor] = useState(null); 
+  const [deliveryType, setDeliveryType] = useState("delivery"); 
 
   return (
     <div className={`App reveal delay-5 ${mounted ? "visible" : ""}`}>
@@ -664,6 +667,36 @@ const MainPage = () => {
                     <span className="checkoutSectionText">Добавление товара в корзину</span>
                     <span className="checkoutSectionLine" />
                   </div>
+
+                  {selectedFlavor && (
+                    <div className="checkoutDeliveryButtons">
+                      <button
+                        className={`deliveryButton ${
+                          deliveryType === "delivery" ? "primary" : ""
+                        }`}
+                        onClick={() => {
+                          haptic.light();
+                          setDeliveryType("delivery");
+                        }}
+                      >
+                        <img src={deliveryIcon} />
+                        <span>Доставка</span>
+                      </button>
+
+                      <button
+                        className={`deliveryButton ${
+                          deliveryType === "pickup" ? "primary" : ""
+                        }`}
+                        onClick={() => {
+                          haptic.light();
+                          setDeliveryType("pickup");
+                        }}
+                      >
+                        <img src={pickupIcon} />
+                        <span>Самовывоз</span>
+                      </button>
+                    </div>
+                  )}
 
                   <div className="checkoutContent">
                     <div className="checkoutCard">
