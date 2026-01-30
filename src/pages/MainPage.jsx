@@ -625,19 +625,18 @@ const MainPage = () => {
 
                         {isFlavorOpen && (
                           <div className="flavorDropdown">
-                          {activeProduct.flavors.map(flavor => (
-                            <div
-                              key={flavor.id}
-                              className={`flavorItem ${!flavor.available ? "disabled" : ""}`}
-                              onClick={() => {
-                                if (!flavor.available) return;
+                            {activeProduct.flavors.map(flavor => (
+                              <div
+                                key={flavor.id}
+                                className={`flavorItem ${!flavor.available ? "disabled" : ""}`}
+                                onClick={() => {
+                                  if (!flavor.available) return;
 
-                                haptic.light();
-                                setSelectedFlavor(flavor);
-                                setIsFlavorOpen(false);
-                              }}
-                            >
-                              <div className="flavorLeft">
+                                  haptic.light();
+                                  setSelectedFlavor(flavor);
+                                  setIsFlavorOpen(false);
+                                }}
+                              >
                                 <span
                                   className="flavorBar"
                                   style={{
@@ -648,20 +647,16 @@ const MainPage = () => {
                                     )`,
                                   }}
                                 />
+                                <span className="flavorLabel">{flavor.label}</span>
 
-                                <span className="flavorLabel">
-                                  {flavor.label}
-                                </span>
+                                <button
+                                  className="flavorAction"
+                                  disabled={!flavor.available}
+                                >
+                                  {flavor.available ? "выбрать" : "нет в наличии"}
+                                </button>
                               </div>
-
-                              <button
-                                className="flavorAction"
-                                disabled={!flavor.available}
-                              >
-                                {flavor.available ? "выбрать" : "нет в наличии"}
-                              </button>
-                            </div>
-                          ))}
+                            ))}
                           </div>
                         )}
 
